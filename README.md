@@ -2,10 +2,13 @@
 
 東京国際映画祭の鑑賞スケジュールを、移動・昼食・勤務条件を考慮して最適化します。
 
-現在は **Phase 1: Scheduler Core** を実装済みです。Web UI・実上映データ・GitHub Pages公開は後続Phaseです。
+現在は **Phase 2: Basic UI** まで実装済みです。作品選択、条件設定、最大3案の生成、日別タイムラインを利用できます。
+
+画面の作品・上映・会場・移動時間はすべて架空のサンプルです。実上映データはPhase 3、GitHub Pages公開はPhase 4です。
 
 - [全体仕様](SPEC.md)
 - [Phase 1 設計・判断事項](docs/phase1-design.md)
+- [Phase 2 UI設計](docs/phase2-design.md)
 
 ## 開発
 
@@ -13,10 +16,15 @@ Node.js 24以上を使用します。
 
 ```sh
 npm ci
+npm run dev
+# 表示URL: http://localhost:5173/TIFFScheduler/
 npm test
 npm run typecheck
 npm run build
 ```
+
+`npm run build` はWebアプリを `dist/` に生成します。`npm run preview` で確認できます。
+コア単体のJS・型宣言は `npm run build:core` で `lib/` に生成します。
 
 ## 利用例
 
