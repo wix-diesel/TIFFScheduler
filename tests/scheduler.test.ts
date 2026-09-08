@@ -1,0 +1,129 @@
+import { test } from 'node:test';
+import assert from 'node:assert/strict';
+import { optimizeSchedule, DEFAULT_CONSTRAINTS, canFollow, vacationDate, lunchBreaks, compareScores, scorePlan } from '../src/scheduler/index.ts';
+import type { ScheduleInput, Screening } from '../src/scheduler/types.ts';
+const time = (clock: string, date = '2026-10-30') => `${date}T${clock}:00+09:00`;
+const screening = (id: string, filmId: string, start: string, end: string, venueId = 'a', date = '2026-10-30'): Screening => ({ id, filmId, venueId, startAt: time(start, date), endAt: time(end, date) });
+function input(screenings: Screening[]): ScheduleInput {
+  const ids = [...new Set(screenings.map(s => s.filmId))];
+  return { films: ids.map(id => ({ id, title: id, durationMinutes: 60 })), screenings,
+    venues: [{ id: 'a', name: 'A' }, { id: 'b', name: 'B' }],
+    travelTimes: [{ fromVenueId: 'a', toVenueId: 'b', minutes: 10 }, { fromVenueId: 'b', toVenueId: 'a', minutes: 15 }],
+    selectedFilmIds: ids, constraints: structuredClone(DEFAULT_CONSTRAINTS), holidays: [] };
+}
+test('overlap, same-venue buffers, exact boundary and directional travel', () => {
+  const a = screening('a', 'a', '09:00', '10:00');
+  const b = screening('b', 'b', '10:15', '11:00'); const data = input([a, b]);
+  assert.equal(canFollow(a, b, data), true);
+  assert.equal(canFollow(a, { ...b, startAt: time('10:14') }, data), false);
+  assert.equal(canFollow(a, { ...b, startAt: time('09:30') }, data), false);
+  assert.equal(canFollow(a, { ...b, venueId: 'b', startAt: time('10:25') }, data), true);
+  assert.equal(canFollow({ ...a, venueId: 'b' }, { ...b, startAt: time('10:25') }, data), false);
+  data.travelTimes = [];
+  assert.equal(canFollow(a, { ...b, venueId: 'b', startAt: time('11:00') }, data), false);
+});
+test('events before and after are mandatory occupancy', () => {
+  const a = { ...screening('a', 'a', '09:00', '10:00'), eventAfterMinutes: 20 };
+  const b = { ...screening('b', 'b', '10:45', '11:15'), eventBeforeMinutes: 10 };
+  const data = input([a, b]); assert.equal(canFollow(a, b, data), true);
+  assert.equal(canFollow(a, { ...b, eventBeforeMinutes: 11 }, data), false);
+});
+test('vacation uses JST, work interval, weekends, holidays and additional days off', () => {
+  const s = screening('a', 'a', '10:00', '11:00'); const data = input([s]);
+  assert.equal(vacationDate(s, data), '2026-10-30');
+  assert.equal(vacationDate({ ...s, startAt: '2026-10-30T01:00:00Z', endAt: '2026-10-30T02:00:00Z' }, data), '2026-10-30');
+  assert.equal(vacationDate(screening('b', 'a', '18:10', '20:00'), data), undefined);
+  assert.equal(vacationDate(screening('b', 'a', '18:09', '20:00'), data), '2026-10-30');
+  assert.equal(vacationDate(screening('b', 'a', '10:00', '11:00', 'a', '2026-10-31'), data), undefined);
+  data.holidays = ['2026-10-30']; assert.equal(vacationDate(s, data), undefined);
+  data.holidays = []; data.constraints.additionalDaysOff = ['2026-10-30']; assert.equal(vacationDate(s, data), undefined);
+});
+test('unavailable means no leave; evening and non-workday screenings remain eligible', () => {
+  const data = input([screening('a', 'a', '10:00', '11:00'), screening('b', 'a', '19:00', '20:00')]);
+  data.constraints.unavailableDates = ['2026-10-30'];
+  assert.equal(optimizeSchedule(data).plans[0]!.screenings[0]!.id, 'b');
+  data.constraints.additionalDaysOff = ['2026-10-30'];
+  assert.equal(optimizeSchedule(data).plans[0]!.score.missedFilmCount, 0);
+});
+test('lunch is continuous, inside window, excludes events, buffers and travel', () => {
+  const data = input([screening('a', 'a', '10:00', '11:30'), screening('b', 'b', '12:40', '14:30', 'b')]);
+  assert.deepEqual(lunchBreaks(data.screenings, data), [{ date: '2026-10-30', startAt: time('11:45'), endAt: time('12:30') }]);
+  data.screenings = [data.screenings[0]!, { ...data.screenings[1]!, startAt: time('12:39') }];
+  assert.equal(lunchBreaks(data.screenings, data), undefined);
+  const evening = input([screening('a', 'a', '19:00', '20:00')]);
+  assert.deepEqual(lunchBreaks(evening.screenings, evening), []);
+  const full = input([screening('a', 'a', '11:00', '15:00')]);
+  assert.equal(optimizeSchedule(full).plans[0]!.score.missedFilmCount, 1);
+});
+test('maximizes films before minimizing vacation and counts each date once', () => {
+  const data = input([screening('a1', 'a', '09:00', '10:00'), screening('a2', 'a', '09:00', '10:00', 'a', '2026-10-31'), screening('b', 'b', '10:30', '11:15')]);
+  const best = optimizeSchedule(data).plans[0]!;
+  assert.equal(best.score.missedFilmCount, 0); assert.equal(best.score.vacationDays, 1);
+  assert.equal(optimizeSchedule(input([data.screenings[0]!, data.screenings[2]!])).plans[0]!.score.vacationDays, 1);
+  assert.equal(optimizeSchedule(input([data.screenings[0]!, data.screenings[1]!])).plans[0]!.score.vacationDays, 0);
+});
+test('same vacation count prefers less travel, then less waiting', () => {
+  const data = input([screening('a', 'a', '09:00', '10:00'), screening('b1', 'b', '10:30', '11:00', 'b'), screening('b2', 'b', '11:00', '11:15'), screening('b3', 'b', '10:20', '11:00')]);
+  assert.equal(optimizeSchedule(data).plans[0]!.screenings[1]!.id, 'b3');
+});
+test('maximum-cardinality alternatives, missing candidates, deterministic top three', () => {
+  const data = input(['a', 'b', 'c', 'd'].map(id => screening(id, id, '09:00', '10:00')));
+  const result = optimizeSchedule(data);
+  assert.equal(result.plans.length, 3);
+  assert.ok(result.plans.every(p => p.screenings.length === 1 && p.missedFilmIds.length === 3));
+  assert.deepEqual(optimizeSchedule({ ...data, screenings: [...data.screenings].reverse(), selectedFilmIds: [...data.selectedFilmIds].reverse() }).plans, result.plans);
+  data.screenings = [];
+  assert.equal(optimizeSchedule(data).plans[0]!.score.missedFilmCount, 4);
+  data.selectedFilmIds = []; assert.deepEqual(optimizeSchedule(data).plans, []);
+});
+test('rejects malformed input instead of silently producing plans', () => {
+  const base = input([screening('a', 'a', '09:00', '10:00')]);
+  for (const mutate of [
+    (d: ScheduleInput) => { d.selectedFilmIds = ['unknown']; },
+    (d: ScheduleInput) => { d.selectedFilmIds = ['a', 'a']; },
+    (d: ScheduleInput) => { d.screenings = [{ ...d.screenings[0]!, startAt: '2026-10-30T09:00:00' }]; },
+    (d: ScheduleInput) => { d.constraints.arrivalBufferMinutes = -1; },
+    (d: ScheduleInput) => { d.constraints.additionalDaysOff = ['2026-02-30']; },
+    (d: ScheduleInput) => { d.screenings = [screening('a', 'a', '23:00', '01:00')]; },
+    (d: ScheduleInput) => { d.travelTimes = [...d.travelTimes, d.travelTimes[0]!]; },
+  ]) { const d = structuredClone(base); mutate(d); assert.throws(() => optimizeSchedule(d), /Invalid schedule input/); }
+  assert.throws(() => optimizeSchedule(base, 4));
+});
+test('waiting excludes the reserved lunch and movement', () => {
+  const data = input([screening('a', 'a', '10:00', '11:30'), screening('b', 'b', '12:40', '14:30', 'b')]);
+  assert.equal(optimizeSchedule(data).plans[0]!.score.waitingMinutes, 0);
+});
+// Exhaustive enumeration deliberately has no optimizer pruning. Seeded fixtures
+// exercise candidate permutations and omission branches against exact top-k.
+test('branch and bound matches exhaustive top-three enumeration for 40 seeded cases', () => {
+  let seed = 42;
+  const random = (n: number) => { seed = (Math.imul(seed, 1664525) + 1013904223) >>> 0; return seed % n; };
+  for (let trial = 0; trial < 40; trial++) {
+    const screenings: Screening[] = [];
+    for (let f = 0; f < 4; f++) for (let c = 0; c < 2; c++) {
+      const hour = 8 + random(12), date = random(2) ? '2026-10-30' : '2026-10-31';
+      screenings.push(screening(`${f}-${c}`, `${f}`, `${hour}`.padStart(2, '0') + ':00', `${hour + 1}`.padStart(2, '0') + ':00', random(2) ? 'a' : 'b', date));
+    }
+    const data = input(screenings), all: ReturnType<typeof scorePlan>[] = [];
+    function enumerate(i: number, chosen: Screening[]) {
+      if (i < data.selectedFilmIds.length) {
+        enumerate(i + 1, chosen);
+        for (const s of screenings.filter(s => s.filmId === data.selectedFilmIds[i])) enumerate(i + 1, [...chosen, s]);
+        return;
+      }
+      chosen.sort((a, b) => Date.parse(a.startAt) - Date.parse(b.startAt) || a.id.localeCompare(b.id));
+      if (!chosen.every((s, j) => j === 0 || canFollow(chosen[j - 1]!, s, data))) return;
+      const lunches = lunchBreaks(chosen, data); if (lunches) all.push(scorePlan(chosen, lunches, data));
+    }
+    enumerate(0, []);
+    const key = (p: ReturnType<typeof scorePlan>) => JSON.stringify(p.screenings.map(s => s.id));
+    all.sort((a, b) => compareScores(a.score, b.score) || (key(a) < key(b) ? -1 : key(a) > key(b) ? 1 : 0));
+    assert.deepEqual(optimizeSchedule(data).plans, all.slice(0, 3), `seeded trial ${trial}`);
+  }
+});
+test('does not prune a partial route that a later intermediate film can make feasible', () => {
+  const data = input([screening('a', 'a', '08:00', '09:00', 'a'), screening('b', 'b', '11:00', '11:15', 'b'), screening('c', 'c', '09:30', '10:00', 'c')]);
+  data.venues = [...data.venues, { id: 'c', name: 'C' }];
+  data.travelTimes = [{ fromVenueId: 'a', toVenueId: 'c', minutes: 10 }, { fromVenueId: 'c', toVenueId: 'b', minutes: 10 }];
+  assert.equal(optimizeSchedule(data).plans[0]!.score.missedFilmCount, 0);
+});
