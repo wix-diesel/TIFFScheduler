@@ -14,16 +14,16 @@ export function validateInput(input: ScheduleInput): void {
   unique(input.films.map(f => f.id), 'films'); unique(input.venues.map(v => v.id), 'venues');
   unique(input.screenings.map(s => s.id), 'screenings'); unique(input.selectedFilmIds, 'selected films');
   for (const id of input.selectedFilmIds) if (!input.films.some(f => f.id === id)) fail(`unknown film ${id}`);
-  for (const f of input.films) { nonnegative(f.durationMinutes, 'film duration'); if (!f.durationMinutes) fail('zero film duration'); }
+  for (const f of input.films) { nonnegative(f.durationMinutes, `film ${f.id}: durationMinutes`); if (!f.durationMinutes) fail(`film ${f.id}: durationMinutes must be positive`); }
   const c = input.constraints;
   for (const d of [...c.additionalDaysOff, ...c.unavailableDates, ...input.holidays]) date(d);
   if (c.workingWeekdays.some(d => !Number.isInteger(d) || d < 0 || d > 6)) fail('weekday');
   for (const v of [c.workStart ?? '09:00', c.workEnd ?? '18:00', c.lunchWindowStart, c.lunchWindowEnd]) clock(v);
   if ((c.workStart ?? '09:00') >= (c.workEnd ?? '18:00')) fail('work window');
   if (c.lunchWindowStart >= c.lunchWindowEnd) fail('lunch window');
-  for (const v of [c.lunchDurationMinutes, c.exitBufferMinutes, c.arrivalBufferMinutes]) nonnegative(v, 'buffer or lunch duration');
+  for (const field of ['lunchDurationMinutes', 'exitBufferMinutes', 'arrivalBufferMinutes'] as const) nonnegative(c[field], field);
   const clockMinutes = (v: string) => Number(v.slice(0, 2)) * 60 + Number(v.slice(3));
-  if (!c.lunchDurationMinutes || c.lunchDurationMinutes > clockMinutes(c.lunchWindowEnd) - clockMinutes(c.lunchWindowStart)) fail('lunch duration');
+  if (!c.lunchDurationMinutes || c.lunchDurationMinutes > clockMinutes(c.lunchWindowEnd) - clockMinutes(c.lunchWindowStart)) fail('lunchDurationMinutes must be positive and fit within the lunch window');
   const routes = new Set<string>();
   for (const t of input.travelTimes) {
     nonnegative(t.minutes, 'travel time');
