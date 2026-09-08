@@ -1,0 +1,32 @@
+[
+  {
+    "id": "f1",
+    "title": "夜明けの街",
+    "durationMinutes": 90
+  },
+  {
+    "id": "f2",
+    "title": "海辺の手紙",
+    "durationMinutes": 90
+  },
+  {
+    "id": "f3",
+    "title": "旅の途中",
+    "durationMinutes": 90
+  },
+  {
+    "id": "f4",
+    "title": "小さな映画館",
+    "durationMinutes": 90
+  },
+  {
+    "id": "f5",
+    "title": "遠い約束",
+    "durationMinutes": 90
+  },
+  {
+    "id": "f6",
+    "title": "雨のあと",
+    "durationMinutes": 90
+  }
+]
