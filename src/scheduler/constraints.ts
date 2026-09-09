@@ -13,6 +13,19 @@ export function canFollow(a: Screening, b: Screening, input: ScheduleInput): boo
   if (end > start) return false;
   return dateInJapan(end) !== dateInJapan(start) || end + travelMinutes(a, b, input) <= start;
 }
+/** Count each screening by its advertised start date in Japan. */
+export function withinDailyScreeningLimit(screenings: readonly Screening[], input: ScheduleInput): boolean {
+  const limit = input.constraints.maxScreeningsPerDay;
+  if (limit === undefined) return true;
+  const counts = new Map<string, number>();
+  for (const screening of screenings) {
+    const date = dateInJapan(minute(screening.startAt));
+    const count = (counts.get(date) ?? 0) + 1;
+    if (count > limit) return false;
+    counts.set(date, count);
+  }
+  return true;
+}
 export function vacationDate(s: Screening, input: ScheduleInput): string | undefined {
   const c = input.constraints, [start, end] = occupied(s, input), date = dateInJapan(start);
   if (!c.workingWeekdays.includes(weekday(date)) || c.additionalDaysOff.includes(date) || input.holidays.includes(date)) return undefined;

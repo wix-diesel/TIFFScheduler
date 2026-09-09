@@ -22,6 +22,7 @@ function constraints(value: unknown): UserConstraints {
   assert(Array.isArray(c.workingWeekdays) && c.workingWeekdays.every(x => natural(x) && x <= 6));
   assert(strings(c.additionalDaysOff) && c.additionalDaysOff.every(date));
   assert(strings(c.unavailableDates) && c.unavailableDates.every(date));
+  assert(c.maxScreeningsPerDay === undefined || (natural(c.maxScreeningsPerDay) && c.maxScreeningsPerDay > 0));
   // Drafts can have temporarily inconsistent windows, but never invalid types.
   for (const x of [c.workStart,c.workEnd,c.lunchWindowStart,c.lunchWindowEnd]) assert(typeof x === 'string' && (x === '' || /^([01]\d|2[0-3]):[0-5]\d$/.test(x)));
   for (const x of [c.lunchDurationMinutes,c.exitBufferMinutes,c.arrivalBufferMinutes]) assert(typeof x === 'number' && Number.isFinite(x));

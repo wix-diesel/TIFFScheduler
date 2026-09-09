@@ -11,7 +11,8 @@ const snapshot={input,result:optimizeSchedule(input)};
 const state=():PersistedState=>({schemaVersion:1,festivalId:'tiff-2025',dataFingerprint:fingerprint(input),updatedAt:new Date().toISOString(),selectedFilmIds:['f1','f2'],constraints:structuredClone(DEFAULT_CONSTRAINTS),lastResult:structuredClone(snapshot),savedPlans:[{id:'one',name:'週末',createdAt:new Date().toISOString(),dataFingerprint:fingerprint(input),snapshot:structuredClone(snapshot)}]});
 function memory() { const data=new Map<string,string>(); return {data,getItem:(key:string)=>data.get(key)??null,setItem:(key:string,value:string)=>{data.set(key,value);}}; }
 test('round trip preserves all settings and independent snapshots',()=>{
- const original=state(); const restored=decode(encode(original),'tiff-2025');assert.deepEqual(restored,original);
+ const original=state(); original.constraints.maxScreeningsPerDay=2; const restored=decode(encode(original),'tiff-2025');assert.deepEqual(restored,original);
+ assert.equal(restored.constraints.maxScreeningsPerDay,2);
  restored.constraints.exitBufferMinutes=50;restored.lastResult=null;
  assert.equal(restored.savedPlans[0]!.snapshot.input.constraints.exitBufferMinutes,5);
 });
@@ -21,7 +22,9 @@ test('malformed nested results and future versions are rejected',()=>{
  const bad=state();bad.savedPlans[0]!.snapshot.result.plans[0]!.screenings[0]!.filmId='missing';assert.throws(()=>decode(JSON.stringify(bad),'tiff-2025'));
 });
 test('missing settings migrate to defaults',()=>{
- const v=state();delete v.constraints.workStart;assert.equal(decode(JSON.stringify(v),'tiff-2025').constraints.workStart,'09:00');
+ const v=state();delete v.constraints.workStart;delete v.constraints.maxScreeningsPerDay;
+ const restored=decode(JSON.stringify(v),'tiff-2025');
+ assert.equal(restored.constraints.workStart,'09:00');assert.equal(restored.constraints.maxScreeningsPerDay,undefined);
 });
 test('year isolation and data fingerprint cover timetable and titles',()=>{
  const storage=memory();const a=createRepository('tiff-2025',()=>storage);a.load();a.save(state());
@@ -48,6 +51,7 @@ test('20 plan limit, deletion and invalid numeric drafts',()=>{
  const v=state();v.savedPlans=Array.from({length:20},(_,i)=>({...structuredClone(v.savedPlans[0]!),id:String(i)}));assert.equal(decode(encode(v),'tiff-2025').savedPlans.length,20);
  v.savedPlans.push({...v.savedPlans[0]!,id:'21'});assert.throws(()=>encode(v));v.savedPlans=[];assert.equal(decode(encode(v),'tiff-2025').savedPlans.length,0);
  v.constraints.exitBufferMinutes=NaN;assert.throws(()=>encode(v));
+ for(const value of [0,-1,1.5,Infinity]){const invalid=state();invalid.constraints.maxScreeningsPerDay=value;assert.throws(()=>decode(JSON.stringify(invalid),'tiff-2025'));}
 });
 
 test('screening lookup rejects unknown IDs and modified fields under the same ID',()=>{

@@ -1,5 +1,5 @@
 import type { ScheduleInput, SchedulePlan, ScheduleResult, Screening } from './types.ts';
-import { canFollow, occupied, vacationDate, lunchBreaks } from './constraints.ts';
+import { canFollow, occupied, vacationDate, lunchBreaks, withinDailyScreeningLimit } from './constraints.ts';
 import { compareScores, scorePlan } from './scoring.ts';
 import { validateInput } from './validation.ts';
 const planKey = (plan: SchedulePlan) => JSON.stringify(plan.screenings.map(s => s.id));
@@ -37,6 +37,8 @@ export function optimizeSchedule(input: ScheduleInput, maxPlans = 3): ScheduleRe
     }
     for (const s of groups[index]!.candidates) {
       const next = [...selected, s].sort((a, b) => occupied(a, input)[0] - occupied(b, input)[0] || lexical(a.id, b.id));
+      // The daily count can only increase, so exceeding it is safe to prune now.
+      if (!withinDailyScreeningLimit(next, input)) continue;
       // An intermediate screening can change the route (including missing edges).
       // Only occupancy overlap is monotone for arbitrary directed matrices.
       if (next.every((b, i) => i === 0 || occupied(next[i - 1]!, input)[1] <= occupied(b, input)[0])) visit(index + 1, next);
