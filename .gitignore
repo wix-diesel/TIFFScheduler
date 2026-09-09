@@ -144,3 +144,7 @@ vite.config.ts.timestamp-*
 
 # Scheduler Core standalone build
 /lib/
+
+# Browser test output
+/playwright-report/
+/test-results/
