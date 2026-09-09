@@ -130,6 +130,16 @@ test('named snapshots survive edits and reload, and deletion requires confirmati
  await page.getByRole('button',{name:'設定・作品選択を初期化'}).click();
  await expect(saved.getByLabel('プラン名')).toHaveValue('週末の映画祭');
  await saved.getByRole('button',{name:'保存プランを全削除',exact:true}).click();
+ const dialog=page.getByRole('alertdialog',{name:'保存プラン全削除の確認'});
+ await expect(dialog).toHaveAttribute('aria-modal','true');
+ await expect(dialog).toHaveAccessibleDescription('保存プランをすべて削除しますか？設定・作品選択は残ります。');
+ await expect(dialog.getByRole('button',{name:'キャンセル',exact:true})).toBeFocused();
+ await page.keyboard.press('Shift+Tab');
+ await expect(dialog.getByRole('button',{name:'すべて削除する',exact:true})).toBeFocused();
+ await page.keyboard.press('Escape');
+ await expect(dialog).toHaveCount(0);
+ await expect(saved.getByRole('button',{name:'保存プランを全削除',exact:true})).toBeFocused();
+ await saved.getByRole('button',{name:'保存プランを全削除',exact:true}).click();
  await page.getByRole('button',{name:'キャンセル',exact:true}).click();
  await expect(saved.getByLabel('プラン名')).toHaveValue('週末の映画祭');
  await saved.getByRole('button',{name:'保存プランを全削除',exact:true}).click();

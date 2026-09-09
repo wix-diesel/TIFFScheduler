@@ -34,10 +34,11 @@ function snapshot(value: unknown): Snapshot {
   validateInput(s.input);
   assert(s.input.films.every(f => typeof f.title === 'string') && s.input.venues.every(v => typeof v.name === 'string'));
   assert(Array.isArray(s.result.plans) && s.result.plans.length <= 3 && natural(s.result.visitedNodes));
+  const screeningsById = new Map(s.input.screenings.map(screening => [screening.id, JSON.stringify(screening)]));
   for (const p of s.result.plans) {
     assert(object(p) && Array.isArray(p.screenings) && strings(p.missedFilmIds) && strings(p.vacationDates));
     assert(p.missedFilmIds.every(id => s.input.films.some(f => f.id === id)) && p.vacationDates.every(date));
-    assert(p.screenings.every(screening => s.input.screenings.some(original => JSON.stringify(original) === JSON.stringify(screening))));
+    assert(p.screenings.every(screening => object(screening) && screeningsById.get(screening.id) === JSON.stringify(screening)));
     assert(Array.isArray(p.lunches) && p.lunches.every(l => object(l) && date(l.date) && timestamp(l.startAt) && timestamp(l.endAt) && l.startAt < l.endAt));
     assert(object(p.score) && [p.score.missedFilmCount,p.score.vacationDays,p.score.travelMinutes,p.score.waitingMinutes].every(natural));
   }
@@ -61,9 +62,13 @@ export function decode(raw: string, festivalId: string): PersistedState {
   return v as unknown as PersistedState;
 }
 export function encode(state: PersistedState): string {
-  const raw = JSON.stringify(state);
-  decode(raw, state.festivalId);
-  return raw;
+  // State is created by the app. Full validation belongs at the untrusted read boundary.
+  assert(state.savedPlans.length <= MAX_PLANS);
+  return JSON.stringify(state, (_key, value: unknown) => {
+    // JSON would silently convert NaN/Infinity to null, including nested snapshots.
+    assert(typeof value !== 'number' || Number.isFinite(value));
+    return value;
+  });
 }
 export function fingerprint(data: unknown): string {
   const raw = JSON.stringify(data);

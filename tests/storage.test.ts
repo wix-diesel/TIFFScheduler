@@ -49,3 +49,20 @@ test('20 plan limit, deletion and invalid numeric drafts',()=>{
  v.savedPlans.push({...v.savedPlans[0]!,id:'21'});assert.throws(()=>encode(v));v.savedPlans=[];assert.equal(decode(encode(v),'tiff-2025').savedPlans.length,0);
  v.constraints.exitBufferMinutes=NaN;assert.throws(()=>encode(v));
 });
+
+test('screening lookup rejects unknown IDs and modified fields under the same ID',()=>{
+ for(const field of ['id','endAt'] as const){
+  const v=state();const plan=v.lastResult!.result.plans[0]!;
+  const screening={...plan.screenings[0]!};plan.screenings[0]=screening;
+  screening[field]=field==='id'?'unknown-screening':'2099-01-01T10:00:00+09:00';
+  assert.throws(()=>decode(JSON.stringify(v),'tiff-2025'));
+ }
+});
+test('encoding rejects nonfinite numbers throughout snapshots without modifying state',()=>{
+ for(const value of [NaN,Infinity,-Infinity]){
+  const v=state();v.savedPlans[0]!.snapshot.result.plans[0]!.score.waitingMinutes=value;
+  assert.throws(()=>encode(v));
+  assert.ok(Object.is(v.savedPlans[0]!.snapshot.result.plans[0]!.score.waitingMinutes,value));
+ }
+ const v=state();const original=structuredClone(v);encode(v);assert.deepEqual(v,original);
+});
