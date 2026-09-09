@@ -62,8 +62,10 @@ test('browse a compact catalog and keep selections across pages and filters', as
   await expect(cards).toHaveCount(0);
   await page.getByRole('button', { name: '選んだ2作品を確認' }).click();
   await expect(cards).toHaveCount(2);
-  await cards.first().getByRole('checkbox').uncheck();
+  // Unselecting removes the card immediately; click once and assert the resulting list.
+  await page.getByRole('checkbox', { name: firstTitle, exact: true }).click();
   await expect(cards).toHaveCount(1);
+  await expect(page.getByRole('checkbox', { name: firstTitle, exact: true })).toHaveCount(0);
   await page.getByRole('button', { name: '絞り込みを解除' }).click();
   await expect(cards).toHaveCount(12);
   await page.getByLabel('上映日で絞り込み').selectOption('2025-10-27');
