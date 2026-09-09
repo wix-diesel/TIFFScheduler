@@ -40,10 +40,20 @@ jobs:
       - name: Build
         run: npm run build
 
-      - name: Install browser test dependencies
-        run: npx playwright install --with-deps chromium webkit
+      - name: Cache Playwright browsers
+        id: playwright-cache
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/ms-playwright
+          key: ${{ runner.os }}-playwright-${{ hashFiles('package-lock.json') }}
+
+      - name: Install Playwright browsers
+        if: steps.playwright-cache.outputs.cache-hit != 'true'
+        timeout-minutes: 5
+        run: npx playwright install chromium webkit
 
       - name: Test production build on mobile and desktop
+        timeout-minutes: 5
         run: npm run test:e2e
 
       - name: Upload browser failure diagnostics
