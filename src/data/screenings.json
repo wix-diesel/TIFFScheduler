@@ -1,88 +1,2822 @@
 [
   {
-    "id": "s0-0",
-    "filmId": "f1",
-    "venueId": "a",
-    "startAt": "2026-10-30T10:00:00+09:00",
-    "endAt": "2026-10-30T11:30:00+09:00"
+    "id": "tiff-2025-act-3709",
+    "filmId": "38008CLA08",
+    "venueId": "tiff-2025-venue-19",
+    "startAt": "2025-10-27T10:45:00+09:00",
+    "endAt": "2025-10-27T12:20:00+09:00",
+    "sourceUrl": "https://2025.tiff-jp.net/ja/lineup/film/38008CLA08",
+    "timingNote": "公式の上映枠終了（イベント等を含む）",
+    "eventLabel": ""
   },
   {
-    "id": "s0-1",
-    "filmId": "f1",
-    "venueId": "b",
-    "startAt": "2026-10-31T10:00:00+09:00",
-    "endAt": "2026-10-31T11:30:00+09:00"
+    "id": "tiff-2025-act-3511",
+    "filmId": "38005WFC16",
+    "venueId": "tiff-2025-venue-8",
+    "startAt": "2025-10-27T11:00:00+09:00",
+    "endAt": "2025-10-27T12:40:00+09:00",
+    "sourceUrl": "https://2025.tiff-jp.net/ja/lineup/film/38005WFC16",
+    "timingNote": "公式の上映枠終了（イベント等を含む）",
+    "eventLabel": ""
   },
   {
-    "id": "s1-0",
-    "filmId": "f2",
-    "venueId": "b",
-    "startAt": "2026-10-30T13:00:00+09:00",
-    "endAt": "2026-10-30T14:30:00+09:00"
+    "id": "tiff-2025-act-3656",
+    "filmId": "38011WEP05",
+    "venueId": "tiff-2025-venue-34",
+    "startAt": "2025-10-27T12:30:00+09:00",
+    "endAt": "2025-10-27T14:27:00+09:00",
+    "sourceUrl": "https://2025.tiff-jp.net/ja/lineup/film/38011WEP05",
+    "timingNote": "公式の上映枠終了（イベント等を含む）",
+    "eventLabel": ""
   },
   {
-    "id": "s1-1",
-    "filmId": "f2",
-    "venueId": "a",
-    "startAt": "2026-10-31T13:00:00+09:00",
-    "endAt": "2026-10-31T14:30:00+09:00"
+    "id": "tiff-2025-act-3710",
+    "filmId": "38008CLA05",
+    "venueId": "tiff-2025-venue-19",
+    "startAt": "2025-10-27T13:30:00+09:00",
+    "endAt": "2025-10-27T15:34:00+09:00",
+    "sourceUrl": "https://2025.tiff-jp.net/ja/lineup/film/38008CLA05",
+    "timingNote": "公式の上映枠終了（イベント等を含む）",
+    "eventLabel": ""
   },
   {
-    "id": "s2-0",
-    "filmId": "f3",
-    "venueId": "a",
-    "startAt": "2026-10-30T16:00:00+09:00",
-    "endAt": "2026-10-30T17:30:00+09:00",
-    "eventAfterMinutes": 15
+    "id": "tiff-2025-act-3549",
+    "filmId": "38005WFC06",
+    "venueId": "tiff-2025-venue-9",
+    "startAt": "2025-10-27T13:50:00+09:00",
+    "endAt": "2025-10-27T15:28:00+09:00",
+    "sourceUrl": "https://2025.tiff-jp.net/ja/lineup/film/38005WFC06",
+    "timingNote": "公式の上映枠終了（イベント等を含む）",
+    "eventLabel": ""
   },
   {
-    "id": "s2-1",
-    "filmId": "f3",
-    "venueId": "b",
-    "startAt": "2026-10-31T16:00:00+09:00",
-    "endAt": "2026-10-31T17:30:00+09:00",
-    "eventAfterMinutes": 15
+    "id": "tiff-2025-act-3512",
+    "filmId": "38005WFC02",
+    "venueId": "tiff-2025-venue-8",
+    "startAt": "2025-10-27T14:30:00+09:00",
+    "endAt": "2025-10-27T16:39:00+09:00",
+    "sourceUrl": "https://2025.tiff-jp.net/ja/lineup/film/38005WFC02",
+    "timingNote": "公式終了時刻の不整合を本編時間で補正",
+    "eventLabel": ""
   },
   {
-    "id": "s3-0",
-    "filmId": "f4",
-    "venueId": "b",
-    "startAt": "2026-10-30T10:00:00+09:00",
-    "endAt": "2026-10-30T11:30:00+09:00"
+    "id": "tiff-2025-act-3657",
+    "filmId": "38009YUT02",
+    "venueId": "tiff-2025-venue-34",
+    "startAt": "2025-10-27T15:50:00+09:00",
+    "endAt": "2025-10-27T17:30:00+09:00",
+    "sourceUrl": "https://2025.tiff-jp.net/ja/lineup/film/38009YUT02",
+    "timingNote": "公式の上映枠終了（イベント等を含む）",
+    "eventLabel": ""
   },
   {
-    "id": "s3-1",
-    "filmId": "f4",
-    "venueId": "a",
-    "startAt": "2026-10-31T10:00:00+09:00",
-    "endAt": "2026-10-31T11:30:00+09:00"
+    "id": "tiff-2025-act-3647",
+    "filmId": "38007ANM01",
+    "venueId": "tiff-2025-venue-33",
+    "startAt": "2025-10-27T16:30:00+09:00",
+    "endAt": "2025-10-27T17:53:00+09:00",
+    "sourceUrl": "https://2025.tiff-jp.net/ja/lineup/film/38007ANM01",
+    "timingNote": "公式の上映枠終了（イベント等を含む）",
+    "eventLabel": ""
   },
   {
-    "id": "s4-0",
-    "filmId": "f5",
-    "venueId": "a",
-    "startAt": "2026-10-30T13:00:00+09:00",
-    "endAt": "2026-10-30T14:30:00+09:00"
+    "id": "tiff-2025-act-3667",
+    "filmId": "38005WFC07",
+    "venueId": "tiff-2025-venue-21",
+    "startAt": "2025-10-27T18:00:00+09:00",
+    "endAt": "2025-10-27T19:50:00+09:00",
+    "sourceUrl": "https://2025.tiff-jp.net/ja/lineup/film/38005WFC07",
+    "timingNote": "公式の上映枠終了（イベント等を含む）",
+    "eventLabel": ""
   },
   {
-    "id": "s4-1",
-    "filmId": "f5",
-    "venueId": "b",
-    "startAt": "2026-10-31T13:00:00+09:00",
-    "endAt": "2026-10-31T14:30:00+09:00"
+    "id": "tiff-2025-act-3690",
+    "filmId": "38002CMP10",
+    "venueId": "tiff-2025-venue-23",
+    "startAt": "2025-10-27T18:30:00+09:00",
+    "endAt": "2025-10-27T21:09:00+09:00",
+    "sourceUrl": "https://2025.tiff-jp.net/ja/lineup/film/38002CMP10",
+    "timingNote": "公式の上映枠終了（イベント等を含む）",
+    "eventLabel": "Q&A"
   },
   {
-    "id": "s5-0",
-    "filmId": "f6",
-    "venueId": "b",
-    "startAt": "2026-10-30T19:00:00+09:00",
-    "endAt": "2026-10-30T20:30:00+09:00"
+    "id": "tiff-2025-act-3648",
+    "filmId": "38005WFC11",
+    "venueId": "tiff-2025-venue-33",
+    "startAt": "2025-10-27T18:45:00+09:00",
+    "endAt": "2025-10-27T20:31:00+09:00",
+    "sourceUrl": "https://2025.tiff-jp.net/ja/lineup/film/38005WFC11",
+    "timingNote": "公式の上映枠終了（イベント等を含む）",
+    "eventLabel": ""
   },
   {
-    "id": "s5-1",
-    "filmId": "f6",
-    "venueId": "a",
-    "startAt": "2026-10-31T19:00:00+09:00",
-    "endAt": "2026-10-31T20:30:00+09:00"
+    "id": "tiff-2025-act-3711",
+    "filmId": "38008CLA02",
+    "venueId": "tiff-2025-venue-19",
+    "startAt": "2025-10-27T19:00:00+09:00",
+    "endAt": "2025-10-27T20:37:00+09:00",
+    "sourceUrl": "https://2025.tiff-jp.net/ja/lineup/film/38008CLA02",
+    "timingNote": "公式の上映枠終了（イベント等を含む）",
+    "eventLabel": ""
+  },
+  {
+    "id": "tiff-2025-act-3740",
+    "filmId": "38000TOC01",
+    "venueId": "tiff-2025-venue-25",
+    "startAt": "2025-10-27T19:15:00+09:00",
+    "endAt": "2025-10-27T21:55:00+09:00",
+    "sourceUrl": "https://2025.tiff-jp.net/ja/lineup/film/38000TOC01",
+    "timingNote": "公式の上映枠終了（イベント等を含む）",
+    "eventLabel": "舞台挨拶"
+  },
+  {
+    "id": "tiff-2025-act-3658",
+    "filmId": "38014SPS03",
+    "venueId": "tiff-2025-venue-34",
+    "startAt": "2025-10-27T19:20:00+09:00",
+    "endAt": "2025-10-27T20:51:00+09:00",
+    "sourceUrl": "https://2025.tiff-jp.net/ja/lineup/film/38014SPS03",
+    "timingNote": "公式の上映枠終了（イベント等を含む）",
+    "eventLabel": ""
+  },
+  {
+    "id": "tiff-2025-act-3513",
+    "filmId": "38003ASF03",
+    "venueId": "tiff-2025-venue-8",
+    "startAt": "2025-10-27T19:35:00+09:00",
+    "endAt": "2025-10-27T21:52:00+09:00",
+    "sourceUrl": "https://2025.tiff-jp.net/ja/lineup/film/38003ASF03",
+    "timingNote": "公式の上映枠終了（イベント等を含む）",
+    "eventLabel": "Q&A"
+  },
+  {
+    "id": "tiff-2025-act-3668",
+    "filmId": "38002CMP13",
+    "venueId": "tiff-2025-venue-21",
+    "startAt": "2025-10-27T21:25:00+09:00",
+    "endAt": "2025-10-27T23:18:00+09:00",
+    "sourceUrl": "https://2025.tiff-jp.net/ja/lineup/film/38002CMP13",
+    "timingNote": "公式の上映枠終了（イベント等を含む）",
+    "eventLabel": ""
+  },
+  {
+    "id": "tiff-2025-act-3598",
+    "filmId": "38014SPS01",
+    "venueId": "tiff-2025-venue-5",
+    "startAt": "2025-10-28T10:00:00+09:00",
+    "endAt": "2025-10-28T13:06:00+09:00",
+    "sourceUrl": "https://2025.tiff-jp.net/ja/lineup/film/38014SPS01",
+    "timingNote": "公式の上映枠終了（イベント等を含む）",
+    "eventLabel": "Q&A"
+  },
+  {
+    "id": "tiff-2025-act-3550",
+    "filmId": "38007ANM04",
+    "venueId": "tiff-2025-venue-9",
+    "startAt": "2025-10-28T11:00:00+09:00",
+    "endAt": "2025-10-28T12:50:00+09:00",
+    "sourceUrl": "https://2025.tiff-jp.net/ja/lineup/film/38007ANM04",
+    "timingNote": "公式の上映枠終了（イベント等を含む）",
+    "eventLabel": "トーク"
+  },
+  {
+    "id": "tiff-2025-act-3691",
+    "filmId": "38004GLS10",
+    "venueId": "tiff-2025-venue-23",
+    "startAt": "2025-10-28T11:20:00+09:00",
+    "endAt": "2025-10-28T13:24:00+09:00",
+    "sourceUrl": "https://2025.tiff-jp.net/ja/lineup/film/38004GLS10",
+    "timingNote": "公式の上映枠終了（イベント等を含む）",
+    "eventLabel": "Q&A"
+  },
+  {
+    "id": "tiff-2025-act-3514",
+    "filmId": "38011WEP03",
+    "venueId": "tiff-2025-venue-8",
+    "startAt": "2025-10-28T12:25:00+09:00",
+    "endAt": "2025-10-28T14:34:00+09:00",
+    "sourceUrl": "https://2025.tiff-jp.net/ja/lineup/film/38011WEP03",
+    "timingNote": "公式の上映枠終了（イベント等を含む）",
+    "eventLabel": ""
+  },
+  {
+    "id": "tiff-2025-act-3741",
+    "filmId": "38007ANM05",
+    "venueId": "tiff-2025-venue-25",
+    "startAt": "2025-10-28T13:00:00+09:00",
+    "endAt": "2025-10-28T14:37:00+09:00",
+    "sourceUrl": "https://2025.tiff-jp.net/ja/lineup/film/38007ANM05",
+    "timingNote": "公式の上映枠終了（イベント等を含む）",
+    "eventLabel": ""
+  },
+  {
+    "id": "tiff-2025-act-3787",
+    "filmId": "38018ODS10",
+    "venueId": "tiff-2025-venue-12",
+    "startAt": "2025-10-28T13:00:00+09:00",
+    "endAt": "2025-10-28T15:30:00+09:00",
+    "sourceUrl": "https://2025.tiff-jp.net/ja/lineup/film/38018ODS10",
+    "timingNote": "公式の上映枠終了（イベント等を含む）",
+    "eventLabel": ""
+  },
+  {
+    "id": "tiff-2025-act-3712",
+    "filmId": "38003ASF05",
+    "venueId": "tiff-2025-venue-19",
+    "startAt": "2025-10-28T13:30:00+09:00",
+    "endAt": "2025-10-28T15:29:00+09:00",
+    "sourceUrl": "https://2025.tiff-jp.net/ja/lineup/film/38003ASF05",
+    "timingNote": "公式の上映枠終了（イベント等を含む）",
+    "eventLabel": "舞台挨拶・Q&A"
+  },
+  {
+    "id": "tiff-2025-act-3551",
+    "filmId": "38005WFC12",
+    "venueId": "tiff-2025-venue-9",
+    "startAt": "2025-10-28T14:00:00+09:00",
+    "endAt": "2025-10-28T16:38:00+09:00",
+    "sourceUrl": "https://2025.tiff-jp.net/ja/lineup/film/38005WFC12",
+    "timingNote": "公式の上映枠終了（イベント等を含む）",
+    "eventLabel": ""
+  },
+  {
+    "id": "tiff-2025-act-3599",
+    "filmId": "38004GLS06",
+    "venueId": "tiff-2025-venue-5",
+    "startAt": "2025-10-28T14:15:00+09:00",
+    "endAt": "2025-10-28T16:39:00+09:00",
+    "sourceUrl": "https://2025.tiff-jp.net/ja/lineup/film/38004GLS06",
+    "timingNote": "公式の上映枠終了（イベント等を含む）",
+    "eventLabel": "舞台挨拶"
+  },
+  {
+    "id": "tiff-2025-act-3692",
+    "filmId": "38004GLS07",
+    "venueId": "tiff-2025-venue-23",
+    "startAt": "2025-10-28T14:30:00+09:00",
+    "endAt": "2025-10-28T17:04:00+09:00",
+    "sourceUrl": "https://2025.tiff-jp.net/ja/lineup/film/38004GLS07",
+    "timingNote": "公式の上映枠終了（イベント等を含む）",
+    "eventLabel": "Q&A"
+  },
+  {
+    "id": "tiff-2025-act-3774",
+    "filmId": "38005WFC23",
+    "venueId": "tiff-2025-venue-37",
+    "startAt": "2025-10-28T15:00:00+09:00",
+    "endAt": "2025-10-28T17:00:00+09:00",
+    "sourceUrl": "https://2025.tiff-jp.net/ja/lineup/film/38005WFC23",
+    "timingNote": "公式の上映枠終了（イベント等を含む）",
+    "eventLabel": ""
+  },
+  {
+    "id": "tiff-2025-act-3515",
+    "filmId": "38005WFC01",
+    "venueId": "tiff-2025-venue-8",
+    "startAt": "2025-10-28T15:30:00+09:00",
+    "endAt": "2025-10-28T17:24:00+09:00",
+    "sourceUrl": "https://2025.tiff-jp.net/ja/lineup/film/38005WFC01",
+    "timingNote": "公式の上映枠終了（イベント等を含む）",
+    "eventLabel": ""
+  },
+  {
+    "id": "tiff-2025-act-3788",
+    "filmId": "38018ODS11",
+    "venueId": "tiff-2025-venue-12",
+    "startAt": "2025-10-28T15:35:00+09:00",
+    "endAt": "2025-10-28T18:30:00+09:00",
+    "sourceUrl": "https://2025.tiff-jp.net/ja/lineup/film/38018ODS11",
+    "timingNote": "公式の上映枠終了（イベント等を含む）",
+    "eventLabel": ""
+  },
+  {
+    "id": "tiff-2025-act-3742",
+    "filmId": "38013MST01",
+    "venueId": "tiff-2025-venue-25",
+    "startAt": "2025-10-28T16:10:00+09:00",
+    "endAt": "2025-10-28T19:00:00+09:00",
+    "sourceUrl": "https://2025.tiff-jp.net/ja/lineup/film/38013MST01",
+    "timingNote": "公式の上映枠終了（イベント等を含む）",
+    "eventLabel": "トーク"
+  },
+  {
+    "id": "tiff-2025-act-3713",
+    "filmId": "38007ANM03",
+    "venueId": "tiff-2025-venue-19",
+    "startAt": "2025-10-28T16:25:00+09:00",
+    "endAt": "2025-10-28T18:25:00+09:00",
+    "sourceUrl": "https://2025.tiff-jp.net/ja/lineup/film/38007ANM03",
+    "timingNote": "公式の上映枠終了（イベント等を含む）",
+    "eventLabel": "トーク"
+  },
+  {
+    "id": "tiff-2025-act-3584",
+    "filmId": "38006NCN06",
+    "venueId": "tiff-2025-venue-10",
+    "startAt": "2025-10-28T17:40:00+09:00",
+    "endAt": "2025-10-28T19:44:00+09:00",
+    "sourceUrl": "https://2025.tiff-jp.net/ja/lineup/film/38006NCN06",
+    "timingNote": "公式の上映枠終了（イベント等を含む）",
+    "eventLabel": "Q&A"
+  },
+  {
+    "id": "tiff-2025-act-3600",
+    "filmId": "38005WFC15",
+    "venueId": "tiff-2025-venue-5",
+    "startAt": "2025-10-28T17:40:00+09:00",
+    "endAt": "2025-10-28T20:20:00+09:00",
+    "sourceUrl": "https://2025.tiff-jp.net/ja/lineup/film/38005WFC15",
+    "timingNote": "公式の上映枠終了（イベント等を含む）",
+    "eventLabel": "Q&A"
+  },
+  {
+    "id": "tiff-2025-act-3552",
+    "filmId": "38011WEP01",
+    "venueId": "tiff-2025-venue-9",
+    "startAt": "2025-10-28T18:00:00+09:00",
+    "endAt": "2025-10-28T20:09:00+09:00",
+    "sourceUrl": "https://2025.tiff-jp.net/ja/lineup/film/38011WEP01",
+    "timingNote": "公式の上映枠終了（イベント等を含む）",
+    "eventLabel": "Q&A"
+  },
+  {
+    "id": "tiff-2025-act-3693",
+    "filmId": "38002CMP02",
+    "venueId": "tiff-2025-venue-23",
+    "startAt": "2025-10-28T18:10:00+09:00",
+    "endAt": "2025-10-28T20:38:00+09:00",
+    "sourceUrl": "https://2025.tiff-jp.net/ja/lineup/film/38002CMP02",
+    "timingNote": "公式の上映枠終了（イベント等を含む）",
+    "eventLabel": "Q&A"
+  },
+  {
+    "id": "tiff-2025-act-3669",
+    "filmId": "38002CMP04",
+    "venueId": "tiff-2025-venue-21",
+    "startAt": "2025-10-28T18:20:00+09:00",
+    "endAt": "2025-10-28T20:07:00+09:00",
+    "sourceUrl": "https://2025.tiff-jp.net/ja/lineup/film/38002CMP04",
+    "timingNote": "公式の上映枠終了（イベント等を含む）",
+    "eventLabel": ""
+  },
+  {
+    "id": "tiff-2025-act-3789",
+    "filmId": "38018ODS14",
+    "venueId": "tiff-2025-venue-12",
+    "startAt": "2025-10-28T18:30:00+09:00",
+    "endAt": "2025-10-28T20:30:00+09:00",
+    "sourceUrl": "https://2025.tiff-jp.net/ja/lineup/film/38018ODS14",
+    "timingNote": "公式の上映枠終了（イベント等を含む）",
+    "eventLabel": ""
+  },
+  {
+    "id": "tiff-2025-act-3516",
+    "filmId": "38003ASF08",
+    "venueId": "tiff-2025-venue-8",
+    "startAt": "2025-10-28T18:50:00+09:00",
+    "endAt": "2025-10-28T20:52:00+09:00",
+    "sourceUrl": "https://2025.tiff-jp.net/ja/lineup/film/38003ASF08",
+    "timingNote": "公式の上映枠終了（イベント等を含む）",
+    "eventLabel": "Q&A"
+  },
+  {
+    "id": "tiff-2025-act-3771",
+    "filmId": "38005WFC21",
+    "venueId": "tiff-2025-venue-37",
+    "startAt": "2025-10-28T19:00:00+09:00",
+    "endAt": "2025-10-28T21:00:00+09:00",
+    "sourceUrl": "https://2025.tiff-jp.net/ja/lineup/film/38005WFC21",
+    "timingNote": "公式の上映枠終了（イベント等を含む）",
+    "eventLabel": ""
+  },
+  {
+    "id": "tiff-2025-act-3714",
+    "filmId": "38007ANM08",
+    "venueId": "tiff-2025-venue-19",
+    "startAt": "2025-10-28T19:20:00+09:00",
+    "endAt": "2025-10-28T22:01:00+09:00",
+    "sourceUrl": "https://2025.tiff-jp.net/ja/lineup/film/38007ANM08",
+    "timingNote": "公式の上映枠終了（イベント等を含む）",
+    "eventLabel": "舞台挨拶・トーク"
+  },
+  {
+    "id": "tiff-2025-act-3743",
+    "filmId": "38005WFC18",
+    "venueId": "tiff-2025-venue-25",
+    "startAt": "2025-10-28T20:10:00+09:00",
+    "endAt": "2025-10-28T22:01:00+09:00",
+    "sourceUrl": "https://2025.tiff-jp.net/ja/lineup/film/38005WFC18",
+    "timingNote": "公式の上映枠終了（イベント等を含む）",
+    "eventLabel": ""
+  },
+  {
+    "id": "tiff-2025-act-3585",
+    "filmId": "38015KAF01",
+    "venueId": "tiff-2025-venue-10",
+    "startAt": "2025-10-28T20:45:00+09:00",
+    "endAt": "2025-10-28T22:42:00+09:00",
+    "sourceUrl": "https://2025.tiff-jp.net/ja/lineup/film/38015KAF01",
+    "timingNote": "公式の上映枠終了（イベント等を含む）",
+    "eventLabel": "トーク"
+  },
+  {
+    "id": "tiff-2025-act-3553",
+    "filmId": "38003ASF00",
+    "venueId": "tiff-2025-venue-9",
+    "startAt": "2025-10-28T21:00:00+09:00",
+    "endAt": "2025-10-28T23:08:00+09:00",
+    "sourceUrl": "https://2025.tiff-jp.net/ja/lineup/film/38003ASF00",
+    "timingNote": "公式の上映枠終了（イベント等を含む）",
+    "eventLabel": "Q&A"
+  },
+  {
+    "id": "tiff-2025-act-3670",
+    "filmId": "38002CMP12",
+    "venueId": "tiff-2025-venue-21",
+    "startAt": "2025-10-28T21:05:00+09:00",
+    "endAt": "2025-10-28T23:04:00+09:00",
+    "sourceUrl": "https://2025.tiff-jp.net/ja/lineup/film/38002CMP12",
+    "timingNote": "公式の上映枠終了（イベント等を含む）",
+    "eventLabel": ""
+  },
+  {
+    "id": "tiff-2025-act-3601",
+    "filmId": "38002CMP08",
+    "venueId": "tiff-2025-venue-5",
+    "startAt": "2025-10-28T21:25:00+09:00",
+    "endAt": "2025-10-28T23:31:00+09:00",
+    "sourceUrl": "https://2025.tiff-jp.net/ja/lineup/film/38002CMP08",
+    "timingNote": "公式の上映枠終了（イベント等を含む）",
+    "eventLabel": "Q&A"
+  },
+  {
+    "id": "tiff-2025-act-3517",
+    "filmId": "38005WFC04",
+    "venueId": "tiff-2025-venue-8",
+    "startAt": "2025-10-28T21:45:00+09:00",
+    "endAt": "2025-10-28T23:38:00+09:00",
+    "sourceUrl": "https://2025.tiff-jp.net/ja/lineup/film/38005WFC04",
+    "timingNote": "公式の上映枠終了（イベント等を含む）",
+    "eventLabel": ""
+  },
+  {
+    "id": "tiff-2025-act-3518",
+    "filmId": "38002CMP05",
+    "venueId": "tiff-2025-venue-8",
+    "startAt": "2025-10-29T10:00:00+09:00",
+    "endAt": "2025-10-29T12:26:00+09:00",
+    "sourceUrl": "https://2025.tiff-jp.net/ja/lineup/film/38002CMP05",
+    "timingNote": "公式の上映枠終了（イベント等を含む）",
+    "eventLabel": "Q&A"
+  },
+  {
+    "id": "tiff-2025-act-3602",
+    "filmId": "38005WFC05",
+    "venueId": "tiff-2025-venue-5",
+    "startAt": "2025-10-29T10:15:00+09:00",
+    "endAt": "2025-10-29T12:59:00+09:00",
+    "sourceUrl": "https://2025.tiff-jp.net/ja/lineup/film/38005WFC05",
+    "timingNote": "公式の上映枠終了（イベント等を含む）",
+    "eventLabel": ""
+  },
+  {
+    "id": "tiff-2025-act-3554",
+    "filmId": "38005WFC10",
+    "venueId": "tiff-2025-venue-9",
+    "startAt": "2025-10-29T11:00:00+09:00",
+    "endAt": "2025-10-29T12:38:00+09:00",
+    "sourceUrl": "https://2025.tiff-jp.net/ja/lineup/film/38005WFC10",
+    "timingNote": "公式の上映枠終了（イベント等を含む）",
+    "eventLabel": ""
+  },
+  {
+    "id": "tiff-2025-act-3694",
+    "filmId": "38001CPC01",
+    "venueId": "tiff-2025-venue-23",
+    "startAt": "2025-10-29T11:45:00+09:00",
+    "endAt": "2025-10-29T13:58:00+09:00",
+    "sourceUrl": "https://2025.tiff-jp.net/ja/lineup/film/38001CPC01",
+    "timingNote": "公式の上映枠終了（イベント等を含む）",
+    "eventLabel": "舞台挨拶"
+  },
+  {
+    "id": "tiff-2025-act-3790",
+    "filmId": "38018ODS15",
+    "venueId": "tiff-2025-venue-12",
+    "startAt": "2025-10-29T12:30:00+09:00",
+    "endAt": "2025-10-29T15:30:00+09:00",
+    "sourceUrl": "https://2025.tiff-jp.net/ja/lineup/film/38018ODS15",
+    "timingNote": "公式の上映枠終了（イベント等を含む）",
+    "eventLabel": ""
+  },
+  {
+    "id": "tiff-2025-act-3744",
+    "filmId": "38002CMP03",
+    "venueId": "tiff-2025-venue-25",
+    "startAt": "2025-10-29T13:10:00+09:00",
+    "endAt": "2025-10-29T15:26:00+09:00",
+    "sourceUrl": "https://2025.tiff-jp.net/ja/lineup/film/38002CMP03",
+    "timingNote": "公式の上映枠終了（イベント等を含む）",
+    "eventLabel": "舞台挨拶・Q&A"
+  },
+  {
+    "id": "tiff-2025-act-3519",
+    "filmId": "38009YUT01",
+    "venueId": "tiff-2025-venue-8",
+    "startAt": "2025-10-29T13:25:00+09:00",
+    "endAt": "2025-10-29T15:01:00+09:00",
+    "sourceUrl": "https://2025.tiff-jp.net/ja/lineup/film/38009YUT01",
+    "timingNote": "公式の上映枠終了（イベント等を含む）",
+    "eventLabel": ""
+  },
+  {
+    "id": "tiff-2025-act-3555",
+    "filmId": "38007ANM06",
+    "venueId": "tiff-2025-venue-9",
+    "startAt": "2025-10-29T13:45:00+09:00",
+    "endAt": "2025-10-29T16:09:00+09:00",
+    "sourceUrl": "https://2025.tiff-jp.net/ja/lineup/film/38007ANM06",
+    "timingNote": "公式の上映枠終了（イベント等を含む）",
+    "eventLabel": ""
+  },
+  {
+    "id": "tiff-2025-act-3603",
+    "filmId": "38005WFC09",
+    "venueId": "tiff-2025-venue-5",
+    "startAt": "2025-10-29T14:05:00+09:00",
+    "endAt": "2025-10-29T16:19:00+09:00",
+    "sourceUrl": "https://2025.tiff-jp.net/ja/lineup/film/38005WFC09",
+    "timingNote": "公式の上映枠終了（イベント等を含む）",
+    "eventLabel": ""
+  },
+  {
+    "id": "tiff-2025-act-3715",
+    "filmId": "38008CLA03",
+    "venueId": "tiff-2025-venue-19",
+    "startAt": "2025-10-29T14:50:00+09:00",
+    "endAt": "2025-10-29T16:17:00+09:00",
+    "sourceUrl": "https://2025.tiff-jp.net/ja/lineup/film/38008CLA03",
+    "timingNote": "公式の上映枠終了（イベント等を含む）",
+    "eventLabel": ""
+  },
+  {
+    "id": "tiff-2025-act-3766",
+    "filmId": "38005WFC19",
+    "venueId": "tiff-2025-venue-37",
+    "startAt": "2025-10-29T15:00:00+09:00",
+    "endAt": "2025-10-29T17:30:00+09:00",
+    "sourceUrl": "https://2025.tiff-jp.net/ja/lineup/film/38005WFC19",
+    "timingNote": "公式の上映枠終了（イベント等を含む）",
+    "eventLabel": ""
+  },
+  {
+    "id": "tiff-2025-act-3695",
+    "filmId": "38004GLS12",
+    "venueId": "tiff-2025-venue-23",
+    "startAt": "2025-10-29T15:10:00+09:00",
+    "endAt": "2025-10-29T17:45:00+09:00",
+    "sourceUrl": "https://2025.tiff-jp.net/ja/lineup/film/38004GLS12",
+    "timingNote": "公式の上映枠終了（イベント等を含む）",
+    "eventLabel": ""
+  },
+  {
+    "id": "tiff-2025-act-3791",
+    "filmId": "38018ODS13",
+    "venueId": "tiff-2025-venue-12",
+    "startAt": "2025-10-29T15:35:00+09:00",
+    "endAt": "2025-10-29T18:30:00+09:00",
+    "sourceUrl": "https://2025.tiff-jp.net/ja/lineup/film/38018ODS13",
+    "timingNote": "公式の上映枠終了（イベント等を含む）",
+    "eventLabel": ""
+  },
+  {
+    "id": "tiff-2025-act-3520",
+    "filmId": "38002CMP13",
+    "venueId": "tiff-2025-venue-8",
+    "startAt": "2025-10-29T15:55:00+09:00",
+    "endAt": "2025-10-29T18:18:00+09:00",
+    "sourceUrl": "https://2025.tiff-jp.net/ja/lineup/film/38002CMP13",
+    "timingNote": "公式の上映枠終了（イベント等を含む）",
+    "eventLabel": "Q&A"
+  },
+  {
+    "id": "tiff-2025-act-3745",
+    "filmId": "38004GLS11",
+    "venueId": "tiff-2025-venue-25",
+    "startAt": "2025-10-29T17:00:00+09:00",
+    "endAt": "2025-10-29T19:25:00+09:00",
+    "sourceUrl": "https://2025.tiff-jp.net/ja/lineup/film/38004GLS11",
+    "timingNote": "公式の上映枠終了（イベント等を含む）",
+    "eventLabel": "Q&A"
+  },
+  {
+    "id": "tiff-2025-act-3556",
+    "filmId": "38033AIC01",
+    "venueId": "tiff-2025-venue-9",
+    "startAt": "2025-10-29T17:05:00+09:00",
+    "endAt": "2025-10-29T19:15:00+09:00",
+    "sourceUrl": "https://2025.tiff-jp.net/ja/lineup/film/38033AIC01",
+    "timingNote": "公式の上映枠終了（イベント等を含む）",
+    "eventLabel": "Q&A"
+  },
+  {
+    "id": "tiff-2025-act-3716",
+    "filmId": "38007ANM02",
+    "venueId": "tiff-2025-venue-19",
+    "startAt": "2025-10-29T17:30:00+09:00",
+    "endAt": "2025-10-29T18:41:00+09:00",
+    "sourceUrl": "https://2025.tiff-jp.net/ja/lineup/film/38007ANM02",
+    "timingNote": "公式の上映枠終了（イベント等を含む）",
+    "eventLabel": ""
+  },
+  {
+    "id": "tiff-2025-act-3604",
+    "filmId": "38005WFC16",
+    "venueId": "tiff-2025-venue-5",
+    "startAt": "2025-10-29T17:50:00+09:00",
+    "endAt": "2025-10-29T20:00:00+09:00",
+    "sourceUrl": "https://2025.tiff-jp.net/ja/lineup/film/38005WFC16",
+    "timingNote": "公式の上映枠終了（イベント等を含む）",
+    "eventLabel": "Q&A"
+  },
+  {
+    "id": "tiff-2025-act-3586",
+    "filmId": "38006NCN01",
+    "venueId": "tiff-2025-venue-10",
+    "startAt": "2025-10-29T18:00:00+09:00",
+    "endAt": "2025-10-29T19:42:00+09:00",
+    "sourceUrl": "https://2025.tiff-jp.net/ja/lineup/film/38006NCN01",
+    "timingNote": "公式の上映枠終了（イベント等を含む）",
+    "eventLabel": "Q&A"
+  },
+  {
+    "id": "tiff-2025-act-3792",
+    "filmId": "38018ODS07",
+    "venueId": "tiff-2025-venue-12",
+    "startAt": "2025-10-29T18:30:00+09:00",
+    "endAt": "2025-10-29T20:30:00+09:00",
+    "sourceUrl": "https://2025.tiff-jp.net/ja/lineup/film/38018ODS07",
+    "timingNote": "公式の上映枠終了（イベント等を含む）",
+    "eventLabel": ""
+  },
+  {
+    "id": "tiff-2025-act-3696",
+    "filmId": "38002CMP11",
+    "venueId": "tiff-2025-venue-23",
+    "startAt": "2025-10-29T18:50:00+09:00",
+    "endAt": "2025-10-29T21:21:00+09:00",
+    "sourceUrl": "https://2025.tiff-jp.net/ja/lineup/film/38002CMP11",
+    "timingNote": "公式の上映枠終了（イベント等を含む）",
+    "eventLabel": "Q&A"
+  },
+  {
+    "id": "tiff-2025-act-3630",
+    "filmId": "38007ANM11",
+    "venueId": "tiff-2025-venue-6",
+    "startAt": "2025-10-29T19:00:00+09:00",
+    "endAt": "2025-10-29T20:38:00+09:00",
+    "sourceUrl": "https://2025.tiff-jp.net/ja/lineup/film/38007ANM11",
+    "timingNote": "公式の上映枠終了（イベント等を含む）",
+    "eventLabel": ""
+  },
+  {
+    "id": "tiff-2025-act-3769",
+    "filmId": "38005WFC20",
+    "venueId": "tiff-2025-venue-37",
+    "startAt": "2025-10-29T19:00:00+09:00",
+    "endAt": "2025-10-29T21:00:00+09:00",
+    "sourceUrl": "https://2025.tiff-jp.net/ja/lineup/film/38005WFC20",
+    "timingNote": "公式の上映枠終了（イベント等を含む）",
+    "eventLabel": ""
+  },
+  {
+    "id": "tiff-2025-act-3521",
+    "filmId": "38003ASF04",
+    "venueId": "tiff-2025-venue-8",
+    "startAt": "2025-10-29T19:50:00+09:00",
+    "endAt": "2025-10-29T22:06:00+09:00",
+    "sourceUrl": "https://2025.tiff-jp.net/ja/lineup/film/38003ASF04",
+    "timingNote": "公式の上映枠終了（イベント等を含む）",
+    "eventLabel": "Q&A"
+  },
+  {
+    "id": "tiff-2025-act-3717",
+    "filmId": "38032DGJ01",
+    "venueId": "tiff-2025-venue-19",
+    "startAt": "2025-10-29T19:55:00+09:00",
+    "endAt": "2025-10-29T22:18:00+09:00",
+    "sourceUrl": "https://2025.tiff-jp.net/ja/lineup/film/38032DGJ01",
+    "timingNote": "公式の上映枠終了（イベント等を含む）",
+    "eventLabel": "トーク"
+  },
+  {
+    "id": "tiff-2025-act-3746",
+    "filmId": "38005WFC17",
+    "venueId": "tiff-2025-venue-25",
+    "startAt": "2025-10-29T20:30:00+09:00",
+    "endAt": "2025-10-29T22:44:00+09:00",
+    "sourceUrl": "https://2025.tiff-jp.net/ja/lineup/film/38005WFC17",
+    "timingNote": "公式の上映枠終了（イベント等を含む）",
+    "eventLabel": "Q&A"
+  },
+  {
+    "id": "tiff-2025-act-3587",
+    "filmId": "38015KAF04",
+    "venueId": "tiff-2025-venue-10",
+    "startAt": "2025-10-29T20:35:00+09:00",
+    "endAt": "2025-10-29T22:33:00+09:00",
+    "sourceUrl": "https://2025.tiff-jp.net/ja/lineup/film/38015KAF04",
+    "timingNote": "公式の上映枠終了（イベント等を含む）",
+    "eventLabel": "トーク"
+  },
+  {
+    "id": "tiff-2025-act-3605",
+    "filmId": "38005WFC08",
+    "venueId": "tiff-2025-venue-5",
+    "startAt": "2025-10-29T21:00:00+09:00",
+    "endAt": "2025-10-29T23:06:00+09:00",
+    "sourceUrl": "https://2025.tiff-jp.net/ja/lineup/film/38005WFC08",
+    "timingNote": "公式の上映枠終了（イベント等を含む）",
+    "eventLabel": ""
+  },
+  {
+    "id": "tiff-2025-act-3557",
+    "filmId": "38007ANM01",
+    "venueId": "tiff-2025-venue-9",
+    "startAt": "2025-10-29T21:10:00+09:00",
+    "endAt": "2025-10-29T22:57:00+09:00",
+    "sourceUrl": "https://2025.tiff-jp.net/ja/lineup/film/38007ANM01",
+    "timingNote": "公式の上映枠終了（イベント等を含む）",
+    "eventLabel": "トーク"
+  },
+  {
+    "id": "tiff-2025-act-3671",
+    "filmId": "38002CMP06",
+    "venueId": "tiff-2025-venue-21",
+    "startAt": "2025-10-29T21:30:00+09:00",
+    "endAt": "2025-10-29T23:06:00+09:00",
+    "sourceUrl": "https://2025.tiff-jp.net/ja/lineup/film/38002CMP06",
+    "timingNote": "公式の上映枠終了（イベント等を含む）",
+    "eventLabel": ""
+  },
+  {
+    "id": "tiff-2025-act-3558",
+    "filmId": "38009YUT03",
+    "venueId": "tiff-2025-venue-9",
+    "startAt": "2025-10-30T10:20:00+09:00",
+    "endAt": "2025-10-30T12:36:00+09:00",
+    "sourceUrl": "https://2025.tiff-jp.net/ja/lineup/film/38009YUT03",
+    "timingNote": "公式の上映枠終了（イベント等を含む）",
+    "eventLabel": "Q&A"
+  },
+  {
+    "id": "tiff-2025-act-3718",
+    "filmId": "38003ASF01",
+    "venueId": "tiff-2025-venue-19",
+    "startAt": "2025-10-30T10:30:00+09:00",
+    "endAt": "2025-10-30T13:38:00+09:00",
+    "sourceUrl": "https://2025.tiff-jp.net/ja/lineup/film/38003ASF01",
+    "timingNote": "公式の上映枠終了（イベント等を含む）",
+    "eventLabel": "舞台挨拶・Q&A"
+  },
+  {
+    "id": "tiff-2025-act-3606",
+    "filmId": "38002CMP10",
+    "venueId": "tiff-2025-venue-5",
+    "startAt": "2025-10-30T10:45:00+09:00",
+    "endAt": "2025-10-30T13:24:00+09:00",
+    "sourceUrl": "https://2025.tiff-jp.net/ja/lineup/film/38002CMP10",
+    "timingNote": "公式の上映枠終了（イベント等を含む）",
+    "eventLabel": "Q&A"
+  },
+  {
+    "id": "tiff-2025-act-3522",
+    "filmId": "38005WFC14",
+    "venueId": "tiff-2025-venue-8",
+    "startAt": "2025-10-30T11:10:00+09:00",
+    "endAt": "2025-10-30T12:30:00+09:00",
+    "sourceUrl": "https://2025.tiff-jp.net/ja/lineup/film/38005WFC14",
+    "timingNote": "公式の上映枠終了（イベント等を含む）",
+    "eventLabel": ""
+  },
+  {
+    "id": "tiff-2025-act-3697",
+    "filmId": "38008CLA09",
+    "venueId": "tiff-2025-venue-23",
+    "startAt": "2025-10-30T11:50:00+09:00",
+    "endAt": "2025-10-30T14:22:00+09:00",
+    "sourceUrl": "https://2025.tiff-jp.net/ja/lineup/film/38008CLA09",
+    "timingNote": "公式の上映枠終了（イベント等を含む）",
+    "eventLabel": "トーク"
+  },
+  {
+    "id": "tiff-2025-act-3793",
+    "filmId": "38018ODS16",
+    "venueId": "tiff-2025-venue-12",
+    "startAt": "2025-10-30T12:30:00+09:00",
+    "endAt": "2025-10-30T15:20:00+09:00",
+    "sourceUrl": "https://2025.tiff-jp.net/ja/lineup/film/38018ODS16",
+    "timingNote": "公式の上映枠終了（イベント等を含む）",
+    "eventLabel": ""
+  },
+  {
+    "id": "tiff-2025-act-3747",
+    "filmId": "38006NCN05",
+    "venueId": "tiff-2025-venue-25",
+    "startAt": "2025-10-30T12:45:00+09:00",
+    "endAt": "2025-10-30T15:14:00+09:00",
+    "sourceUrl": "https://2025.tiff-jp.net/ja/lineup/film/38006NCN05",
+    "timingNote": "公式の上映枠終了（イベント等を含む）",
+    "eventLabel": "Q&A"
+  },
+  {
+    "id": "tiff-2025-act-3559",
+    "filmId": "38011WEP05",
+    "venueId": "tiff-2025-venue-9",
+    "startAt": "2025-10-30T13:30:00+09:00",
+    "endAt": "2025-10-30T15:57:00+09:00",
+    "sourceUrl": "https://2025.tiff-jp.net/ja/lineup/film/38011WEP05",
+    "timingNote": "公式の上映枠終了（イベント等を含む）",
+    "eventLabel": "Q&A"
+  },
+  {
+    "id": "tiff-2025-act-3523",
+    "filmId": "38003ASF08",
+    "venueId": "tiff-2025-venue-8",
+    "startAt": "2025-10-30T14:10:00+09:00",
+    "endAt": "2025-10-30T16:12:00+09:00",
+    "sourceUrl": "https://2025.tiff-jp.net/ja/lineup/film/38003ASF08",
+    "timingNote": "公式の上映枠終了（イベント等を含む）",
+    "eventLabel": "Q&A"
+  },
+  {
+    "id": "tiff-2025-act-3719",
+    "filmId": "38014SPS05",
+    "venueId": "tiff-2025-venue-19",
+    "startAt": "2025-10-30T14:30:00+09:00",
+    "endAt": "2025-10-30T16:35:00+09:00",
+    "sourceUrl": "https://2025.tiff-jp.net/ja/lineup/film/38014SPS05",
+    "timingNote": "公式の上映枠終了（イベント等を含む）",
+    "eventLabel": "Q&A"
+  },
+  {
+    "id": "tiff-2025-act-3607",
+    "filmId": "38002CMP12",
+    "venueId": "tiff-2025-venue-5",
+    "startAt": "2025-10-30T14:40:00+09:00",
+    "endAt": "2025-10-30T17:09:00+09:00",
+    "sourceUrl": "https://2025.tiff-jp.net/ja/lineup/film/38002CMP12",
+    "timingNote": "公式の上映枠終了（イベント等を含む）",
+    "eventLabel": "Q&A"
+  },
+  {
+    "id": "tiff-2025-act-3775",
+    "filmId": "38005WFC23",
+    "venueId": "tiff-2025-venue-37",
+    "startAt": "2025-10-30T15:00:00+09:00",
+    "endAt": "2025-10-30T17:00:00+09:00",
+    "sourceUrl": "https://2025.tiff-jp.net/ja/lineup/film/38005WFC23",
+    "timingNote": "公式の上映枠終了（イベント等を含む）",
+    "eventLabel": ""
+  },
+  {
+    "id": "tiff-2025-act-3794",
+    "filmId": "38018ODS17",
+    "venueId": "tiff-2025-venue-12",
+    "startAt": "2025-10-30T15:20:00+09:00",
+    "endAt": "2025-10-30T18:30:00+09:00",
+    "sourceUrl": "https://2025.tiff-jp.net/ja/lineup/film/38018ODS17",
+    "timingNote": "公式の上映枠終了（イベント等を含む）",
+    "eventLabel": ""
+  },
+  {
+    "id": "tiff-2025-act-3698",
+    "filmId": "38005WFC07",
+    "venueId": "tiff-2025-venue-23",
+    "startAt": "2025-10-30T15:30:00+09:00",
+    "endAt": "2025-10-30T17:20:00+09:00",
+    "sourceUrl": "https://2025.tiff-jp.net/ja/lineup/film/38005WFC07",
+    "timingNote": "公式の上映枠終了（イベント等を含む）",
+    "eventLabel": ""
+  },
+  {
+    "id": "tiff-2025-act-3748",
+    "filmId": "38004GLS04",
+    "venueId": "tiff-2025-venue-25",
+    "startAt": "2025-10-30T16:20:00+09:00",
+    "endAt": "2025-10-30T19:18:00+09:00",
+    "sourceUrl": "https://2025.tiff-jp.net/ja/lineup/film/38004GLS04",
+    "timingNote": "公式の上映枠終了（イベント等を含む）",
+    "eventLabel": "舞台挨拶"
+  },
+  {
+    "id": "tiff-2025-act-3560",
+    "filmId": "38005WFC03",
+    "venueId": "tiff-2025-venue-9",
+    "startAt": "2025-10-30T16:50:00+09:00",
+    "endAt": "2025-10-30T18:59:00+09:00",
+    "sourceUrl": "https://2025.tiff-jp.net/ja/lineup/film/38005WFC03",
+    "timingNote": "公式の上映枠終了（イベント等を含む）",
+    "eventLabel": ""
+  },
+  {
+    "id": "tiff-2025-act-3524",
+    "filmId": "38003ASF03",
+    "venueId": "tiff-2025-venue-8",
+    "startAt": "2025-10-30T17:10:00+09:00",
+    "endAt": "2025-10-30T19:27:00+09:00",
+    "sourceUrl": "https://2025.tiff-jp.net/ja/lineup/film/38003ASF03",
+    "timingNote": "公式の上映枠終了（イベント等を含む）",
+    "eventLabel": "Q&A"
+  },
+  {
+    "id": "tiff-2025-act-3720",
+    "filmId": "38007ANM08",
+    "venueId": "tiff-2025-venue-19",
+    "startAt": "2025-10-30T17:30:00+09:00",
+    "endAt": "2025-10-30T19:26:00+09:00",
+    "sourceUrl": "https://2025.tiff-jp.net/ja/lineup/film/38007ANM08",
+    "timingNote": "公式の上映枠終了（イベント等を含む）",
+    "eventLabel": ""
+  },
+  {
+    "id": "tiff-2025-act-3588",
+    "filmId": "38006NCN08",
+    "venueId": "tiff-2025-venue-10",
+    "startAt": "2025-10-30T17:45:00+09:00",
+    "endAt": "2025-10-30T19:54:00+09:00",
+    "sourceUrl": "https://2025.tiff-jp.net/ja/lineup/film/38006NCN08",
+    "timingNote": "公式の上映枠終了（イベント等を含む）",
+    "eventLabel": "Q&A"
+  },
+  {
+    "id": "tiff-2025-act-3608",
+    "filmId": "38011WEP06",
+    "venueId": "tiff-2025-venue-5",
+    "startAt": "2025-10-30T18:15:00+09:00",
+    "endAt": "2025-10-30T20:29:00+09:00",
+    "sourceUrl": "https://2025.tiff-jp.net/ja/lineup/film/38011WEP06",
+    "timingNote": "公式の上映枠終了（イベント等を含む）",
+    "eventLabel": "舞台挨拶"
+  },
+  {
+    "id": "tiff-2025-act-3699",
+    "filmId": "38002CMP14",
+    "venueId": "tiff-2025-venue-23",
+    "startAt": "2025-10-30T18:30:00+09:00",
+    "endAt": "2025-10-30T20:59:00+09:00",
+    "sourceUrl": "https://2025.tiff-jp.net/ja/lineup/film/38002CMP14",
+    "timingNote": "公式の上映枠終了（イベント等を含む）",
+    "eventLabel": "Q&A"
+  },
+  {
+    "id": "tiff-2025-act-3795",
+    "filmId": "38018ODS18",
+    "venueId": "tiff-2025-venue-12",
+    "startAt": "2025-10-30T18:30:00+09:00",
+    "endAt": "2025-10-30T20:53:00+09:00",
+    "sourceUrl": "https://2025.tiff-jp.net/ja/lineup/film/38018ODS18",
+    "timingNote": "公式終了時刻の不整合を本編時間で補正",
+    "eventLabel": ""
+  },
+  {
+    "id": "tiff-2025-act-3672",
+    "filmId": "38002CMP01",
+    "venueId": "tiff-2025-venue-21",
+    "startAt": "2025-10-30T18:40:00+09:00",
+    "endAt": "2025-10-30T20:23:00+09:00",
+    "sourceUrl": "https://2025.tiff-jp.net/ja/lineup/film/38002CMP01",
+    "timingNote": "公式の上映枠終了（イベント等を含む）",
+    "eventLabel": ""
+  },
+  {
+    "id": "tiff-2025-act-3773",
+    "filmId": "38005WFC22",
+    "venueId": "tiff-2025-venue-37",
+    "startAt": "2025-10-30T19:00:00+09:00",
+    "endAt": "2025-10-30T21:00:00+09:00",
+    "sourceUrl": "https://2025.tiff-jp.net/ja/lineup/film/38005WFC22",
+    "timingNote": "公式の上映枠終了（イベント等を含む）",
+    "eventLabel": ""
+  },
+  {
+    "id": "tiff-2025-act-3525",
+    "filmId": "38003ASF10",
+    "venueId": "tiff-2025-venue-8",
+    "startAt": "2025-10-30T20:20:00+09:00",
+    "endAt": "2025-10-30T22:28:00+09:00",
+    "sourceUrl": "https://2025.tiff-jp.net/ja/lineup/film/38003ASF10",
+    "timingNote": "公式の上映枠終了（イベント等を含む）",
+    "eventLabel": "Q&A"
+  },
+  {
+    "id": "tiff-2025-act-3749",
+    "filmId": "38006NCN02",
+    "venueId": "tiff-2025-venue-25",
+    "startAt": "2025-10-30T20:30:00+09:00",
+    "endAt": "2025-10-30T22:50:00+09:00",
+    "sourceUrl": "https://2025.tiff-jp.net/ja/lineup/film/38006NCN02",
+    "timingNote": "公式の上映枠終了（イベント等を含む）",
+    "eventLabel": "舞台挨拶"
+  },
+  {
+    "id": "tiff-2025-act-3589",
+    "filmId": "38007ANM02",
+    "venueId": "tiff-2025-venue-10",
+    "startAt": "2025-10-30T20:45:00+09:00",
+    "endAt": "2025-10-30T22:26:00+09:00",
+    "sourceUrl": "https://2025.tiff-jp.net/ja/lineup/film/38007ANM02",
+    "timingNote": "公式の上映枠終了（イベント等を含む）",
+    "eventLabel": "トーク"
+  },
+  {
+    "id": "tiff-2025-act-3561",
+    "filmId": "38005WFC06",
+    "venueId": "tiff-2025-venue-9",
+    "startAt": "2025-10-30T21:00:00+09:00",
+    "endAt": "2025-10-30T23:08:00+09:00",
+    "sourceUrl": "https://2025.tiff-jp.net/ja/lineup/film/38005WFC06",
+    "timingNote": "公式の上映枠終了（イベント等を含む）",
+    "eventLabel": ""
+  },
+  {
+    "id": "tiff-2025-act-3673",
+    "filmId": "38002CMP09",
+    "venueId": "tiff-2025-venue-21",
+    "startAt": "2025-10-30T21:20:00+09:00",
+    "endAt": "2025-10-30T23:04:00+09:00",
+    "sourceUrl": "https://2025.tiff-jp.net/ja/lineup/film/38002CMP09",
+    "timingNote": "公式の上映枠終了（イベント等を含む）",
+    "eventLabel": ""
+  },
+  {
+    "id": "tiff-2025-act-3609",
+    "filmId": "38002CMP15",
+    "venueId": "tiff-2025-venue-5",
+    "startAt": "2025-10-30T21:30:00+09:00",
+    "endAt": "2025-10-30T23:27:00+09:00",
+    "sourceUrl": "https://2025.tiff-jp.net/ja/lineup/film/38002CMP15",
+    "timingNote": "公式の上映枠終了（イベント等を含む）",
+    "eventLabel": "Q&A"
+  },
+  {
+    "id": "tiff-2025-act-3526",
+    "filmId": "38002CMP11",
+    "venueId": "tiff-2025-venue-8",
+    "startAt": "2025-10-31T10:15:00+09:00",
+    "endAt": "2025-10-31T12:46:00+09:00",
+    "sourceUrl": "https://2025.tiff-jp.net/ja/lineup/film/38002CMP11",
+    "timingNote": "公式の上映枠終了（イベント等を含む）",
+    "eventLabel": "Q&A"
+  },
+  {
+    "id": "tiff-2025-act-3610",
+    "filmId": "38005WFC04",
+    "venueId": "tiff-2025-venue-5",
+    "startAt": "2025-10-31T10:25:00+09:00",
+    "endAt": "2025-10-31T12:18:00+09:00",
+    "sourceUrl": "https://2025.tiff-jp.net/ja/lineup/film/38005WFC04",
+    "timingNote": "公式の上映枠終了（イベント等を含む）",
+    "eventLabel": ""
+  },
+  {
+    "id": "tiff-2025-act-3562",
+    "filmId": "38005WFC11",
+    "venueId": "tiff-2025-venue-9",
+    "startAt": "2025-10-31T11:30:00+09:00",
+    "endAt": "2025-10-31T13:16:00+09:00",
+    "sourceUrl": "https://2025.tiff-jp.net/ja/lineup/film/38005WFC11",
+    "timingNote": "公式の上映枠終了（イベント等を含む）",
+    "eventLabel": ""
+  },
+  {
+    "id": "tiff-2025-act-3700",
+    "filmId": "38008CLA10",
+    "venueId": "tiff-2025-venue-23",
+    "startAt": "2025-10-31T12:15:00+09:00",
+    "endAt": "2025-10-31T14:03:00+09:00",
+    "sourceUrl": "https://2025.tiff-jp.net/ja/lineup/film/38008CLA10",
+    "timingNote": "公式の上映枠終了（イベント等を含む）",
+    "eventLabel": ""
+  },
+  {
+    "id": "tiff-2025-act-3750",
+    "filmId": "38006NCN07",
+    "venueId": "tiff-2025-venue-25",
+    "startAt": "2025-10-31T12:55:00+09:00",
+    "endAt": "2025-10-31T15:42:00+09:00",
+    "sourceUrl": "https://2025.tiff-jp.net/ja/lineup/film/38006NCN07",
+    "timingNote": "公式の上映枠終了（イベント等を含む）",
+    "eventLabel": "Q&A"
+  },
+  {
+    "id": "tiff-2025-act-3796",
+    "filmId": "38018ODS11",
+    "venueId": "tiff-2025-venue-12",
+    "startAt": "2025-10-31T13:00:00+09:00",
+    "endAt": "2025-10-31T15:30:00+09:00",
+    "sourceUrl": "https://2025.tiff-jp.net/ja/lineup/film/38018ODS11",
+    "timingNote": "公式の上映枠終了（イベント等を含む）",
+    "eventLabel": ""
+  },
+  {
+    "id": "tiff-2025-act-3611",
+    "filmId": "38002CMP08",
+    "venueId": "tiff-2025-venue-5",
+    "startAt": "2025-10-31T13:15:00+09:00",
+    "endAt": "2025-10-31T15:21:00+09:00",
+    "sourceUrl": "https://2025.tiff-jp.net/ja/lineup/film/38002CMP08",
+    "timingNote": "公式の上映枠終了（イベント等を含む）",
+    "eventLabel": "Q&A"
+  },
+  {
+    "id": "tiff-2025-act-3527",
+    "filmId": "38003ASF04",
+    "venueId": "tiff-2025-venue-8",
+    "startAt": "2025-10-31T13:40:00+09:00",
+    "endAt": "2025-10-31T15:56:00+09:00",
+    "sourceUrl": "https://2025.tiff-jp.net/ja/lineup/film/38003ASF04",
+    "timingNote": "公式の上映枠終了（イベント等を含む）",
+    "eventLabel": "Q&A"
+  },
+  {
+    "id": "tiff-2025-act-3563",
+    "filmId": "38007ANM05",
+    "venueId": "tiff-2025-venue-9",
+    "startAt": "2025-10-31T14:50:00+09:00",
+    "endAt": "2025-10-31T16:57:00+09:00",
+    "sourceUrl": "https://2025.tiff-jp.net/ja/lineup/film/38007ANM05",
+    "timingNote": "公式の上映枠終了（イベント等を含む）",
+    "eventLabel": "トーク"
+  },
+  {
+    "id": "tiff-2025-act-3768",
+    "filmId": "38005WFC20",
+    "venueId": "tiff-2025-venue-37",
+    "startAt": "2025-10-31T15:00:00+09:00",
+    "endAt": "2025-10-31T17:00:00+09:00",
+    "sourceUrl": "https://2025.tiff-jp.net/ja/lineup/film/38005WFC20",
+    "timingNote": "公式の上映枠終了（イベント等を含む）",
+    "eventLabel": ""
+  },
+  {
+    "id": "tiff-2025-act-3701",
+    "filmId": "38005WFC13",
+    "venueId": "tiff-2025-venue-23",
+    "startAt": "2025-10-31T15:20:00+09:00",
+    "endAt": "2025-10-31T17:46:00+09:00",
+    "sourceUrl": "https://2025.tiff-jp.net/ja/lineup/film/38005WFC13",
+    "timingNote": "公式の上映枠終了（イベント等を含む）",
+    "eventLabel": "Q&A"
+  },
+  {
+    "id": "tiff-2025-act-3797",
+    "filmId": "38018ODS12",
+    "venueId": "tiff-2025-venue-12",
+    "startAt": "2025-10-31T15:45:00+09:00",
+    "endAt": "2025-10-31T18:30:00+09:00",
+    "sourceUrl": "https://2025.tiff-jp.net/ja/lineup/film/38018ODS12",
+    "timingNote": "公式の上映枠終了（イベント等を含む）",
+    "eventLabel": ""
+  },
+  {
+    "id": "tiff-2025-act-3721",
+    "filmId": "38006NCN03",
+    "venueId": "tiff-2025-venue-19",
+    "startAt": "2025-10-31T16:20:00+09:00",
+    "endAt": "2025-10-31T18:27:00+09:00",
+    "sourceUrl": "https://2025.tiff-jp.net/ja/lineup/film/38006NCN03",
+    "timingNote": "公式の上映枠終了（イベント等を含む）",
+    "eventLabel": "Q&A"
+  },
+  {
+    "id": "tiff-2025-act-3612",
+    "filmId": "38002CMP06",
+    "venueId": "tiff-2025-venue-5",
+    "startAt": "2025-10-31T16:25:00+09:00",
+    "endAt": "2025-10-31T18:31:00+09:00",
+    "sourceUrl": "https://2025.tiff-jp.net/ja/lineup/film/38002CMP06",
+    "timingNote": "公式の上映枠終了（イベント等を含む）",
+    "eventLabel": "Q&A"
+  },
+  {
+    "id": "tiff-2025-act-3528",
+    "filmId": "38011WEP04",
+    "venueId": "tiff-2025-venue-8",
+    "startAt": "2025-10-31T16:50:00+09:00",
+    "endAt": "2025-10-31T18:51:00+09:00",
+    "sourceUrl": "https://2025.tiff-jp.net/ja/lineup/film/38011WEP04",
+    "timingNote": "公式の上映枠終了（イベント等を含む）",
+    "eventLabel": ""
+  },
+  {
+    "id": "tiff-2025-act-3751",
+    "filmId": "38010TSR01",
+    "venueId": "tiff-2025-venue-25",
+    "startAt": "2025-10-31T17:00:00+09:00",
+    "endAt": "2025-10-31T19:00:00+09:00",
+    "sourceUrl": "https://2025.tiff-jp.net/ja/lineup/film/38010TSR01",
+    "timingNote": "公式の上映枠終了（イベント等を含む）",
+    "eventLabel": "舞台挨拶"
+  },
+  {
+    "id": "tiff-2025-act-3590",
+    "filmId": "38008CLA06",
+    "venueId": "tiff-2025-venue-10",
+    "startAt": "2025-10-31T18:00:00+09:00",
+    "endAt": "2025-10-31T20:06:00+09:00",
+    "sourceUrl": "https://2025.tiff-jp.net/ja/lineup/film/38008CLA06",
+    "timingNote": "公式の上映枠終了（イベント等を含む）",
+    "eventLabel": ""
+  },
+  {
+    "id": "tiff-2025-act-3564",
+    "filmId": "38005WFC08",
+    "venueId": "tiff-2025-venue-9",
+    "startAt": "2025-10-31T18:20:00+09:00",
+    "endAt": "2025-10-31T20:26:00+09:00",
+    "sourceUrl": "https://2025.tiff-jp.net/ja/lineup/film/38005WFC08",
+    "timingNote": "公式の上映枠終了（イベント等を含む）",
+    "eventLabel": "Q&A"
+  },
+  {
+    "id": "tiff-2025-act-3798",
+    "filmId": "38018ODS03",
+    "venueId": "tiff-2025-venue-12",
+    "startAt": "2025-10-31T18:30:00+09:00",
+    "endAt": "2025-10-31T21:00:00+09:00",
+    "sourceUrl": "https://2025.tiff-jp.net/ja/lineup/film/38018ODS03",
+    "timingNote": "公式の上映枠終了（イベント等を含む）",
+    "eventLabel": ""
+  },
+  {
+    "id": "tiff-2025-act-3702",
+    "filmId": "38002CMP05",
+    "venueId": "tiff-2025-venue-23",
+    "startAt": "2025-10-31T18:55:00+09:00",
+    "endAt": "2025-10-31T21:21:00+09:00",
+    "sourceUrl": "https://2025.tiff-jp.net/ja/lineup/film/38002CMP05",
+    "timingNote": "公式の上映枠終了（イベント等を含む）",
+    "eventLabel": "Q&A"
+  },
+  {
+    "id": "tiff-2025-act-3767",
+    "filmId": "38005WFC19",
+    "venueId": "tiff-2025-venue-37",
+    "startAt": "2025-10-31T19:00:00+09:00",
+    "endAt": "2025-10-31T21:00:00+09:00",
+    "sourceUrl": "https://2025.tiff-jp.net/ja/lineup/film/38005WFC19",
+    "timingNote": "公式の上映枠終了（イベント等を含む）",
+    "eventLabel": ""
+  },
+  {
+    "id": "tiff-2025-act-3674",
+    "filmId": "38004GLS10",
+    "venueId": "tiff-2025-venue-21",
+    "startAt": "2025-10-31T19:05:00+09:00",
+    "endAt": "2025-10-31T20:39:00+09:00",
+    "sourceUrl": "https://2025.tiff-jp.net/ja/lineup/film/38004GLS10",
+    "timingNote": "公式の上映枠終了（イベント等を含む）",
+    "eventLabel": ""
+  },
+  {
+    "id": "tiff-2025-act-3722",
+    "filmId": "38006NCN04",
+    "venueId": "tiff-2025-venue-19",
+    "startAt": "2025-10-31T19:20:00+09:00",
+    "endAt": "2025-10-31T22:27:00+09:00",
+    "sourceUrl": "https://2025.tiff-jp.net/ja/lineup/film/38006NCN04",
+    "timingNote": "公式の上映枠終了（イベント等を含む）",
+    "eventLabel": "Q&A"
+  },
+  {
+    "id": "tiff-2025-act-3613",
+    "filmId": "38011WEP07",
+    "venueId": "tiff-2025-venue-5",
+    "startAt": "2025-10-31T19:45:00+09:00",
+    "endAt": "2025-10-31T22:00:00+09:00",
+    "sourceUrl": "https://2025.tiff-jp.net/ja/lineup/film/38011WEP07",
+    "timingNote": "公式の上映枠終了（イベント等を含む）",
+    "eventLabel": "Q&A"
+  },
+  {
+    "id": "tiff-2025-act-3529",
+    "filmId": "38005WFC02",
+    "venueId": "tiff-2025-venue-8",
+    "startAt": "2025-10-31T19:50:00+09:00",
+    "endAt": "2025-10-31T21:59:00+09:00",
+    "sourceUrl": "https://2025.tiff-jp.net/ja/lineup/film/38005WFC02",
+    "timingNote": "公式終了時刻の不整合を本編時間で補正",
+    "eventLabel": ""
+  },
+  {
+    "id": "tiff-2025-act-3752",
+    "filmId": "38004GLS02",
+    "venueId": "tiff-2025-venue-25",
+    "startAt": "2025-10-31T20:05:00+09:00",
+    "endAt": "2025-10-31T22:32:00+09:00",
+    "sourceUrl": "https://2025.tiff-jp.net/ja/lineup/film/38004GLS02",
+    "timingNote": "公式の上映枠終了（イベント等を含む）",
+    "eventLabel": "舞台挨拶"
+  },
+  {
+    "id": "tiff-2025-act-3591",
+    "filmId": "38007ANM09",
+    "venueId": "tiff-2025-venue-10",
+    "startAt": "2025-10-31T21:00:00+09:00",
+    "endAt": "2025-10-31T23:00:00+09:00",
+    "sourceUrl": "https://2025.tiff-jp.net/ja/lineup/film/38007ANM09",
+    "timingNote": "公式の上映枠終了（イベント等を含む）",
+    "eventLabel": "トーク"
+  },
+  {
+    "id": "tiff-2025-act-3675",
+    "filmId": "38002CMP03",
+    "venueId": "tiff-2025-venue-21",
+    "startAt": "2025-10-31T21:35:00+09:00",
+    "endAt": "2025-10-31T23:06:00+09:00",
+    "sourceUrl": "https://2025.tiff-jp.net/ja/lineup/film/38002CMP03",
+    "timingNote": "公式の上映枠終了（イベント等を含む）",
+    "eventLabel": ""
+  },
+  {
+    "id": "tiff-2025-act-3799",
+    "filmId": "38018ODS24",
+    "venueId": "tiff-2025-venue-12",
+    "startAt": "2025-11-01T10:00:00+09:00",
+    "endAt": "2025-11-01T12:30:00+09:00",
+    "sourceUrl": "https://2025.tiff-jp.net/ja/lineup/film/38018ODS24",
+    "timingNote": "公式の上映枠終了（イベント等を含む）",
+    "eventLabel": ""
+  },
+  {
+    "id": "tiff-2025-act-3565",
+    "filmId": "38015KAF05",
+    "venueId": "tiff-2025-venue-9",
+    "startAt": "2025-11-01T10:20:00+09:00",
+    "endAt": "2025-11-01T12:49:00+09:00",
+    "sourceUrl": "https://2025.tiff-jp.net/ja/lineup/film/38015KAF05",
+    "timingNote": "公式の上映枠終了（イベント等を含む）",
+    "eventLabel": "トーク"
+  },
+  {
+    "id": "tiff-2025-act-3614",
+    "filmId": "38002CMP07",
+    "venueId": "tiff-2025-venue-5",
+    "startAt": "2025-11-01T10:30:00+09:00",
+    "endAt": "2025-11-01T12:54:00+09:00",
+    "sourceUrl": "https://2025.tiff-jp.net/ja/lineup/film/38002CMP07",
+    "timingNote": "公式の上映枠終了（イベント等を含む）",
+    "eventLabel": "Q&A"
+  },
+  {
+    "id": "tiff-2025-act-3723",
+    "filmId": "38006NCN06",
+    "venueId": "tiff-2025-venue-19",
+    "startAt": "2025-11-01T10:30:00+09:00",
+    "endAt": "2025-11-01T12:34:00+09:00",
+    "sourceUrl": "https://2025.tiff-jp.net/ja/lineup/film/38006NCN06",
+    "timingNote": "公式の上映枠終了（イベント等を含む）",
+    "eventLabel": "Q&A"
+  },
+  {
+    "id": "tiff-2025-act-3530",
+    "filmId": "38003ASF10",
+    "venueId": "tiff-2025-venue-8",
+    "startAt": "2025-11-01T11:00:00+09:00",
+    "endAt": "2025-11-01T13:08:00+09:00",
+    "sourceUrl": "https://2025.tiff-jp.net/ja/lineup/film/38003ASF10",
+    "timingNote": "公式の上映枠終了（イベント等を含む）",
+    "eventLabel": "Q&A"
+  },
+  {
+    "id": "tiff-2025-act-3703",
+    "filmId": "38004GLS08",
+    "venueId": "tiff-2025-venue-23",
+    "startAt": "2025-11-01T11:50:00+09:00",
+    "endAt": "2025-11-01T14:35:00+09:00",
+    "sourceUrl": "https://2025.tiff-jp.net/ja/lineup/film/38004GLS08",
+    "timingNote": "公式の上映枠終了（イベント等を含む）",
+    "eventLabel": "舞台挨拶"
+  },
+  {
+    "id": "tiff-2025-act-3800",
+    "filmId": "38018ODS06",
+    "venueId": "tiff-2025-venue-12",
+    "startAt": "2025-11-01T12:40:00+09:00",
+    "endAt": "2025-11-01T15:30:00+09:00",
+    "sourceUrl": "https://2025.tiff-jp.net/ja/lineup/film/38018ODS06",
+    "timingNote": "公式の上映枠終了（イベント等を含む）",
+    "eventLabel": ""
+  },
+  {
+    "id": "tiff-2025-act-3753",
+    "filmId": "38014SPS02",
+    "venueId": "tiff-2025-venue-25",
+    "startAt": "2025-11-01T13:00:00+09:00",
+    "endAt": "2025-11-01T15:53:00+09:00",
+    "sourceUrl": "https://2025.tiff-jp.net/ja/lineup/film/38014SPS02",
+    "timingNote": "公式の上映枠終了（イベント等を含む）",
+    "eventLabel": ""
+  },
+  {
+    "id": "tiff-2025-act-3566",
+    "filmId": "38005WFC01",
+    "venueId": "tiff-2025-venue-9",
+    "startAt": "2025-11-01T13:40:00+09:00",
+    "endAt": "2025-11-01T15:34:00+09:00",
+    "sourceUrl": "https://2025.tiff-jp.net/ja/lineup/film/38005WFC01",
+    "timingNote": "公式の上映枠終了（イベント等を含む）",
+    "eventLabel": ""
+  },
+  {
+    "id": "tiff-2025-act-3724",
+    "filmId": "38008CLA01",
+    "venueId": "tiff-2025-venue-19",
+    "startAt": "2025-11-01T14:00:00+09:00",
+    "endAt": "2025-11-01T16:33:00+09:00",
+    "sourceUrl": "https://2025.tiff-jp.net/ja/lineup/film/38008CLA01",
+    "timingNote": "公式の上映枠終了（イベント等を含む）",
+    "eventLabel": "トーク"
+  },
+  {
+    "id": "tiff-2025-act-3531",
+    "filmId": "38003ASF07",
+    "venueId": "tiff-2025-venue-8",
+    "startAt": "2025-11-01T14:10:00+09:00",
+    "endAt": "2025-11-01T16:00:00+09:00",
+    "sourceUrl": "https://2025.tiff-jp.net/ja/lineup/film/38003ASF07",
+    "timingNote": "公式の上映枠終了（イベント等を含む）",
+    "eventLabel": "Q&A"
+  },
+  {
+    "id": "tiff-2025-act-3615",
+    "filmId": "38005WFC10",
+    "venueId": "tiff-2025-venue-5",
+    "startAt": "2025-11-01T14:15:00+09:00",
+    "endAt": "2025-11-01T15:53:00+09:00",
+    "sourceUrl": "https://2025.tiff-jp.net/ja/lineup/film/38005WFC10",
+    "timingNote": "公式の上映枠終了（イベント等を含む）",
+    "eventLabel": ""
+  },
+  {
+    "id": "tiff-2025-act-3632",
+    "filmId": "38007ANM03",
+    "venueId": "tiff-2025-venue-6",
+    "startAt": "2025-11-01T14:55:00+09:00",
+    "endAt": "2025-11-01T16:25:00+09:00",
+    "sourceUrl": "https://2025.tiff-jp.net/ja/lineup/film/38007ANM03",
+    "timingNote": "公式の上映枠終了（イベント等を含む）",
+    "eventLabel": ""
+  },
+  {
+    "id": "tiff-2025-act-3772",
+    "filmId": "38005WFC22",
+    "venueId": "tiff-2025-venue-37",
+    "startAt": "2025-11-01T15:00:00+09:00",
+    "endAt": "2025-11-01T17:00:00+09:00",
+    "sourceUrl": "https://2025.tiff-jp.net/ja/lineup/film/38005WFC22",
+    "timingNote": "公式の上映枠終了（イベント等を含む）",
+    "eventLabel": ""
+  },
+  {
+    "id": "tiff-2025-act-3801",
+    "filmId": "38018ODS01",
+    "venueId": "tiff-2025-venue-12",
+    "startAt": "2025-11-01T15:30:00+09:00",
+    "endAt": "2025-11-01T18:50:00+09:00",
+    "sourceUrl": "https://2025.tiff-jp.net/ja/lineup/film/38018ODS01",
+    "timingNote": "公式の上映枠終了（イベント等を含む）",
+    "eventLabel": ""
+  },
+  {
+    "id": "tiff-2025-act-3704",
+    "filmId": "38002CMP09",
+    "venueId": "tiff-2025-venue-23",
+    "startAt": "2025-11-01T15:45:00+09:00",
+    "endAt": "2025-11-01T17:59:00+09:00",
+    "sourceUrl": "https://2025.tiff-jp.net/ja/lineup/film/38002CMP09",
+    "timingNote": "公式の上映枠終了（イベント等を含む）",
+    "eventLabel": "Q&A"
+  },
+  {
+    "id": "tiff-2025-act-3567",
+    "filmId": "38009YUT02",
+    "venueId": "tiff-2025-venue-9",
+    "startAt": "2025-11-01T16:30:00+09:00",
+    "endAt": "2025-11-01T18:40:00+09:00",
+    "sourceUrl": "https://2025.tiff-jp.net/ja/lineup/film/38009YUT02",
+    "timingNote": "公式の上映枠終了（イベント等を含む）",
+    "eventLabel": ""
+  },
+  {
+    "id": "tiff-2025-act-3532",
+    "filmId": "38003ASF06",
+    "venueId": "tiff-2025-venue-8",
+    "startAt": "2025-11-01T17:10:00+09:00",
+    "endAt": "2025-11-01T19:20:00+09:00",
+    "sourceUrl": "https://2025.tiff-jp.net/ja/lineup/film/38003ASF06",
+    "timingNote": "公式の上映枠終了（イベント等を含む）",
+    "eventLabel": "Q&A"
+  },
+  {
+    "id": "tiff-2025-act-3616",
+    "filmId": "38004GLS13",
+    "venueId": "tiff-2025-venue-5",
+    "startAt": "2025-11-01T17:15:00+09:00",
+    "endAt": "2025-11-01T19:35:00+09:00",
+    "sourceUrl": "https://2025.tiff-jp.net/ja/lineup/film/38004GLS13",
+    "timingNote": "公式の上映枠終了（イベント等を含む）",
+    "eventLabel": "トーク"
+  },
+  {
+    "id": "tiff-2025-act-3754",
+    "filmId": "38005WFC18",
+    "venueId": "tiff-2025-venue-25",
+    "startAt": "2025-11-01T17:15:00+09:00",
+    "endAt": "2025-11-01T19:06:00+09:00",
+    "sourceUrl": "https://2025.tiff-jp.net/ja/lineup/film/38005WFC18",
+    "timingNote": "公式の上映枠終了（イベント等を含む）",
+    "eventLabel": ""
+  },
+  {
+    "id": "tiff-2025-act-3725",
+    "filmId": "38006NCN01",
+    "venueId": "tiff-2025-venue-19",
+    "startAt": "2025-11-01T17:30:00+09:00",
+    "endAt": "2025-11-01T19:12:00+09:00",
+    "sourceUrl": "https://2025.tiff-jp.net/ja/lineup/film/38006NCN01",
+    "timingNote": "公式の上映枠終了（イベント等を含む）",
+    "eventLabel": "Q&A"
+  },
+  {
+    "id": "tiff-2025-act-3592",
+    "filmId": "38031SKP01",
+    "venueId": "tiff-2025-venue-10",
+    "startAt": "2025-11-01T17:45:00+09:00",
+    "endAt": "2025-11-01T20:11:00+09:00",
+    "sourceUrl": "https://2025.tiff-jp.net/ja/lineup/film/38031SKP01",
+    "timingNote": "公式の上映枠終了（イベント等を含む）",
+    "eventLabel": "Q&A"
+  },
+  {
+    "id": "tiff-2025-act-3676",
+    "filmId": "38002CMP14",
+    "venueId": "tiff-2025-venue-21",
+    "startAt": "2025-11-01T18:20:00+09:00",
+    "endAt": "2025-11-01T20:19:00+09:00",
+    "sourceUrl": "https://2025.tiff-jp.net/ja/lineup/film/38002CMP14",
+    "timingNote": "公式の上映枠終了（イベント等を含む）",
+    "eventLabel": ""
+  },
+  {
+    "id": "tiff-2025-act-3802",
+    "filmId": "38018ODS04",
+    "venueId": "tiff-2025-venue-12",
+    "startAt": "2025-11-01T18:50:00+09:00",
+    "endAt": "2025-11-01T20:50:00+09:00",
+    "sourceUrl": "https://2025.tiff-jp.net/ja/lineup/film/38018ODS04",
+    "timingNote": "公式の上映枠終了（イベント等を含む）",
+    "eventLabel": ""
+  },
+  {
+    "id": "tiff-2025-act-3776",
+    "filmId": "38005WFC23",
+    "venueId": "tiff-2025-venue-37",
+    "startAt": "2025-11-01T19:00:00+09:00",
+    "endAt": "2025-11-01T21:00:00+09:00",
+    "sourceUrl": "https://2025.tiff-jp.net/ja/lineup/film/38005WFC23",
+    "timingNote": "公式の上映枠終了（イベント等を含む）",
+    "eventLabel": ""
+  },
+  {
+    "id": "tiff-2025-act-3705",
+    "filmId": "38014SPS04",
+    "venueId": "tiff-2025-venue-23",
+    "startAt": "2025-11-01T19:05:00+09:00",
+    "endAt": "2025-11-01T21:12:00+09:00",
+    "sourceUrl": "https://2025.tiff-jp.net/ja/lineup/film/38014SPS04",
+    "timingNote": "公式の上映枠終了（イベント等を含む）",
+    "eventLabel": "舞台挨拶"
+  },
+  {
+    "id": "tiff-2025-act-3568",
+    "filmId": "38005WFC12",
+    "venueId": "tiff-2025-venue-9",
+    "startAt": "2025-11-01T19:50:00+09:00",
+    "endAt": "2025-11-01T22:28:00+09:00",
+    "sourceUrl": "https://2025.tiff-jp.net/ja/lineup/film/38005WFC12",
+    "timingNote": "公式の上映枠終了（イベント等を含む）",
+    "eventLabel": "Q&A"
+  },
+  {
+    "id": "tiff-2025-act-3726",
+    "filmId": "38003ASF05",
+    "venueId": "tiff-2025-venue-19",
+    "startAt": "2025-11-01T20:05:00+09:00",
+    "endAt": "2025-11-01T22:04:00+09:00",
+    "sourceUrl": "https://2025.tiff-jp.net/ja/lineup/film/38003ASF05",
+    "timingNote": "公式の上映枠終了（イベント等を含む）",
+    "eventLabel": "舞台挨拶・Q&A"
+  },
+  {
+    "id": "tiff-2025-act-3634",
+    "filmId": "38004GLS07",
+    "venueId": "tiff-2025-venue-6",
+    "startAt": "2025-11-01T20:15:00+09:00",
+    "endAt": "2025-11-01T22:19:00+09:00",
+    "sourceUrl": "https://2025.tiff-jp.net/ja/lineup/film/38004GLS07",
+    "timingNote": "公式の上映枠終了（イベント等を含む）",
+    "eventLabel": ""
+  },
+  {
+    "id": "tiff-2025-act-3755",
+    "filmId": "38006NCN05",
+    "venueId": "tiff-2025-venue-25",
+    "startAt": "2025-11-01T20:30:00+09:00",
+    "endAt": "2025-11-01T22:59:00+09:00",
+    "sourceUrl": "https://2025.tiff-jp.net/ja/lineup/film/38006NCN05",
+    "timingNote": "公式の上映枠終了（イベント等を含む）",
+    "eventLabel": "Q&A"
+  },
+  {
+    "id": "tiff-2025-act-3617",
+    "filmId": "38002CMP01",
+    "venueId": "tiff-2025-venue-5",
+    "startAt": "2025-11-01T20:45:00+09:00",
+    "endAt": "2025-11-01T22:58:00+09:00",
+    "sourceUrl": "https://2025.tiff-jp.net/ja/lineup/film/38002CMP01",
+    "timingNote": "公式の上映枠終了（イベント等を含む）",
+    "eventLabel": "Q&A"
+  },
+  {
+    "id": "tiff-2025-act-3533",
+    "filmId": "38005WFC14",
+    "venueId": "tiff-2025-venue-8",
+    "startAt": "2025-11-01T21:10:00+09:00",
+    "endAt": "2025-11-01T23:00:00+09:00",
+    "sourceUrl": "https://2025.tiff-jp.net/ja/lineup/film/38005WFC14",
+    "timingNote": "公式の上映枠終了（イベント等を含む）",
+    "eventLabel": "Q&A"
+  },
+  {
+    "id": "tiff-2025-act-3593",
+    "filmId": "38007ANM12",
+    "venueId": "tiff-2025-venue-10",
+    "startAt": "2025-11-01T21:10:00+09:00",
+    "endAt": "2025-11-01T22:39:00+09:00",
+    "sourceUrl": "https://2025.tiff-jp.net/ja/lineup/film/38007ANM12",
+    "timingNote": "公式の上映枠終了（イベント等を含む）",
+    "eventLabel": "トーク"
+  },
+  {
+    "id": "tiff-2025-act-3677",
+    "filmId": "38002CMP02",
+    "venueId": "tiff-2025-venue-21",
+    "startAt": "2025-11-01T21:20:00+09:00",
+    "endAt": "2025-11-01T23:03:00+09:00",
+    "sourceUrl": "https://2025.tiff-jp.net/ja/lineup/film/38002CMP02",
+    "timingNote": "公式の上映枠終了（イベント等を含む）",
+    "eventLabel": ""
+  },
+  {
+    "id": "tiff-2025-act-3803",
+    "filmId": "38018ODS05",
+    "venueId": "tiff-2025-venue-12",
+    "startAt": "2025-11-02T10:00:00+09:00",
+    "endAt": "2025-11-02T12:30:00+09:00",
+    "sourceUrl": "https://2025.tiff-jp.net/ja/lineup/film/38018ODS05",
+    "timingNote": "公式の上映枠終了（イベント等を含む）",
+    "eventLabel": ""
+  },
+  {
+    "id": "tiff-2025-act-3569",
+    "filmId": "38007ANM06",
+    "venueId": "tiff-2025-venue-9",
+    "startAt": "2025-11-02T10:15:00+09:00",
+    "endAt": "2025-11-02T12:39:00+09:00",
+    "sourceUrl": "https://2025.tiff-jp.net/ja/lineup/film/38007ANM06",
+    "timingNote": "公式の上映枠終了（イベント等を含む）",
+    "eventLabel": "トーク"
+  },
+  {
+    "id": "tiff-2025-act-3618",
+    "filmId": "38005WFC15",
+    "venueId": "tiff-2025-venue-5",
+    "startAt": "2025-11-02T10:15:00+09:00",
+    "endAt": "2025-11-02T12:25:00+09:00",
+    "sourceUrl": "https://2025.tiff-jp.net/ja/lineup/film/38005WFC15",
+    "timingNote": "公式の上映枠終了（イベント等を含む）",
+    "eventLabel": ""
+  },
+  {
+    "id": "tiff-2025-act-3727",
+    "filmId": "38006NCN03",
+    "venueId": "tiff-2025-venue-19",
+    "startAt": "2025-11-02T10:45:00+09:00",
+    "endAt": "2025-11-02T12:52:00+09:00",
+    "sourceUrl": "https://2025.tiff-jp.net/ja/lineup/film/38006NCN03",
+    "timingNote": "公式の上映枠終了（イベント等を含む）",
+    "eventLabel": "Q&A"
+  },
+  {
+    "id": "tiff-2025-act-3635",
+    "filmId": "38015KAF03",
+    "venueId": "tiff-2025-venue-6",
+    "startAt": "2025-11-02T11:05:00+09:00",
+    "endAt": "2025-11-02T12:43:00+09:00",
+    "sourceUrl": "https://2025.tiff-jp.net/ja/lineup/film/38015KAF03",
+    "timingNote": "公式の上映枠終了（イベント等を含む）",
+    "eventLabel": ""
+  },
+  {
+    "id": "tiff-2025-act-3706",
+    "filmId": "38002CMP13",
+    "venueId": "tiff-2025-venue-23",
+    "startAt": "2025-11-02T11:30:00+09:00",
+    "endAt": "2025-11-02T13:53:00+09:00",
+    "sourceUrl": "https://2025.tiff-jp.net/ja/lineup/film/38002CMP13",
+    "timingNote": "公式の上映枠終了（イベント等を含む）",
+    "eventLabel": "Q&A"
+  },
+  {
+    "id": "tiff-2025-act-3535",
+    "filmId": "38003ASF09",
+    "venueId": "tiff-2025-venue-8",
+    "startAt": "2025-11-02T12:30:00+09:00",
+    "endAt": "2025-11-02T14:22:00+09:00",
+    "sourceUrl": "https://2025.tiff-jp.net/ja/lineup/film/38003ASF09",
+    "timingNote": "公式の上映枠終了（イベント等を含む）",
+    "eventLabel": "Q&A"
+  },
+  {
+    "id": "tiff-2025-act-3804",
+    "filmId": "38018ODS19",
+    "venueId": "tiff-2025-venue-12",
+    "startAt": "2025-11-02T12:40:00+09:00",
+    "endAt": "2025-11-02T15:30:00+09:00",
+    "sourceUrl": "https://2025.tiff-jp.net/ja/lineup/film/38018ODS19",
+    "timingNote": "公式の上映枠終了（イベント等を含む）",
+    "eventLabel": ""
+  },
+  {
+    "id": "tiff-2025-act-3756",
+    "filmId": "38004GLS03",
+    "venueId": "tiff-2025-venue-25",
+    "startAt": "2025-11-02T13:00:00+09:00",
+    "endAt": "2025-11-02T15:23:00+09:00",
+    "sourceUrl": "https://2025.tiff-jp.net/ja/lineup/film/38004GLS03",
+    "timingNote": "公式の上映枠終了（イベント等を含む）",
+    "eventLabel": "トーク"
+  },
+  {
+    "id": "tiff-2025-act-3770",
+    "filmId": "38005WFC21",
+    "venueId": "tiff-2025-venue-37",
+    "startAt": "2025-11-02T13:00:00+09:00",
+    "endAt": "2025-11-02T15:00:00+09:00",
+    "sourceUrl": "https://2025.tiff-jp.net/ja/lineup/film/38005WFC21",
+    "timingNote": "公式の上映枠終了（イベント等を含む）",
+    "eventLabel": ""
+  },
+  {
+    "id": "tiff-2025-act-3570",
+    "filmId": "38009YUT03",
+    "venueId": "tiff-2025-venue-9",
+    "startAt": "2025-11-02T13:30:00+09:00",
+    "endAt": "2025-11-02T15:16:00+09:00",
+    "sourceUrl": "https://2025.tiff-jp.net/ja/lineup/film/38009YUT03",
+    "timingNote": "公式の上映枠終了（イベント等を含む）",
+    "eventLabel": ""
+  },
+  {
+    "id": "tiff-2025-act-3728",
+    "filmId": "38007ANM07",
+    "venueId": "tiff-2025-venue-19",
+    "startAt": "2025-11-02T13:50:00+09:00",
+    "endAt": "2025-11-02T15:53:00+09:00",
+    "sourceUrl": "https://2025.tiff-jp.net/ja/lineup/film/38007ANM07",
+    "timingNote": "公式の上映枠終了（イベント等を含む）",
+    "eventLabel": "トーク"
+  },
+  {
+    "id": "tiff-2025-act-3619",
+    "filmId": "38008CLA14",
+    "venueId": "tiff-2025-venue-5",
+    "startAt": "2025-11-02T14:00:00+09:00",
+    "endAt": "2025-11-02T16:49:00+09:00",
+    "sourceUrl": "https://2025.tiff-jp.net/ja/lineup/film/38008CLA14",
+    "timingNote": "公式の上映枠終了（イベント等を含む）",
+    "eventLabel": "Q&A"
+  },
+  {
+    "id": "tiff-2025-act-3707",
+    "filmId": "38002CMP03",
+    "venueId": "tiff-2025-venue-23",
+    "startAt": "2025-11-02T15:15:00+09:00",
+    "endAt": "2025-11-02T17:31:00+09:00",
+    "sourceUrl": "https://2025.tiff-jp.net/ja/lineup/film/38002CMP03",
+    "timingNote": "公式の上映枠終了（イベント等を含む）",
+    "eventLabel": "舞台挨拶・Q&A"
+  },
+  {
+    "id": "tiff-2025-act-3805",
+    "filmId": "38018ODS20",
+    "venueId": "tiff-2025-venue-12",
+    "startAt": "2025-11-02T15:30:00+09:00",
+    "endAt": "2025-11-02T18:30:00+09:00",
+    "sourceUrl": "https://2025.tiff-jp.net/ja/lineup/film/38018ODS20",
+    "timingNote": "公式の上映枠終了（イベント等を含む）",
+    "eventLabel": ""
+  },
+  {
+    "id": "tiff-2025-act-3536",
+    "filmId": "38008CLA12",
+    "venueId": "tiff-2025-venue-8",
+    "startAt": "2025-11-02T15:45:00+09:00",
+    "endAt": "2025-11-02T17:22:00+09:00",
+    "sourceUrl": "https://2025.tiff-jp.net/ja/lineup/film/38008CLA12",
+    "timingNote": "公式の上映枠終了（イベント等を含む）",
+    "eventLabel": "トーク"
+  },
+  {
+    "id": "tiff-2025-act-3777",
+    "filmId": "38005WFC24",
+    "venueId": "tiff-2025-venue-37",
+    "startAt": "2025-11-02T16:00:00+09:00",
+    "endAt": "2025-11-02T18:00:00+09:00",
+    "sourceUrl": "https://2025.tiff-jp.net/ja/lineup/film/38005WFC24",
+    "timingNote": "公式の上映枠終了（イベント等を含む）",
+    "eventLabel": ""
+  },
+  {
+    "id": "tiff-2025-act-3757",
+    "filmId": "38006NCN07",
+    "venueId": "tiff-2025-venue-25",
+    "startAt": "2025-11-02T16:30:00+09:00",
+    "endAt": "2025-11-02T19:17:00+09:00",
+    "sourceUrl": "https://2025.tiff-jp.net/ja/lineup/film/38006NCN07",
+    "timingNote": "公式の上映枠終了（イベント等を含む）",
+    "eventLabel": "Q&A"
+  },
+  {
+    "id": "tiff-2025-act-3571",
+    "filmId": "38005WFC13",
+    "venueId": "tiff-2025-venue-9",
+    "startAt": "2025-11-02T16:40:00+09:00",
+    "endAt": "2025-11-02T18:36:00+09:00",
+    "sourceUrl": "https://2025.tiff-jp.net/ja/lineup/film/38005WFC13",
+    "timingNote": "公式の上映枠終了（イベント等を含む）",
+    "eventLabel": ""
+  },
+  {
+    "id": "tiff-2025-act-3729",
+    "filmId": "38011WEP02",
+    "venueId": "tiff-2025-venue-19",
+    "startAt": "2025-11-02T16:50:00+09:00",
+    "endAt": "2025-11-02T19:03:00+09:00",
+    "sourceUrl": "https://2025.tiff-jp.net/ja/lineup/film/38011WEP02",
+    "timingNote": "公式の上映枠終了（イベント等を含む）",
+    "eventLabel": "舞台挨拶・Q&A"
+  },
+  {
+    "id": "tiff-2025-act-3637",
+    "filmId": "38004GLS02",
+    "venueId": "tiff-2025-venue-6",
+    "startAt": "2025-11-02T17:10:00+09:00",
+    "endAt": "2025-11-02T19:17:00+09:00",
+    "sourceUrl": "https://2025.tiff-jp.net/ja/lineup/film/38004GLS02",
+    "timingNote": "公式の上映枠終了（イベント等を含む）",
+    "eventLabel": ""
+  },
+  {
+    "id": "tiff-2025-act-3594",
+    "filmId": "38008CLA11",
+    "venueId": "tiff-2025-venue-10",
+    "startAt": "2025-11-02T17:50:00+09:00",
+    "endAt": "2025-11-02T20:49:00+09:00",
+    "sourceUrl": "https://2025.tiff-jp.net/ja/lineup/film/38008CLA11",
+    "timingNote": "公式の上映枠終了（イベント等を含む）",
+    "eventLabel": "トーク"
+  },
+  {
+    "id": "tiff-2025-act-3620",
+    "filmId": "38002CMP04",
+    "venueId": "tiff-2025-venue-5",
+    "startAt": "2025-11-02T18:00:00+09:00",
+    "endAt": "2025-11-02T19:47:00+09:00",
+    "sourceUrl": "https://2025.tiff-jp.net/ja/lineup/film/38002CMP04",
+    "timingNote": "公式の上映枠終了（イベント等を含む）",
+    "eventLabel": ""
+  },
+  {
+    "id": "tiff-2025-act-3678",
+    "filmId": "38002CMP07",
+    "venueId": "tiff-2025-venue-21",
+    "startAt": "2025-11-02T18:00:00+09:00",
+    "endAt": "2025-11-02T19:54:00+09:00",
+    "sourceUrl": "https://2025.tiff-jp.net/ja/lineup/film/38002CMP07",
+    "timingNote": "公式の上映枠終了（イベント等を含む）",
+    "eventLabel": ""
+  },
+  {
+    "id": "tiff-2025-act-3708",
+    "filmId": "38014SPS03",
+    "venueId": "tiff-2025-venue-23",
+    "startAt": "2025-11-02T18:45:00+09:00",
+    "endAt": "2025-11-02T20:16:00+09:00",
+    "sourceUrl": "https://2025.tiff-jp.net/ja/lineup/film/38014SPS03",
+    "timingNote": "公式の上映枠終了（イベント等を含む）",
+    "eventLabel": ""
+  },
+  {
+    "id": "tiff-2025-act-3806",
+    "filmId": "38018ODS02",
+    "venueId": "tiff-2025-venue-12",
+    "startAt": "2025-11-02T18:50:00+09:00",
+    "endAt": "2025-11-02T20:50:00+09:00",
+    "sourceUrl": "https://2025.tiff-jp.net/ja/lineup/film/38018ODS02",
+    "timingNote": "公式の上映枠終了（イベント等を含む）",
+    "eventLabel": ""
+  },
+  {
+    "id": "tiff-2025-act-3537",
+    "filmId": "38011WEP03",
+    "venueId": "tiff-2025-venue-8",
+    "startAt": "2025-11-02T19:40:00+09:00",
+    "endAt": "2025-11-02T22:19:00+09:00",
+    "sourceUrl": "https://2025.tiff-jp.net/ja/lineup/film/38011WEP03",
+    "timingNote": "公式の上映枠終了（イベント等を含む）",
+    "eventLabel": ""
+  },
+  {
+    "id": "tiff-2025-act-3730",
+    "filmId": "38008CLA07",
+    "venueId": "tiff-2025-venue-19",
+    "startAt": "2025-11-02T20:00:00+09:00",
+    "endAt": "2025-11-02T21:39:00+09:00",
+    "sourceUrl": "https://2025.tiff-jp.net/ja/lineup/film/38008CLA07",
+    "timingNote": "公式の上映枠終了（イベント等を含む）",
+    "eventLabel": ""
+  },
+  {
+    "id": "tiff-2025-act-3572",
+    "filmId": "38005WFC03",
+    "venueId": "tiff-2025-venue-9",
+    "startAt": "2025-11-02T20:20:00+09:00",
+    "endAt": "2025-11-02T22:59:00+09:00",
+    "sourceUrl": "https://2025.tiff-jp.net/ja/lineup/film/38005WFC03",
+    "timingNote": "公式の上映枠終了（イベント等を含む）",
+    "eventLabel": "Q&A"
+  },
+  {
+    "id": "tiff-2025-act-3758",
+    "filmId": "38007ANM11",
+    "venueId": "tiff-2025-venue-25",
+    "startAt": "2025-11-02T20:30:00+09:00",
+    "endAt": "2025-11-02T22:38:00+09:00",
+    "sourceUrl": "https://2025.tiff-jp.net/ja/lineup/film/38007ANM11",
+    "timingNote": "公式の上映枠終了（イベント等を含む）",
+    "eventLabel": "舞台挨拶"
+  },
+  {
+    "id": "tiff-2025-act-3679",
+    "filmId": "38002CMP10",
+    "venueId": "tiff-2025-venue-21",
+    "startAt": "2025-11-02T20:50:00+09:00",
+    "endAt": "2025-11-02T22:59:00+09:00",
+    "sourceUrl": "https://2025.tiff-jp.net/ja/lineup/film/38002CMP10",
+    "timingNote": "公式の上映枠終了（イベント等を含む）",
+    "eventLabel": ""
+  },
+  {
+    "id": "tiff-2025-act-3621",
+    "filmId": "38002CMP06",
+    "venueId": "tiff-2025-venue-5",
+    "startAt": "2025-11-02T20:55:00+09:00",
+    "endAt": "2025-11-02T23:01:00+09:00",
+    "sourceUrl": "https://2025.tiff-jp.net/ja/lineup/film/38002CMP06",
+    "timingNote": "公式の上映枠終了（イベント等を含む）",
+    "eventLabel": "Q&A"
+  },
+  {
+    "id": "tiff-2025-act-3638",
+    "filmId": "38005WFC17",
+    "venueId": "tiff-2025-venue-6",
+    "startAt": "2025-11-02T21:10:00+09:00",
+    "endAt": "2025-11-02T23:00:00+09:00",
+    "sourceUrl": "https://2025.tiff-jp.net/ja/lineup/film/38005WFC17",
+    "timingNote": "公式終了時刻の不整合を本編時間で補正",
+    "eventLabel": ""
+  },
+  {
+    "id": "tiff-2025-act-3622",
+    "filmId": "38002CMP15",
+    "venueId": "tiff-2025-venue-5",
+    "startAt": "2025-11-03T10:25:00+09:00",
+    "endAt": "2025-11-03T12:22:00+09:00",
+    "sourceUrl": "https://2025.tiff-jp.net/ja/lineup/film/38002CMP15",
+    "timingNote": "公式の上映枠終了（イベント等を含む）",
+    "eventLabel": "Q&A"
+  },
+  {
+    "id": "tiff-2025-act-3573",
+    "filmId": "38003ASF02",
+    "venueId": "tiff-2025-venue-9",
+    "startAt": "2025-11-03T10:30:00+09:00",
+    "endAt": "2025-11-03T12:44:00+09:00",
+    "sourceUrl": "https://2025.tiff-jp.net/ja/lineup/film/38003ASF02",
+    "timingNote": "公式の上映枠終了（イベント等を含む）",
+    "eventLabel": "Q&A"
+  },
+  {
+    "id": "tiff-2025-act-3807",
+    "filmId": "38018ODS08",
+    "venueId": "tiff-2025-venue-12",
+    "startAt": "2025-11-03T10:30:00+09:00",
+    "endAt": "2025-11-03T12:30:00+09:00",
+    "sourceUrl": "https://2025.tiff-jp.net/ja/lineup/film/38018ODS08",
+    "timingNote": "公式の上映枠終了（イベント等を含む）",
+    "eventLabel": ""
+  },
+  {
+    "id": "tiff-2025-act-3639",
+    "filmId": "38004GLS04",
+    "venueId": "tiff-2025-venue-6",
+    "startAt": "2025-11-03T12:00:00+09:00",
+    "endAt": "2025-11-03T14:28:00+09:00",
+    "sourceUrl": "https://2025.tiff-jp.net/ja/lineup/film/38004GLS04",
+    "timingNote": "公式の上映枠終了（イベント等を含む）",
+    "eventLabel": ""
+  },
+  {
+    "id": "tiff-2025-act-3808",
+    "filmId": "38018ODS03",
+    "venueId": "tiff-2025-venue-12",
+    "startAt": "2025-11-03T12:40:00+09:00",
+    "endAt": "2025-11-03T15:30:00+09:00",
+    "sourceUrl": "https://2025.tiff-jp.net/ja/lineup/film/38018ODS03",
+    "timingNote": "公式の上映枠終了（イベント等を含む）",
+    "eventLabel": ""
+  },
+  {
+    "id": "tiff-2025-act-3759",
+    "filmId": "38006NCN04",
+    "venueId": "tiff-2025-venue-25",
+    "startAt": "2025-11-03T13:00:00+09:00",
+    "endAt": "2025-11-03T16:07:00+09:00",
+    "sourceUrl": "https://2025.tiff-jp.net/ja/lineup/film/38006NCN04",
+    "timingNote": "公式の上映枠終了（イベント等を含む）",
+    "eventLabel": "舞台挨拶"
+  },
+  {
+    "id": "tiff-2025-act-3623",
+    "filmId": "38002CMP12",
+    "venueId": "tiff-2025-venue-5",
+    "startAt": "2025-11-03T13:30:00+09:00",
+    "endAt": "2025-11-03T15:59:00+09:00",
+    "sourceUrl": "https://2025.tiff-jp.net/ja/lineup/film/38002CMP12",
+    "timingNote": "公式の上映枠終了（イベント等を含む）",
+    "eventLabel": ""
+  },
+  {
+    "id": "tiff-2025-act-3574",
+    "filmId": "38007ANM05",
+    "venueId": "tiff-2025-venue-9",
+    "startAt": "2025-11-03T13:40:00+09:00",
+    "endAt": "2025-11-03T15:17:00+09:00",
+    "sourceUrl": "https://2025.tiff-jp.net/ja/lineup/film/38007ANM05",
+    "timingNote": "公式の上映枠終了（イベント等を含む）",
+    "eventLabel": ""
+  },
+  {
+    "id": "tiff-2025-act-3680",
+    "filmId": "38004GLS12",
+    "venueId": "tiff-2025-venue-21",
+    "startAt": "2025-11-03T14:00:00+09:00",
+    "endAt": "2025-11-03T16:05:00+09:00",
+    "sourceUrl": "https://2025.tiff-jp.net/ja/lineup/film/38004GLS12",
+    "timingNote": "公式の上映枠終了（イベント等を含む）",
+    "eventLabel": ""
+  },
+  {
+    "id": "tiff-2025-act-3539",
+    "filmId": "38003ASF06",
+    "venueId": "tiff-2025-venue-8",
+    "startAt": "2025-11-03T14:35:00+09:00",
+    "endAt": "2025-11-03T16:45:00+09:00",
+    "sourceUrl": "https://2025.tiff-jp.net/ja/lineup/film/38003ASF06",
+    "timingNote": "公式の上映枠終了（イベント等を含む）",
+    "eventLabel": "Q&A"
+  },
+  {
+    "id": "tiff-2025-act-3732",
+    "filmId": "38008CLA13",
+    "venueId": "tiff-2025-venue-19",
+    "startAt": "2025-11-03T15:00:00+09:00",
+    "endAt": "2025-11-03T17:16:00+09:00",
+    "sourceUrl": "https://2025.tiff-jp.net/ja/lineup/film/38008CLA13",
+    "timingNote": "公式の上映枠終了（イベント等を含む）",
+    "eventLabel": ""
+  },
+  {
+    "id": "tiff-2025-act-3809",
+    "filmId": "38018ODS21",
+    "venueId": "tiff-2025-venue-12",
+    "startAt": "2025-11-03T15:30:00+09:00",
+    "endAt": "2025-11-03T18:00:00+09:00",
+    "sourceUrl": "https://2025.tiff-jp.net/ja/lineup/film/38018ODS21",
+    "timingNote": "公式の上映枠終了（イベント等を含む）",
+    "eventLabel": ""
+  },
+  {
+    "id": "tiff-2025-act-3659",
+    "filmId": "38005WFC04",
+    "venueId": "tiff-2025-venue-34",
+    "startAt": "2025-11-03T15:35:00+09:00",
+    "endAt": "2025-11-03T16:58:00+09:00",
+    "sourceUrl": "https://2025.tiff-jp.net/ja/lineup/film/38005WFC04",
+    "timingNote": "公式の上映枠終了（イベント等を含む）",
+    "eventLabel": ""
+  },
+  {
+    "id": "tiff-2025-act-3640",
+    "filmId": "38011WEP06",
+    "venueId": "tiff-2025-venue-6",
+    "startAt": "2025-11-03T15:50:00+09:00",
+    "endAt": "2025-11-03T17:44:00+09:00",
+    "sourceUrl": "https://2025.tiff-jp.net/ja/lineup/film/38011WEP06",
+    "timingNote": "公式の上映枠終了（イベント等を含む）",
+    "eventLabel": ""
+  },
+  {
+    "id": "tiff-2025-act-3575",
+    "filmId": "38009YUT01",
+    "venueId": "tiff-2025-venue-9",
+    "startAt": "2025-11-03T16:50:00+09:00",
+    "endAt": "2025-11-03T18:56:00+09:00",
+    "sourceUrl": "https://2025.tiff-jp.net/ja/lineup/film/38009YUT01",
+    "timingNote": "公式の上映枠終了（イベント等を含む）",
+    "eventLabel": "Q&A"
+  },
+  {
+    "id": "tiff-2025-act-3624",
+    "filmId": "38004GLS09",
+    "venueId": "tiff-2025-venue-5",
+    "startAt": "2025-11-03T17:10:00+09:00",
+    "endAt": "2025-11-03T19:20:00+09:00",
+    "sourceUrl": "https://2025.tiff-jp.net/ja/lineup/film/38004GLS09",
+    "timingNote": "公式の上映枠終了（イベント等を含む）",
+    "eventLabel": "舞台挨拶"
+  },
+  {
+    "id": "tiff-2025-act-3681",
+    "filmId": "38002CMP08",
+    "venueId": "tiff-2025-venue-21",
+    "startAt": "2025-11-03T17:20:00+09:00",
+    "endAt": "2025-11-03T18:56:00+09:00",
+    "sourceUrl": "https://2025.tiff-jp.net/ja/lineup/film/38002CMP08",
+    "timingNote": "公式の上映枠終了（イベント等を含む）",
+    "eventLabel": ""
+  },
+  {
+    "id": "tiff-2025-act-3760",
+    "filmId": "38006NCN08",
+    "venueId": "tiff-2025-venue-25",
+    "startAt": "2025-11-03T17:20:00+09:00",
+    "endAt": "2025-11-03T19:29:00+09:00",
+    "sourceUrl": "https://2025.tiff-jp.net/ja/lineup/film/38006NCN08",
+    "timingNote": "公式の上映枠終了（イベント等を含む）",
+    "eventLabel": "Q&A"
+  },
+  {
+    "id": "tiff-2025-act-3540",
+    "filmId": "38002CMP09",
+    "venueId": "tiff-2025-venue-8",
+    "startAt": "2025-11-03T17:40:00+09:00",
+    "endAt": "2025-11-03T19:54:00+09:00",
+    "sourceUrl": "https://2025.tiff-jp.net/ja/lineup/film/38002CMP09",
+    "timingNote": "公式の上映枠終了（イベント等を含む）",
+    "eventLabel": "Q&A"
+  },
+  {
+    "id": "tiff-2025-act-3660",
+    "filmId": "38014SPS01",
+    "venueId": "tiff-2025-venue-34",
+    "startAt": "2025-11-03T17:50:00+09:00",
+    "endAt": "2025-11-03T20:26:00+09:00",
+    "sourceUrl": "https://2025.tiff-jp.net/ja/lineup/film/38014SPS01",
+    "timingNote": "公式の上映枠終了（イベント等を含む）",
+    "eventLabel": ""
+  },
+  {
+    "id": "tiff-2025-act-3810",
+    "filmId": "38018ODS22",
+    "venueId": "tiff-2025-venue-12",
+    "startAt": "2025-11-03T18:00:00+09:00",
+    "endAt": "2025-11-03T20:10:00+09:00",
+    "sourceUrl": "https://2025.tiff-jp.net/ja/lineup/film/38018ODS22",
+    "timingNote": "公式の上映枠終了（イベント等を含む）",
+    "eventLabel": ""
+  },
+  {
+    "id": "tiff-2025-act-3733",
+    "filmId": "38003ASF01",
+    "venueId": "tiff-2025-venue-19",
+    "startAt": "2025-11-03T18:30:00+09:00",
+    "endAt": "2025-11-03T21:38:00+09:00",
+    "sourceUrl": "https://2025.tiff-jp.net/ja/lineup/film/38003ASF01",
+    "timingNote": "公式の上映枠終了（イベント等を含む）",
+    "eventLabel": "舞台挨拶・Q&A"
+  },
+  {
+    "id": "tiff-2025-act-3641",
+    "filmId": "38007ANM09",
+    "venueId": "tiff-2025-venue-6",
+    "startAt": "2025-11-03T19:00:00+09:00",
+    "endAt": "2025-11-03T20:30:00+09:00",
+    "sourceUrl": "https://2025.tiff-jp.net/ja/lineup/film/38007ANM09",
+    "timingNote": "公式の上映枠終了（イベント等を含む）",
+    "eventLabel": ""
+  },
+  {
+    "id": "tiff-2025-act-3576",
+    "filmId": "38005WFC09",
+    "venueId": "tiff-2025-venue-9",
+    "startAt": "2025-11-03T20:05:00+09:00",
+    "endAt": "2025-11-03T22:19:00+09:00",
+    "sourceUrl": "https://2025.tiff-jp.net/ja/lineup/film/38005WFC09",
+    "timingNote": "公式の上映枠終了（イベント等を含む）",
+    "eventLabel": ""
+  },
+  {
+    "id": "tiff-2025-act-3682",
+    "filmId": "38002CMP05",
+    "venueId": "tiff-2025-venue-21",
+    "startAt": "2025-11-03T20:20:00+09:00",
+    "endAt": "2025-11-03T22:16:00+09:00",
+    "sourceUrl": "https://2025.tiff-jp.net/ja/lineup/film/38002CMP05",
+    "timingNote": "公式の上映枠終了（イベント等を含む）",
+    "eventLabel": ""
+  },
+  {
+    "id": "tiff-2025-act-3625",
+    "filmId": "38005WFC02",
+    "venueId": "tiff-2025-venue-5",
+    "startAt": "2025-11-03T20:25:00+09:00",
+    "endAt": "2025-11-03T23:03:00+09:00",
+    "sourceUrl": "https://2025.tiff-jp.net/ja/lineup/film/38005WFC02",
+    "timingNote": "公式の上映枠終了（イベント等を含む）",
+    "eventLabel": ""
+  },
+  {
+    "id": "tiff-2025-act-3761",
+    "filmId": "38004GLS05",
+    "venueId": "tiff-2025-venue-25",
+    "startAt": "2025-11-03T20:45:00+09:00",
+    "endAt": "2025-11-03T22:37:00+09:00",
+    "sourceUrl": "https://2025.tiff-jp.net/ja/lineup/film/38004GLS05",
+    "timingNote": "公式の上映枠終了（イベント等を含む）",
+    "eventLabel": "トーク"
+  },
+  {
+    "id": "tiff-2025-act-3541",
+    "filmId": "38002CMP14",
+    "venueId": "tiff-2025-venue-8",
+    "startAt": "2025-11-03T20:50:00+09:00",
+    "endAt": "2025-11-03T23:19:00+09:00",
+    "sourceUrl": "https://2025.tiff-jp.net/ja/lineup/film/38002CMP14",
+    "timingNote": "公式の上映枠終了（イベント等を含む）",
+    "eventLabel": "Q&A"
+  },
+  {
+    "id": "tiff-2025-act-3577",
+    "filmId": "38015KAF02",
+    "venueId": "tiff-2025-venue-9",
+    "startAt": "2025-11-04T10:00:00+09:00",
+    "endAt": "2025-11-04T12:28:00+09:00",
+    "sourceUrl": "https://2025.tiff-jp.net/ja/lineup/film/38015KAF02",
+    "timingNote": "公式の上映枠終了（イベント等を含む）",
+    "eventLabel": "トーク"
+  },
+  {
+    "id": "tiff-2025-act-3626",
+    "filmId": "38002CMP01",
+    "venueId": "tiff-2025-venue-5",
+    "startAt": "2025-11-04T10:00:00+09:00",
+    "endAt": "2025-11-04T12:13:00+09:00",
+    "sourceUrl": "https://2025.tiff-jp.net/ja/lineup/film/38002CMP01",
+    "timingNote": "公式の上映枠終了（イベント等を含む）",
+    "eventLabel": "Q&A"
+  },
+  {
+    "id": "tiff-2025-act-3649",
+    "filmId": "38005WFC13",
+    "venueId": "tiff-2025-venue-33",
+    "startAt": "2025-11-04T10:15:00+09:00",
+    "endAt": "2025-11-04T12:11:00+09:00",
+    "sourceUrl": "https://2025.tiff-jp.net/ja/lineup/film/38005WFC13",
+    "timingNote": "公式の上映枠終了（イベント等を含む）",
+    "eventLabel": ""
+  },
+  {
+    "id": "tiff-2025-act-3542",
+    "filmId": "38003ASF09",
+    "venueId": "tiff-2025-venue-8",
+    "startAt": "2025-11-04T10:30:00+09:00",
+    "endAt": "2025-11-04T12:22:00+09:00",
+    "sourceUrl": "https://2025.tiff-jp.net/ja/lineup/film/38003ASF09",
+    "timingNote": "公式の上映枠終了（イベント等を含む）",
+    "eventLabel": "Q&A"
+  },
+  {
+    "id": "tiff-2025-act-3734",
+    "filmId": "38006NCN02",
+    "venueId": "tiff-2025-venue-19",
+    "startAt": "2025-11-04T10:30:00+09:00",
+    "endAt": "2025-11-04T12:50:00+09:00",
+    "sourceUrl": "https://2025.tiff-jp.net/ja/lineup/film/38006NCN02",
+    "timingNote": "公式の上映枠終了（イベント等を含む）",
+    "eventLabel": "Q&A"
+  },
+  {
+    "id": "tiff-2025-act-3642",
+    "filmId": "38007ANM07",
+    "venueId": "tiff-2025-venue-6",
+    "startAt": "2025-11-04T11:20:00+09:00",
+    "endAt": "2025-11-04T12:53:00+09:00",
+    "sourceUrl": "https://2025.tiff-jp.net/ja/lineup/film/38007ANM07",
+    "timingNote": "公式の上映枠終了（イベント等を含む）",
+    "eventLabel": ""
+  },
+  {
+    "id": "tiff-2025-act-3683",
+    "filmId": "38005WFC07",
+    "venueId": "tiff-2025-venue-21",
+    "startAt": "2025-11-04T12:00:00+09:00",
+    "endAt": "2025-11-04T13:50:00+09:00",
+    "sourceUrl": "https://2025.tiff-jp.net/ja/lineup/film/38005WFC07",
+    "timingNote": "公式の上映枠終了（イベント等を含む）",
+    "eventLabel": ""
+  },
+  {
+    "id": "tiff-2025-act-3811",
+    "filmId": "38018ODS13",
+    "venueId": "tiff-2025-venue-12",
+    "startAt": "2025-11-04T12:30:00+09:00",
+    "endAt": "2025-11-04T15:30:00+09:00",
+    "sourceUrl": "https://2025.tiff-jp.net/ja/lineup/film/38018ODS13",
+    "timingNote": "公式の上映枠終了（イベント等を含む）",
+    "eventLabel": ""
+  },
+  {
+    "id": "tiff-2025-act-3762",
+    "filmId": "38011WEP02",
+    "venueId": "tiff-2025-venue-25",
+    "startAt": "2025-11-04T12:45:00+09:00",
+    "endAt": "2025-11-04T14:58:00+09:00",
+    "sourceUrl": "https://2025.tiff-jp.net/ja/lineup/film/38011WEP02",
+    "timingNote": "公式の上映枠終了（イベント等を含む）",
+    "eventLabel": "舞台挨拶・Q&A"
+  },
+  {
+    "id": "tiff-2025-act-3661",
+    "filmId": "38009YUT02",
+    "venueId": "tiff-2025-venue-34",
+    "startAt": "2025-11-04T12:50:00+09:00",
+    "endAt": "2025-11-04T14:30:00+09:00",
+    "sourceUrl": "https://2025.tiff-jp.net/ja/lineup/film/38009YUT02",
+    "timingNote": "公式の上映枠終了（イベント等を含む）",
+    "eventLabel": ""
+  },
+  {
+    "id": "tiff-2025-act-3543",
+    "filmId": "38003ASF02",
+    "venueId": "tiff-2025-venue-8",
+    "startAt": "2025-11-04T13:20:00+09:00",
+    "endAt": "2025-11-04T15:34:00+09:00",
+    "sourceUrl": "https://2025.tiff-jp.net/ja/lineup/film/38003ASF02",
+    "timingNote": "公式の上映枠終了（イベント等を含む）",
+    "eventLabel": "Q&A"
+  },
+  {
+    "id": "tiff-2025-act-3627",
+    "filmId": "38002CMP07",
+    "venueId": "tiff-2025-venue-5",
+    "startAt": "2025-11-04T13:20:00+09:00",
+    "endAt": "2025-11-04T15:44:00+09:00",
+    "sourceUrl": "https://2025.tiff-jp.net/ja/lineup/film/38002CMP07",
+    "timingNote": "公式の上映枠終了（イベント等を含む）",
+    "eventLabel": "Q&A"
+  },
+  {
+    "id": "tiff-2025-act-3578",
+    "filmId": "38005WFC06",
+    "venueId": "tiff-2025-venue-9",
+    "startAt": "2025-11-04T13:45:00+09:00",
+    "endAt": "2025-11-04T15:53:00+09:00",
+    "sourceUrl": "https://2025.tiff-jp.net/ja/lineup/film/38005WFC06",
+    "timingNote": "公式の上映枠終了（イベント等を含む）",
+    "eventLabel": ""
+  },
+  {
+    "id": "tiff-2025-act-3735",
+    "filmId": "38007ANM10",
+    "venueId": "tiff-2025-venue-19",
+    "startAt": "2025-11-04T14:00:00+09:00",
+    "endAt": "2025-11-04T15:45:00+09:00",
+    "sourceUrl": "https://2025.tiff-jp.net/ja/lineup/film/38007ANM10",
+    "timingNote": "公式の上映枠終了（イベント等を含む）",
+    "eventLabel": "トーク"
+  },
+  {
+    "id": "tiff-2025-act-3650",
+    "filmId": "38011WEP07",
+    "venueId": "tiff-2025-venue-33",
+    "startAt": "2025-11-04T14:05:00+09:00",
+    "endAt": "2025-11-04T15:50:00+09:00",
+    "sourceUrl": "https://2025.tiff-jp.net/ja/lineup/film/38011WEP07",
+    "timingNote": "公式の上映枠終了（イベント等を含む）",
+    "eventLabel": ""
+  },
+  {
+    "id": "tiff-2025-act-3643",
+    "filmId": "38004GLS08",
+    "venueId": "tiff-2025-venue-6",
+    "startAt": "2025-11-04T14:15:00+09:00",
+    "endAt": "2025-11-04T16:30:00+09:00",
+    "sourceUrl": "https://2025.tiff-jp.net/ja/lineup/film/38004GLS08",
+    "timingNote": "公式の上映枠終了（イベント等を含む）",
+    "eventLabel": ""
+  },
+  {
+    "id": "tiff-2025-act-3684",
+    "filmId": "38004GLS10",
+    "venueId": "tiff-2025-venue-21",
+    "startAt": "2025-11-04T14:50:00+09:00",
+    "endAt": "2025-11-04T16:24:00+09:00",
+    "sourceUrl": "https://2025.tiff-jp.net/ja/lineup/film/38004GLS10",
+    "timingNote": "公式の上映枠終了（イベント等を含む）",
+    "eventLabel": ""
+  },
+  {
+    "id": "tiff-2025-act-3812",
+    "filmId": "38018ODS15",
+    "venueId": "tiff-2025-venue-12",
+    "startAt": "2025-11-04T15:30:00+09:00",
+    "endAt": "2025-11-04T18:30:00+09:00",
+    "sourceUrl": "https://2025.tiff-jp.net/ja/lineup/film/38018ODS15",
+    "timingNote": "公式の上映枠終了（イベント等を含む）",
+    "eventLabel": ""
+  },
+  {
+    "id": "tiff-2025-act-3662",
+    "filmId": "38005WFC10",
+    "venueId": "tiff-2025-venue-34",
+    "startAt": "2025-11-04T16:00:00+09:00",
+    "endAt": "2025-11-04T17:38:00+09:00",
+    "sourceUrl": "https://2025.tiff-jp.net/ja/lineup/film/38005WFC10",
+    "timingNote": "公式の上映枠終了（イベント等を含む）",
+    "eventLabel": ""
+  },
+  {
+    "id": "tiff-2025-act-3763",
+    "filmId": "38002CMP02",
+    "venueId": "tiff-2025-venue-25",
+    "startAt": "2025-11-04T16:05:00+09:00",
+    "endAt": "2025-11-04T18:33:00+09:00",
+    "sourceUrl": "https://2025.tiff-jp.net/ja/lineup/film/38002CMP02",
+    "timingNote": "公式の上映枠終了（イベント等を含む）",
+    "eventLabel": "舞台挨拶・Q&A"
+  },
+  {
+    "id": "tiff-2025-act-3544",
+    "filmId": "38003ASF07",
+    "venueId": "tiff-2025-venue-8",
+    "startAt": "2025-11-04T16:30:00+09:00",
+    "endAt": "2025-11-04T18:20:00+09:00",
+    "sourceUrl": "https://2025.tiff-jp.net/ja/lineup/film/38003ASF07",
+    "timingNote": "公式の上映枠終了（イベント等を含む）",
+    "eventLabel": "Q&A"
+  },
+  {
+    "id": "tiff-2025-act-3579",
+    "filmId": "38007ANM06",
+    "venueId": "tiff-2025-venue-9",
+    "startAt": "2025-11-04T16:50:00+09:00",
+    "endAt": "2025-11-04T19:14:00+09:00",
+    "sourceUrl": "https://2025.tiff-jp.net/ja/lineup/film/38007ANM06",
+    "timingNote": "公式の上映枠終了（イベント等を含む）",
+    "eventLabel": ""
+  },
+  {
+    "id": "tiff-2025-act-3736",
+    "filmId": "38006NCN09",
+    "venueId": "tiff-2025-venue-19",
+    "startAt": "2025-11-04T16:55:00+09:00",
+    "endAt": "2025-11-04T19:43:00+09:00",
+    "sourceUrl": "https://2025.tiff-jp.net/ja/lineup/film/38006NCN09",
+    "timingNote": "公式の上映枠終了（イベント等を含む）",
+    "eventLabel": "Q&A"
+  },
+  {
+    "id": "tiff-2025-act-3628",
+    "filmId": "38005WFC01",
+    "venueId": "tiff-2025-venue-5",
+    "startAt": "2025-11-04T17:10:00+09:00",
+    "endAt": "2025-11-04T19:34:00+09:00",
+    "sourceUrl": "https://2025.tiff-jp.net/ja/lineup/film/38005WFC01",
+    "timingNote": "公式の上映枠終了（イベント等を含む）",
+    "eventLabel": "Q&A"
+  },
+  {
+    "id": "tiff-2025-act-3651",
+    "filmId": "38005WFC05",
+    "venueId": "tiff-2025-venue-33",
+    "startAt": "2025-11-04T18:05:00+09:00",
+    "endAt": "2025-11-04T20:49:00+09:00",
+    "sourceUrl": "https://2025.tiff-jp.net/ja/lineup/film/38005WFC05",
+    "timingNote": "公式の上映枠終了（イベント等を含む）",
+    "eventLabel": ""
+  },
+  {
+    "id": "tiff-2025-act-3644",
+    "filmId": "38004GLS05",
+    "venueId": "tiff-2025-venue-6",
+    "startAt": "2025-11-04T18:15:00+09:00",
+    "endAt": "2025-11-04T19:47:00+09:00",
+    "sourceUrl": "https://2025.tiff-jp.net/ja/lineup/film/38004GLS05",
+    "timingNote": "公式の上映枠終了（イベント等を含む）",
+    "eventLabel": ""
+  },
+  {
+    "id": "tiff-2025-act-3813",
+    "filmId": "38018ODS09",
+    "venueId": "tiff-2025-venue-12",
+    "startAt": "2025-11-04T18:30:00+09:00",
+    "endAt": "2025-11-04T20:40:00+09:00",
+    "sourceUrl": "https://2025.tiff-jp.net/ja/lineup/film/38018ODS09",
+    "timingNote": "公式の上映枠終了（イベント等を含む）",
+    "eventLabel": ""
+  },
+  {
+    "id": "tiff-2025-act-3685",
+    "filmId": "38002CMP15",
+    "venueId": "tiff-2025-venue-21",
+    "startAt": "2025-11-04T18:45:00+09:00",
+    "endAt": "2025-11-04T20:12:00+09:00",
+    "sourceUrl": "https://2025.tiff-jp.net/ja/lineup/film/38002CMP15",
+    "timingNote": "公式の上映枠終了（イベント等を含む）",
+    "eventLabel": ""
+  },
+  {
+    "id": "tiff-2025-act-3663",
+    "filmId": "38011WEP04",
+    "venueId": "tiff-2025-venue-34",
+    "startAt": "2025-11-04T19:10:00+09:00",
+    "endAt": "2025-11-04T20:41:00+09:00",
+    "sourceUrl": "https://2025.tiff-jp.net/ja/lineup/film/38011WEP04",
+    "timingNote": "公式の上映枠終了（イベント等を含む）",
+    "eventLabel": ""
+  },
+  {
+    "id": "tiff-2025-act-3545",
+    "filmId": "38005WFC12",
+    "venueId": "tiff-2025-venue-8",
+    "startAt": "2025-11-04T19:15:00+09:00",
+    "endAt": "2025-11-04T21:53:00+09:00",
+    "sourceUrl": "https://2025.tiff-jp.net/ja/lineup/film/38005WFC12",
+    "timingNote": "公式の上映枠終了（イベント等を含む）",
+    "eventLabel": ""
+  },
+  {
+    "id": "tiff-2025-act-3764",
+    "filmId": "38004GLS01",
+    "venueId": "tiff-2025-venue-25",
+    "startAt": "2025-11-04T19:50:00+09:00",
+    "endAt": "2025-11-04T22:06:00+09:00",
+    "sourceUrl": "https://2025.tiff-jp.net/ja/lineup/film/38004GLS01",
+    "timingNote": "公式の上映枠終了（イベント等を含む）",
+    "eventLabel": "舞台挨拶"
+  },
+  {
+    "id": "tiff-2025-act-3580",
+    "filmId": "38011WEP05",
+    "venueId": "tiff-2025-venue-9",
+    "startAt": "2025-11-04T20:10:00+09:00",
+    "endAt": "2025-11-04T22:37:00+09:00",
+    "sourceUrl": "https://2025.tiff-jp.net/ja/lineup/film/38011WEP05",
+    "timingNote": "公式の上映枠終了（イベント等を含む）",
+    "eventLabel": ""
+  },
+  {
+    "id": "tiff-2025-act-3737",
+    "filmId": "38008CLA04",
+    "venueId": "tiff-2025-venue-19",
+    "startAt": "2025-11-04T20:35:00+09:00",
+    "endAt": "2025-11-04T22:11:00+09:00",
+    "sourceUrl": "https://2025.tiff-jp.net/ja/lineup/film/38008CLA04",
+    "timingNote": "公式の上映枠終了（イベント等を含む）",
+    "eventLabel": ""
+  },
+  {
+    "id": "tiff-2025-act-3629",
+    "filmId": "38002CMP04",
+    "venueId": "tiff-2025-venue-5",
+    "startAt": "2025-11-04T20:40:00+09:00",
+    "endAt": "2025-11-04T22:57:00+09:00",
+    "sourceUrl": "https://2025.tiff-jp.net/ja/lineup/film/38002CMP04",
+    "timingNote": "公式の上映枠終了（イベント等を含む）",
+    "eventLabel": "Q&A"
+  },
+  {
+    "id": "tiff-2025-act-3645",
+    "filmId": "38005WFC17",
+    "venueId": "tiff-2025-venue-6",
+    "startAt": "2025-11-04T21:00:00+09:00",
+    "endAt": "2025-11-04T22:50:00+09:00",
+    "sourceUrl": "https://2025.tiff-jp.net/ja/lineup/film/38005WFC17",
+    "timingNote": "公式終了時刻の不整合を本編時間で補正",
+    "eventLabel": ""
+  },
+  {
+    "id": "tiff-2025-act-3686",
+    "filmId": "38002CMP11",
+    "venueId": "tiff-2025-venue-21",
+    "startAt": "2025-11-04T21:05:00+09:00",
+    "endAt": "2025-11-04T23:07:00+09:00",
+    "sourceUrl": "https://2025.tiff-jp.net/ja/lineup/film/38002CMP11",
+    "timingNote": "公式終了時刻の不整合を本編時間で補正",
+    "eventLabel": ""
+  },
+  {
+    "id": "tiff-2025-act-3652",
+    "filmId": "38011WEP01",
+    "venueId": "tiff-2025-venue-33",
+    "startAt": "2025-11-05T10:20:00+09:00",
+    "endAt": "2025-11-05T11:59:00+09:00",
+    "sourceUrl": "https://2025.tiff-jp.net/ja/lineup/film/38011WEP01",
+    "timingNote": "公式の上映枠終了（イベント等を含む）",
+    "eventLabel": ""
+  },
+  {
+    "id": "tiff-2025-act-3546",
+    "filmId": "38005WFC14",
+    "venueId": "tiff-2025-venue-8",
+    "startAt": "2025-11-05T10:50:00+09:00",
+    "endAt": "2025-11-05T12:10:00+09:00",
+    "sourceUrl": "https://2025.tiff-jp.net/ja/lineup/film/38005WFC14",
+    "timingNote": "公式の上映枠終了（イベント等を含む）",
+    "eventLabel": ""
+  },
+  {
+    "id": "tiff-2025-act-3664",
+    "filmId": "38007ANM01",
+    "venueId": "tiff-2025-venue-34",
+    "startAt": "2025-11-05T11:00:00+09:00",
+    "endAt": "2025-11-05T12:23:00+09:00",
+    "sourceUrl": "https://2025.tiff-jp.net/ja/lineup/film/38007ANM01",
+    "timingNote": "公式の上映枠終了（イベント等を含む）",
+    "eventLabel": ""
+  },
+  {
+    "id": "tiff-2025-act-3687",
+    "filmId": "38004GLS01",
+    "venueId": "tiff-2025-venue-21",
+    "startAt": "2025-11-05T11:00:00+09:00",
+    "endAt": "2025-11-05T12:46:00+09:00",
+    "sourceUrl": "https://2025.tiff-jp.net/ja/lineup/film/38004GLS01",
+    "timingNote": "公式の上映枠終了（イベント等を含む）",
+    "eventLabel": ""
+  },
+  {
+    "id": "tiff-2025-act-3581",
+    "filmId": "38007ANM04",
+    "venueId": "tiff-2025-venue-9",
+    "startAt": "2025-11-05T12:50:00+09:00",
+    "endAt": "2025-11-05T14:25:00+09:00",
+    "sourceUrl": "https://2025.tiff-jp.net/ja/lineup/film/38007ANM04",
+    "timingNote": "公式の上映枠終了（イベント等を含む）",
+    "eventLabel": ""
+  },
+  {
+    "id": "tiff-2025-act-3653",
+    "filmId": "38005WFC16",
+    "venueId": "tiff-2025-venue-33",
+    "startAt": "2025-11-05T13:00:00+09:00",
+    "endAt": "2025-11-05T14:40:00+09:00",
+    "sourceUrl": "https://2025.tiff-jp.net/ja/lineup/film/38005WFC16",
+    "timingNote": "公式の上映枠終了（イベント等を含む）",
+    "eventLabel": ""
+  },
+  {
+    "id": "tiff-2025-act-3738",
+    "filmId": "38004GLS09",
+    "venueId": "tiff-2025-venue-19",
+    "startAt": "2025-11-05T13:00:00+09:00",
+    "endAt": "2025-11-05T14:50:00+09:00",
+    "sourceUrl": "https://2025.tiff-jp.net/ja/lineup/film/38004GLS09",
+    "timingNote": "公式の上映枠終了（イベント等を含む）",
+    "eventLabel": ""
+  },
+  {
+    "id": "tiff-2025-act-3814",
+    "filmId": "38018ODS10",
+    "venueId": "tiff-2025-venue-12",
+    "startAt": "2025-11-05T13:00:00+09:00",
+    "endAt": "2025-11-05T15:30:00+09:00",
+    "sourceUrl": "https://2025.tiff-jp.net/ja/lineup/film/38018ODS10",
+    "timingNote": "公式の上映枠終了（イベント等を含む）",
+    "eventLabel": ""
+  },
+  {
+    "id": "tiff-2025-act-3547",
+    "filmId": "38005WFC08",
+    "venueId": "tiff-2025-venue-8",
+    "startAt": "2025-11-05T13:15:00+09:00",
+    "endAt": "2025-11-05T15:21:00+09:00",
+    "sourceUrl": "https://2025.tiff-jp.net/ja/lineup/film/38005WFC08",
+    "timingNote": "公式の上映枠終了（イベント等を含む）",
+    "eventLabel": ""
+  },
+  {
+    "id": "tiff-2025-act-3665",
+    "filmId": "38009YUT03",
+    "venueId": "tiff-2025-venue-34",
+    "startAt": "2025-11-05T14:00:00+09:00",
+    "endAt": "2025-11-05T15:46:00+09:00",
+    "sourceUrl": "https://2025.tiff-jp.net/ja/lineup/film/38009YUT03",
+    "timingNote": "公式の上映枠終了（イベント等を含む）",
+    "eventLabel": ""
+  },
+  {
+    "id": "tiff-2025-act-3582",
+    "filmId": "38005WFC03",
+    "venueId": "tiff-2025-venue-9",
+    "startAt": "2025-11-05T15:30:00+09:00",
+    "endAt": "2025-11-05T17:39:00+09:00",
+    "sourceUrl": "https://2025.tiff-jp.net/ja/lineup/film/38005WFC03",
+    "timingNote": "公式の上映枠終了（イベント等を含む）",
+    "eventLabel": ""
+  },
+  {
+    "id": "tiff-2025-act-3688",
+    "filmId": "38004GLS12",
+    "venueId": "tiff-2025-venue-21",
+    "startAt": "2025-11-05T15:30:00+09:00",
+    "endAt": "2025-11-05T17:35:00+09:00",
+    "sourceUrl": "https://2025.tiff-jp.net/ja/lineup/film/38004GLS12",
+    "timingNote": "公式の上映枠終了（イベント等を含む）",
+    "eventLabel": ""
+  },
+  {
+    "id": "tiff-2025-act-3815",
+    "filmId": "38018ODS12",
+    "venueId": "tiff-2025-venue-12",
+    "startAt": "2025-11-05T15:30:00+09:00",
+    "endAt": "2025-11-05T18:00:00+09:00",
+    "sourceUrl": "https://2025.tiff-jp.net/ja/lineup/film/38018ODS12",
+    "timingNote": "公式の上映枠終了（イベント等を含む）",
+    "eventLabel": ""
+  },
+  {
+    "id": "tiff-2025-act-3654",
+    "filmId": "38005WFC15",
+    "venueId": "tiff-2025-venue-33",
+    "startAt": "2025-11-05T15:40:00+09:00",
+    "endAt": "2025-11-05T17:50:00+09:00",
+    "sourceUrl": "https://2025.tiff-jp.net/ja/lineup/film/38005WFC15",
+    "timingNote": "公式の上映枠終了（イベント等を含む）",
+    "eventLabel": ""
+  },
+  {
+    "id": "tiff-2025-act-3739",
+    "filmId": "38010TSR01",
+    "venueId": "tiff-2025-venue-19",
+    "startAt": "2025-11-05T18:00:00+09:00",
+    "endAt": "2025-11-05T19:40:00+09:00",
+    "sourceUrl": "https://2025.tiff-jp.net/ja/lineup/film/38010TSR01",
+    "timingNote": "公式の上映枠終了（イベント等を含む）",
+    "eventLabel": ""
+  },
+  {
+    "id": "tiff-2025-act-3816",
+    "filmId": "38018ODS01",
+    "venueId": "tiff-2025-venue-12",
+    "startAt": "2025-11-05T18:00:00+09:00",
+    "endAt": "2025-11-05T21:00:00+09:00",
+    "sourceUrl": "https://2025.tiff-jp.net/ja/lineup/film/38018ODS01",
+    "timingNote": "公式の上映枠終了（イベント等を含む）",
+    "eventLabel": ""
+  },
+  {
+    "id": "tiff-2025-act-3765",
+    "filmId": "38000TOC02",
+    "venueId": "tiff-2025-venue-25",
+    "startAt": "2025-11-05T19:30:00+09:00",
+    "endAt": "2025-11-05T21:56:00+09:00",
+    "sourceUrl": "https://2025.tiff-jp.net/ja/lineup/film/38000TOC02",
+    "timingNote": "公式の上映枠終了（イベント等を含む）",
+    "eventLabel": ""
   }
 ]

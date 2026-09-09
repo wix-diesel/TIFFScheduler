@@ -1,0 +1,72 @@
+{
+  "sourceUrl": "https://2025.tiff-jp.net/ja/access/",
+  "hub": "JR有楽町駅",
+  "method": "公式会場案内の駅徒歩時間・所在地を参考にJR有楽町駅経由を想定。駅までの徒歩分数を合算し、建物内移動と信号待ち2分を加え5分単位切り上げ。同一建物別スクリーン5分、同一スクリーン0分。最短経路ではなく余裕を持った推定。入退場バッファは別途。",
+  "locations": [
+    {
+      "cinemaIds": [
+        4
+      ],
+      "address": "東京都千代田区有楽町1-1-3 東京宝塚ビル地下",
+      "stationWalkMinutes": 5,
+      "buildingMinutes": 2
+    },
+    {
+      "cinemaIds": [
+        7
+      ],
+      "address": "東京都千代田区有楽町1-2-2",
+      "stationWalkMinutes": 5,
+      "buildingMinutes": 2
+    },
+    {
+      "cinemaIds": [
+        11
+      ],
+      "address": "東京都千代田区有楽町1-1-2 日比谷ステップ広場",
+      "stationWalkMinutes": 5,
+      "buildingMinutes": 0
+    },
+    {
+      "cinemaIds": [
+        18
+      ],
+      "address": "東京都千代田区有楽町1-11-1 読売会館8F",
+      "stationWalkMinutes": 2,
+      "buildingMinutes": 4
+    },
+    {
+      "cinemaIds": [
+        20
+      ],
+      "address": "東京都千代田区有楽町2-7-1 有楽町イトシア・イトシアプラザ4F",
+      "stationWalkMinutes": 1,
+      "buildingMinutes": 3
+    },
+    {
+      "cinemaIds": [
+        22,
+        24
+      ],
+      "address": "東京都千代田区有楽町2-5-1 有楽町マリオン（ピカデリー9F／ヒューリック11F）",
+      "stationWalkMinutes": 3,
+      "buildingMinutes": 5
+    },
+    {
+      "cinemaIds": [
+        32
+      ],
+      "address": "東京都中央区銀座4-4-5 簱ビル",
+      "stationWalkMinutes": 10,
+      "buildingMinutes": 2
+    },
+    {
+      "cinemaIds": [
+        36
+      ],
+      "address": "東京都中央区京橋3-7-6",
+      "stationWalkMinutes": 18,
+      "buildingMinutes": 3
+    }
+  ]
+}

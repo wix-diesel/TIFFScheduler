@@ -18,9 +18,9 @@ export function buildTimeline(plan: SchedulePlan, input: ScheduleInput): Map<str
   })).sort((a,b) => a.filmStart-b.filmStart);
   screenings.forEach(({screening: s, occupancy: [start,end], filmStart, filmEnd},i) => {
     const venue = venueNames.get(s.venueId)!;
-    add({start,end:filmStart,label:'入場・上映前イベント',detail:venue,kind:'buffer'});
-    add({start:filmStart,end:filmEnd,label:filmTitles.get(s.filmId)!,detail:venue,kind:'film'});
-    add({start:filmEnd,end,label:'上映後イベント・退場',detail:venue,kind:'buffer'});
+    add({start,end:filmStart,label:s.eventBeforeMinutes?'入場・上映前イベント':'入場',detail:venue,kind:'buffer'});
+    add({start:filmStart,end:filmEnd,label:filmTitles.get(s.filmId)!,detail:[venue,s.eventLabel,s.timingNote].filter(Boolean).join(' / '),kind:'film'});
+    add({start:filmEnd,end,label:s.eventAfterMinutes?'上映後イベント・退場':'退場',detail:venue,kind:'buffer'});
     const next=screenings[i+1];
     if(next && dateInJapan(end)===dateInJapan(next.occupancy[0])) add({start:end,end:end+travelMinutes(s,next.screening,input),label:'会場移動',detail:`${venue} → ${venueNames.get(next.screening.venueId)!}`,kind:'travel'});
   });
