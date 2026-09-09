@@ -44,3 +44,36 @@ test('invalid lunch settings show an actionable error', async ({ page }) => {
   await expect(page.getByRole('alert')).toContainText('昼食時間帯');
   await expect(page.locator('.plan')).toHaveCount(0);
 });
+
+test('browse a compact catalog and keep selections across pages and filters', async ({ page }) => {
+  await page.goto('./');
+  const cards = page.locator('.film-card');
+  await expect(cards).toHaveCount(12);
+  await expect(cards.first().locator('.screenings')).toBeHidden();
+  const firstTitle = await cards.first().locator('strong').innerText();
+  await cards.first().getByRole('checkbox').check();
+  await page.getByRole('button', { name: '次へ', exact: true }).click();
+  await expect(page.getByLabel('作品一覧のページ番号')).toHaveValue('2');
+  await cards.first().getByRole('checkbox').check();
+  await page.getByRole('button', { name: '選んだ2作品を確認' }).click();
+  await expect(cards).toHaveCount(2);
+  await expect(cards.getByRole('checkbox', { checked: true })).toHaveCount(2);
+  await page.getByRole('searchbox').fill('存在しない作品xyz');
+  await expect(cards).toHaveCount(0);
+  await page.getByRole('button', { name: '選んだ2作品を確認' }).click();
+  await expect(cards).toHaveCount(2);
+  await cards.first().getByRole('checkbox').uncheck();
+  await expect(cards).toHaveCount(1);
+  await page.getByRole('button', { name: '絞り込みを解除' }).click();
+  await expect(cards).toHaveCount(12);
+  await page.getByLabel('上映日で絞り込み').selectOption('2025-10-27');
+  await cards.first().getByText('上映日時・会場を見る', { exact: true }).click();
+  await expect(cards.first().locator('.screenings')).toContainText(/10(?:月|\/)27/);
+  await page.getByRole('button', { name: '絞り込みを解除' }).click();
+  await page.getByLabel('作品一覧のページ番号').selectOption('13');
+  await expect(cards).toHaveCount(5);
+  await expect(page.getByRole('button', { name: '次へ', exact: true })).toBeDisabled();
+  await page.getByRole('searchbox').fill(firstTitle);
+  await expect(cards.first().locator('strong')).toHaveText(firstTitle);
+  expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true);
+});
