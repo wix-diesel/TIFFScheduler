@@ -13,6 +13,15 @@ export function canFollow(a: Screening, b: Screening, input: ScheduleInput): boo
   if (end > start) return false;
   return dateInJapan(end) !== dateInJapan(start) || end + travelMinutes(a, b, input) <= start;
 }
+/** Apply the JST lower bound to the screening and its preceding event only.
+ * The arrival buffer remains part of occupancy, but intentionally not this rule. */
+export function meetsEarliestScreeningStart(screening: Screening, input: ScheduleInput): boolean {
+  const earliest = input.constraints.earliestScreeningStart;
+  if (earliest === undefined) return true;
+  const advertisedStart = minute(screening.startAt);
+  const screeningStart = advertisedStart - (screening.eventBeforeMinutes ?? 0);
+  return screeningStart >= at(dateInJapan(advertisedStart), earliest);
+}
 /** Count each screening by its advertised start date in Japan. */
 export function withinDailyScreeningLimit(screenings: readonly Screening[], input: ScheduleInput): boolean {
   const limit = input.constraints.maxScreeningsPerDay;

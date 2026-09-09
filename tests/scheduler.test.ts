@@ -1,6 +1,6 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { optimizeSchedule, DEFAULT_CONSTRAINTS, canFollow, vacationDate, lunchBreaks, compareScores, scorePlan, withinDailyScreeningLimit } from '../src/scheduler/index.ts';
+import { optimizeSchedule, DEFAULT_CONSTRAINTS, canFollow, vacationDate, lunchBreaks, compareScores, scorePlan, meetsEarliestScreeningStart, withinDailyScreeningLimit } from '../src/scheduler/index.ts';
 import type { ScheduleInput, Screening } from '../src/scheduler/types.ts';
 const time = (clock: string, date = '2026-10-30') => `${date}T${clock}:00+09:00`;
 const screening = (id: string, filmId: string, start: string, end: string, venueId = 'a', date = '2026-10-30'): Screening => ({ id, filmId, venueId, startAt: time(start, date), endAt: time(end, date) });
@@ -27,6 +27,28 @@ test('events before and after are mandatory occupancy', () => {
   const b = { ...screening('b', 'b', '10:45', '11:15'), eventBeforeMinutes: 10 };
   const data = input([a, b]); assert.equal(canFollow(a, b, data), true);
   assert.equal(canFollow(a, { ...b, eventBeforeMinutes: 11 }, data), false);
+});
+test('earliest start uses JST, includes the preceding event and excludes the arrival buffer', () => {
+  const boundary = screening('boundary', 'film', '10:00', '11:00');
+  const data = input([boundary]);
+  data.constraints.earliestScreeningStart = '10:00';
+  assert.equal(meetsEarliestScreeningStart(boundary, data), true);
+  assert.equal(meetsEarliestScreeningStart({ ...boundary, startAt: time('09:59') }, data), false);
+  assert.equal(meetsEarliestScreeningStart({ ...boundary, startAt: time('10:10'), eventBeforeMinutes: 10 }, data), true);
+  assert.equal(meetsEarliestScreeningStart({ ...boundary, startAt: time('10:10'), eventBeforeMinutes: 11 }, data), false);
+  // Even a large arrival buffer is occupancy only and does not reject the screening.
+  data.constraints.arrivalBufferMinutes = 120;
+  assert.equal(meetsEarliestScreeningStart(boundary, data), true);
+  assert.equal(meetsEarliestScreeningStart({ ...boundary, startAt: '2026-10-30T01:00:00Z', endAt: '2026-10-30T02:00:00Z' }, data), true);
+
+  const candidates = input([
+    screening('early', 'film', '09:59', '10:59'),
+    screening('allowed', 'film', '10:00', '11:00'),
+  ]);
+  candidates.constraints.earliestScreeningStart = '10:00';
+  assert.equal(optimizeSchedule(candidates).plans[0]!.screenings[0]!.id, 'allowed');
+  candidates.constraints.earliestScreeningStart = undefined;
+  assert.equal(optimizeSchedule(candidates).plans[0]!.score.missedFilmCount, 0);
 });
 test('vacation uses JST, work interval, weekends, holidays and additional days off', () => {
   const s = screening('a', 'a', '10:00', '11:00'); const data = input([s]);
@@ -108,6 +130,11 @@ test('rejects malformed input instead of silently producing plans', () => {
     (d: ScheduleInput) => { d.constraints.maxScreeningsPerDay = -1; },
     (d: ScheduleInput) => { d.constraints.maxScreeningsPerDay = 1.5; },
     (d: ScheduleInput) => { d.constraints.maxScreeningsPerDay = Infinity; },
+    (d: ScheduleInput) => { d.constraints.earliestScreeningStart = ''; },
+    (d: ScheduleInput) => { d.constraints.earliestScreeningStart = '24:00'; },
+    (d: ScheduleInput) => { d.constraints.latestScreeningEnd = '24:00'; },
+    (d: ScheduleInput) => { d.constraints.earliestScreeningStart = '10:00'; d.constraints.latestScreeningEnd = '10:00'; },
+    (d: ScheduleInput) => { d.constraints.earliestScreeningStart = '10:01'; d.constraints.latestScreeningEnd = '10:00'; },
     (d: ScheduleInput) => { d.constraints.additionalDaysOff = ['2026-02-30']; },
     (d: ScheduleInput) => { d.screenings = [screening('a', 'a', '23:00', '01:00')]; },
     (d: ScheduleInput) => { d.travelTimes = [...d.travelTimes, d.travelTimes[0]!]; },

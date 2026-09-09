@@ -5,6 +5,10 @@ export interface TravelTime { fromVenueId: string; toVenueId: string; minutes: n
 export interface UserConstraints {
   /** Maximum screenings whose start time falls on the same JST date. */
   maxScreeningsPerDay?: number | undefined;
+  /** Earliest screening start including any event before it, as a JST HH:mm clock. */
+  earliestScreeningStart?: string | undefined;
+  /** Reserved for the paired latest-end constraint; undefined means unrestricted. */
+  latestScreeningEnd?: string | undefined;
   workingWeekdays: number[];
   additionalDaysOff: string[];
   unavailableDates: string[];
@@ -32,6 +36,8 @@ export interface SchedulePlan { screenings: Screening[]; missedFilmIds: string[]
 export interface ScheduleResult { plans: SchedulePlan[]; visitedNodes: number }
 export const DEFAULT_CONSTRAINTS: Readonly<UserConstraints> = {
   maxScreeningsPerDay: undefined,
+  earliestScreeningStart: undefined,
+  latestScreeningEnd: undefined,
   workingWeekdays: [1, 2, 3, 4, 5], additionalDaysOff: [], unavailableDates: [],
   workStart: '09:00', workEnd: '18:00', lunchWindowStart: '11:30', lunchWindowEnd: '14:30',
   lunchDurationMinutes: 45, exitBufferMinutes: 5, arrivalBufferMinutes: 10,
