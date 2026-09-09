@@ -9,10 +9,12 @@
   "scripts": {
     "test": "node --test",
     "typecheck": "tsc --noEmit && tsc -p tsconfig.app.json",
-    "build": "npm run typecheck && vite build",
+    "build": "npm run data:check && npm run typecheck && vite build",
     "dev": "vite",
     "preview": "vite preview",
-    "build:core": "tsc"
+    "build:core": "tsc",
+    "data:import": "node scripts/import-tiff.ts",
+    "data:check": "node scripts/import-tiff.ts --check"
   },
   "devDependencies": {
     "@types/react": "^19.2.18",

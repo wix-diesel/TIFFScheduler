@@ -2,13 +2,14 @@
 
 東京国際映画祭の鑑賞スケジュールを、移動・昼食・勤務条件を考慮して最適化します。
 
-現在は **Phase 2: Basic UI** まで実装済みです。作品選択、条件設定、最大3案の生成、日別タイムラインを利用できます。
+現在は **Phase 3: Real TIFF Data** まで実装済みです。2025年の公式データ（149作品・282上映・13会場）で、作品検索・選択、条件設定、最大3案の生成、日別タイムラインを利用できます。
 
-画面の作品・上映・会場・移動時間はすべて架空のサンプルです。実上映データはPhase 3、GitHub Pages公開はPhase 4です。
+2026年の上映情報未公開のため、2025年10月27日〜11月5日を対象にしています。終了はイベント等を含む確保枠、移動時間は保守的な推定です。本編時間不明の企画等35件は除外し、時刻不整合6件を補正しています。11月3日は祝日として計算します。GitHub Pages公開はPhase 4です。
 
 - [全体仕様](SPEC.md)
 - [Phase 1 設計・判断事項](docs/phase1-design.md)
 - [Phase 2 UI設計](docs/phase2-design.md)
+- [Phase 3 データ出典・取り込み・移動時間・制限](docs/phase3-design.md)
 
 ## 開発
 
@@ -19,6 +20,7 @@ npm ci
 npm run dev
 # 表示URL: http://localhost:5173/TIFFScheduler/
 npm test
+npm run data:check
 npm run typecheck
 npm run build
 ```
@@ -50,4 +52,6 @@ console.log(result.plans[0]);
 
 上位3案を未鑑賞数→休暇日数→移動時間→待ち時間で比較します。各案には上映列、見送った作品ID、休暇日付、昼食予約時刻、スコアを含みます。
 日時はオフセット必須で、日付/勤務日は常に日本時間として扱います。
-サンプルは架空データであり、実際のTIFF上映情報ではありません。
+上のコード例は架空データです。アプリは `src/data/` の2025年実データを使用します。
+
+保存済み出典からの再生成は `npm run data:import`。公式レスポンスの手動取り込みは `npm run data:import -- /path/to/official-venues-acts.json`。通常のビルドは公式サイトへ通信しません。

@@ -4,7 +4,7 @@ import { readFileSync } from 'node:fs';
 import { buildTimeline, timeLabel } from '../src/ui/timeline.ts';
 import { optimizeSchedule, DEFAULT_CONSTRAINTS } from '../src/scheduler/index.ts';
 import type { ScheduleInput } from '../src/scheduler/types.ts';
-const read=(name:string)=>JSON.parse(readFileSync(new URL(`../src/data/${name}.json`,import.meta.url),'utf8'));
+const read=(name:string)=>JSON.parse(readFileSync(new URL(`./fixtures/${name}.json`,import.meta.url),'utf8'));
 const input:ScheduleInput={films:read('films'),screenings:read('screenings'),venues:read('venues'),travelTimes:read('travel-times'),holidays:[],constraints:{...DEFAULT_CONSTRAINTS},selectedFilmIds:['f1','f2','f3','f4','f5','f6']};
 test('sample data produces plans with correct ordered, non-overlapping timeline',()=>{
  const result=optimizeSchedule(input);

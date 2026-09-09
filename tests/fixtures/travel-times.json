@@ -1,0 +1,12 @@
+[
+  {
+    "fromVenueId": "a",
+    "toVenueId": "b",
+    "minutes": 15
+  },
+  {
+    "fromVenueId": "b",
+    "toVenueId": "a",
+    "minutes": 15
+  }
+]
