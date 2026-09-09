@@ -14,9 +14,11 @@
     "preview": "vite preview",
     "build:core": "tsc",
     "data:import": "node scripts/import-tiff.ts",
-    "data:check": "node scripts/import-tiff.ts --check"
+    "data:check": "node scripts/import-tiff.ts --check",
+    "test:e2e": "playwright test"
   },
   "devDependencies": {
+    "@playwright/test": "^1.63.0",
     "@types/react": "^19.2.18",
     "@types/react-dom": "^19.2.7",
     "typescript": "~5.9.3",
