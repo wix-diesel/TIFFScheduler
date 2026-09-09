@@ -44,3 +44,69 @@ test('invalid lunch settings show an actionable error', async ({ page }) => {
   await expect(page.getByRole('alert')).toContainText('昼食時間帯');
   await expect(page.locator('.plan')).toHaveCount(0);
 });
+
+test('browse a compact catalog and keep selections across pages and filters', async ({ page }) => {
+  await page.goto('./');
+  const cards = page.locator('.film-card');
+  await expect(cards).toHaveCount(12);
+  await expect(cards.first().locator('.screenings')).toBeHidden();
+  const firstTitle = await cards.first().locator('strong').innerText();
+  await cards.first().getByRole('checkbox').check();
+  await page.getByRole('button', { name: '次へ', exact: true }).click();
+  await expect(page.getByLabel('作品一覧のページ番号')).toHaveValue('2');
+  await cards.first().getByRole('checkbox').check();
+  await page.getByRole('button', { name: '選んだ2作品を確認' }).click();
+  await expect(cards).toHaveCount(2);
+  await expect(cards.getByRole('checkbox', { checked: true })).toHaveCount(2);
+  await page.getByRole('searchbox').fill('存在しない作品xyz');
+  await expect(cards).toHaveCount(0);
+  await page.getByRole('button', { name: '選んだ2作品を確認' }).click();
+  await expect(cards).toHaveCount(2);
+  // Unselecting removes the card immediately; click once and assert the resulting list.
+  await page.getByRole('checkbox', { name: firstTitle, exact: true }).click();
+  await expect(cards).toHaveCount(1);
+  await expect(page.getByRole('checkbox', { name: firstTitle, exact: true })).toHaveCount(0);
+  await page.getByRole('button', { name: '絞り込みを解除' }).click();
+  await expect(cards).toHaveCount(12);
+  await page.getByLabel('上映日で絞り込み').selectOption('2025-10-27');
+  await cards.first().getByText('上映日時・会場を見る', { exact: true }).click();
+  await expect(cards.first().locator('.screenings')).toContainText(/10(?:月|\/)27/);
+  await page.getByRole('button', { name: '絞り込みを解除' }).click();
+  await page.getByLabel('作品一覧のページ番号').selectOption('13');
+  await expect(cards).toHaveCount(5);
+  await expect(page.getByRole('button', { name: '次へ', exact: true })).toBeDisabled();
+  await page.getByRole('searchbox').fill(firstTitle);
+  await expect(cards.first().locator('strong')).toHaveText(firstTitle);
+  expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true);
+});
+
+test('combine department, title and date filters without losing selected films', async ({ page }) => {
+  await page.goto('./');
+  const cards = page.locator('.film-card');
+  await page.getByLabel('部門で絞り込み').selectOption('コンペティション');
+  await expect(cards).toHaveCount(12);
+  await expect(page.getByRole('status')).toContainText('15作品中');
+  const title = await cards.first().locator('strong').innerText();
+  await cards.first().getByRole('checkbox').check();
+  await page.getByRole('button', { name: '次へ', exact: true }).click();
+  await expect(cards).toHaveCount(3);
+  for (const card of await cards.all()) await expect(card.locator('.film-department')).toHaveText('コンペティション');
+  await page.getByRole('searchbox').fill(title);
+  await expect(cards).toHaveCount(1);
+  await expect(cards.first().getByRole('checkbox')).toBeChecked();
+  await page.getByLabel('部門で絞り込み').selectOption('アニメーション');
+  await expect(cards).toHaveCount(0);
+  await page.getByRole('button', { name: '選んだ1作品を確認' }).click();
+  await expect(page.getByLabel('部門で絞り込み')).toHaveValue('');
+  await expect(cards.first().locator('strong')).toHaveText(title);
+  await page.getByRole('button', { name: '絞り込みを解除' }).click();
+  await page.getByLabel('部門で絞り込み').selectOption('ワールド・フォーカス');
+  await page.getByLabel('上映日で絞り込み').selectOption('2025-10-27');
+  await expect(cards.first()).toBeVisible();
+  for (const card of await cards.all()) {
+    await expect(card.locator('.film-department')).toHaveText('ワールド・フォーカス');
+    await card.getByText('上映日時・会場を見る', { exact: true }).click();
+    await expect(card.locator('.screenings')).toContainText(/10(?:月|\/)27/);
+  }
+  expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true);
+});
