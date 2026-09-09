@@ -47,6 +47,7 @@ export function buildDataset(source: Source, travel: TravelConfig) {
   const screenings: Screening[] = [];
   const excluded: Issue[] = [], corrections: Issue[] = [];
   const ids = new Set<number>();
+  const departmentMap = new Map(departmentSource.departments.map(d => [d.id, d.name]));
   for (const a of source.acts) {
     if (!Number.isSafeInteger(a.id) || ids.has(a.id)) throw new Error(`Duplicate/invalid act ID ${a.id}`);
     ids.add(a.id);
@@ -64,7 +65,7 @@ export function buildDataset(source: Source, travel: TravelConfig) {
     const endAt = new Date(endMs + 9 * 3600_000).toISOString().slice(0,19) + '+09:00';
     if (endAt.slice(0,10) !== a.date) { skip('日跨ぎ上映はコア未対応'); continue; }
     const url = `https://2025.tiff-jp.net/ja/lineup/film/${a.filmId}`;
-    const department = departmentSource.departments.find(d => d.id === a.departmentId)?.name;
+    const department = departmentMap.get(a.departmentId);
     if (!department) throw new Error(`Unknown department ${a.departmentId}`);
     const existing = films.get(a.filmId);
     if (existing && (existing.title !== a.title || existing.durationMinutes !== duration || existing.department !== department)) throw new Error(`Conflicting film ${a.filmId}`);

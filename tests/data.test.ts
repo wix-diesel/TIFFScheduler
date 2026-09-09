@@ -62,7 +62,7 @@ test('unknown durations remain explicit exclusions; missing routes and duplicate
   assert.throws(()=>projectOfficialData([],source.retrievedAt),/Expected/);
 });
 
-test('every included film retains its official department and conflicting categories fail', () => {
+test('every included film retains its official department and conflicting departments fail', () => {
   const departments = read('../data-sources/departments-2025.json').departments as {id:number;name:string}[];
   for (const film of data.films) {
     const act = source.acts.find(a => a.filmId === film.id)!;
@@ -72,8 +72,10 @@ test('every included film retains its official department and conflicting catego
   const unknown = structuredClone(source);
   unknown.acts[0]!.departmentId = 9999;
   assert.throws(() => buildDataset(unknown, travel), /Unknown department/);
+  // Use a film known to have multiple screenings (filmId '38005WFC16' has 3 acts)
   const conflicting = structuredClone(source);
-  const repeated = conflicting.acts.find(a => a.id !== conflicting.acts[0]!.id && a.filmId === conflicting.acts[0]!.filmId)!;
-  repeated.departmentId = 4;
+  const multiFilmId = '38005WFC16';
+  const acts = conflicting.acts.filter(a => a.filmId === multiFilmId);
+  acts[1]!.departmentId = 4;
   assert.throws(() => buildDataset(conflicting, travel), /Conflicting film/);
 });
