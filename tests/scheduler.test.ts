@@ -1,6 +1,6 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { optimizeSchedule, DEFAULT_CONSTRAINTS, canFollow, vacationDate, lunchBreaks, compareScores, scorePlan } from '../src/scheduler/index.ts';
+import { optimizeSchedule, DEFAULT_CONSTRAINTS, canFollow, vacationDate, lunchBreaks, compareScores, scorePlan, withinDailyScreeningLimit } from '../src/scheduler/index.ts';
 import type { ScheduleInput, Screening } from '../src/scheduler/types.ts';
 const time = (clock: string, date = '2026-10-30') => `${date}T${clock}:00+09:00`;
 const screening = (id: string, filmId: string, start: string, end: string, venueId = 'a', date = '2026-10-30'): Screening => ({ id, filmId, venueId, startAt: time(start, date), endAt: time(end, date) });
@@ -76,6 +76,27 @@ test('maximum-cardinality alternatives, missing candidates, deterministic top th
   assert.equal(optimizeSchedule(data).plans[0]!.score.missedFilmCount, 4);
   data.selectedFilmIds = []; assert.deepEqual(optimizeSchedule(data).plans, []);
 });
+test('limits screenings per JST start date and keeps maximum-cardinality alternatives', () => {
+  const sameDay = input([
+    screening('a', 'a', '09:00', '10:00'),
+    screening('b', 'b', '10:30', '11:30'),
+    screening('c', 'c', '15:00', '16:00'),
+  ]);
+  sameDay.constraints.maxScreeningsPerDay = 2;
+  const alternatives = optimizeSchedule(sameDay).plans;
+  assert.ok(alternatives.every(plan => plan.screenings.length === 2 && plan.missedFilmIds.length === 1));
+  assert.ok(alternatives.every(plan => withinDailyScreeningLimit(plan.screenings, sameDay)));
+
+  sameDay.screenings = [...sameDay.screenings, screening('c-next', 'c', '09:00', '10:00', 'a', '2026-10-31')];
+  assert.equal(optimizeSchedule(sameDay).plans[0]!.score.missedFilmCount, 0);
+
+  const boundary = input([
+    { ...screening('utc', 'utc', '00:30', '01:30'), startAt: '2026-10-30T15:30:00Z', endAt: '2026-10-30T16:30:00Z' },
+    screening('jst', 'jst', '02:00', '03:00', 'a', '2026-10-31'),
+  ]);
+  boundary.constraints.maxScreeningsPerDay = 1;
+  assert.equal(optimizeSchedule(boundary).plans[0]!.screenings.length, 1);
+});
 test('rejects malformed input instead of silently producing plans', () => {
   const base = input([screening('a', 'a', '09:00', '10:00')]);
   for (const mutate of [
@@ -83,10 +104,16 @@ test('rejects malformed input instead of silently producing plans', () => {
     (d: ScheduleInput) => { d.selectedFilmIds = ['a', 'a']; },
     (d: ScheduleInput) => { d.screenings = [{ ...d.screenings[0]!, startAt: '2026-10-30T09:00:00' }]; },
     (d: ScheduleInput) => { d.constraints.arrivalBufferMinutes = -1; },
+    (d: ScheduleInput) => { d.constraints.maxScreeningsPerDay = 0; },
+    (d: ScheduleInput) => { d.constraints.maxScreeningsPerDay = -1; },
+    (d: ScheduleInput) => { d.constraints.maxScreeningsPerDay = 1.5; },
+    (d: ScheduleInput) => { d.constraints.maxScreeningsPerDay = Infinity; },
     (d: ScheduleInput) => { d.constraints.additionalDaysOff = ['2026-02-30']; },
     (d: ScheduleInput) => { d.screenings = [screening('a', 'a', '23:00', '01:00')]; },
     (d: ScheduleInput) => { d.travelTimes = [...d.travelTimes, d.travelTimes[0]!]; },
   ]) { const d = structuredClone(base); mutate(d); assert.throws(() => optimizeSchedule(d), /Invalid schedule input/); }
+  base.constraints.maxScreeningsPerDay = base.selectedFilmIds.length + 1;
+  assert.equal(optimizeSchedule(base).plans[0]!.score.missedFilmCount, 0);
   assert.throws(() => optimizeSchedule(base, 4));
 });
 test('waiting excludes the reserved lunch and movement', () => {
@@ -105,6 +132,7 @@ test('branch and bound matches exhaustive top-three enumeration for 40 seeded ca
       screenings.push(screening(`${f}-${c}`, `${f}`, `${hour}`.padStart(2, '0') + ':00', `${hour + 1}`.padStart(2, '0') + ':00', random(2) ? 'a' : 'b', date));
     }
     const data = input(screenings), all: ReturnType<typeof scorePlan>[] = [];
+    data.constraints.maxScreeningsPerDay = 1 + random(2);
     function enumerate(i: number, chosen: Screening[]) {
       if (i < data.selectedFilmIds.length) {
         enumerate(i + 1, chosen);
@@ -112,6 +140,7 @@ test('branch and bound matches exhaustive top-three enumeration for 40 seeded ca
         return;
       }
       chosen.sort((a, b) => Date.parse(a.startAt) - Date.parse(b.startAt) || a.id.localeCompare(b.id));
+      if (!withinDailyScreeningLimit(chosen, data)) return;
       if (!chosen.every((s, j) => j === 0 || canFollow(chosen[j - 1]!, s, data))) return;
       const lunches = lunchBreaks(chosen, data); if (lunches) all.push(scorePlan(chosen, lunches, data));
     }
