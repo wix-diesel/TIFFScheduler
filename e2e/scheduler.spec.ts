@@ -77,3 +77,34 @@ test('browse a compact catalog and keep selections across pages and filters', as
   await expect(cards.first().locator('strong')).toHaveText(firstTitle);
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true);
 });
+
+test('combine department, title and date filters without losing selected films', async ({ page }) => {
+  await page.goto('./');
+  const cards = page.locator('.film-card');
+  await page.getByLabel('部門で絞り込み').selectOption('コンペティション');
+  await expect(cards).toHaveCount(12);
+  await expect(page.getByRole('status')).toContainText('15作品中');
+  const title = await cards.first().locator('strong').innerText();
+  await cards.first().getByRole('checkbox').check();
+  await page.getByRole('button', { name: '次へ', exact: true }).click();
+  await expect(cards).toHaveCount(3);
+  for (const card of await cards.all()) await expect(card.locator('.film-department')).toHaveText('コンペティション');
+  await page.getByRole('searchbox').fill(title);
+  await expect(cards).toHaveCount(1);
+  await expect(cards.first().getByRole('checkbox')).toBeChecked();
+  await page.getByLabel('部門で絞り込み').selectOption('アニメーション');
+  await expect(cards).toHaveCount(0);
+  await page.getByRole('button', { name: '選んだ1作品を確認' }).click();
+  await expect(page.getByLabel('部門で絞り込み')).toHaveValue('');
+  await expect(cards.first().locator('strong')).toHaveText(title);
+  await page.getByRole('button', { name: '絞り込みを解除' }).click();
+  await page.getByLabel('部門で絞り込み').selectOption('ワールド・フォーカス');
+  await page.getByLabel('上映日で絞り込み').selectOption('2025-10-27');
+  await expect(cards.first()).toBeVisible();
+  for (const card of await cards.all()) {
+    await expect(card.locator('.film-department')).toHaveText('ワールド・フォーカス');
+    await card.getByText('上映日時・会場を見る', { exact: true }).click();
+    await expect(card.locator('.screenings')).toContainText(/10(?:月|\/)27/);
+  }
+  expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true);
+});

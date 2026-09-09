@@ -1,3 +1,4 @@
+import departmentSource from '../data-sources/departments-2025.json' with { type: 'json' };
 import type { Film, Screening, Venue, TravelTime } from '../src/scheduler/types.ts';
 import { DEFAULT_CONSTRAINTS } from '../src/scheduler/types.ts';
 import { validateInput } from '../src/scheduler/validation.ts';
@@ -63,9 +64,11 @@ export function buildDataset(source: Source, travel: TravelConfig) {
     const endAt = new Date(endMs + 9 * 3600_000).toISOString().slice(0,19) + '+09:00';
     if (endAt.slice(0,10) !== a.date) { skip('日跨ぎ上映はコア未対応'); continue; }
     const url = `https://2025.tiff-jp.net/ja/lineup/film/${a.filmId}`;
+    const department = departmentSource.departments.find(d => d.id === a.departmentId)?.name;
+    if (!department) throw new Error(`Unknown department ${a.departmentId}`);
     const existing = films.get(a.filmId);
-    if (existing && (existing.title !== a.title || existing.durationMinutes !== duration)) throw new Error(`Conflicting film ${a.filmId}`);
-    films.set(a.filmId, {id:a.filmId, title:a.title, durationMinutes:duration, url});
+    if (existing && (existing.title !== a.title || existing.durationMinutes !== duration || existing.department !== department)) throw new Error(`Conflicting film ${a.filmId}`);
+    films.set(a.filmId, {id:a.filmId, title:a.title, durationMinutes:duration, department, url});
     const venueId = `tiff-2025-venue-${a.venueId}`;
     const location = travel.locations.find(l=>l.cinemaIds.includes(a.cinemaId));
     if (!location) throw new Error(`Missing travel location for cinema ${a.cinemaId}`);

@@ -1,4 +1,4 @@
-export interface Film { id: string; title: string; originalTitle?: string; durationMinutes: number; url?: string }
+export interface Film { id: string; title: string; originalTitle?: string; department?: string; durationMinutes: number; url?: string }
 export interface Screening { id: string; filmId: string; venueId: string; startAt: string; endAt: string; eventBeforeMinutes?: number; eventAfterMinutes?: number; sourceUrl?: string; timingNote?: string; eventLabel?: string }
 export interface Venue { id: string; name: string; address?: string }
 export interface TravelTime { fromVenueId: string; toVenueId: string; minutes: number }

@@ -61,3 +61,19 @@ test('unknown durations remain explicit exclusions; missing routes and duplicate
   assert.throws(()=>validateDataset(broken),/reference/);
   assert.throws(()=>projectOfficialData([],source.retrievedAt),/Expected/);
 });
+
+test('every included film retains its official department and conflicting categories fail', () => {
+  const departments = read('../data-sources/departments-2025.json').departments as {id:number;name:string}[];
+  for (const film of data.films) {
+    const act = source.acts.find(a => a.filmId === film.id)!;
+    assert.equal(film.department, departments.find(d => d.id === act.departmentId)!.name);
+  }
+  assert.equal(data.films.filter(f => f.department === 'コンペティション').length, 15);
+  const unknown = structuredClone(source);
+  unknown.acts[0]!.departmentId = 9999;
+  assert.throws(() => buildDataset(unknown, travel), /Unknown department/);
+  const conflicting = structuredClone(source);
+  const repeated = conflicting.acts.find(a => a.id !== conflicting.acts[0]!.id && a.filmId === conflicting.acts[0]!.filmId)!;
+  repeated.departmentId = 4;
+  assert.throws(() => buildDataset(conflicting, travel), /Conflicting film/);
+});
