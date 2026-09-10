@@ -23,10 +23,12 @@ function constraints(value: unknown): UserConstraints {
   assert(Array.isArray(c.workingWeekdays) && c.workingWeekdays.every(x => natural(x) && x <= 6));
   assert(strings(c.additionalDaysOff) && c.additionalDaysOff.every(date));
   assert(strings(c.unavailableDates) && c.unavailableDates.every(date));
+  assert(strings(c.afternoonLeaveDates) && c.afternoonLeaveDates.every(date));
   assert(c.maxScreeningsPerDay === undefined || (natural(c.maxScreeningsPerDay) && c.maxScreeningsPerDay > 0));
   // Drafts can have temporarily inconsistent windows, but never invalid types.
   for (const x of [c.workStart,c.workEnd,c.lunchWindowStart,c.lunchWindowEnd]) assert(typeof x === 'string' && (x === '' || /^([01]\d|2[0-3]):[0-5]\d$/.test(x)));
   for (const x of [c.earliestScreeningStart,c.latestScreeningEnd]) assert(x === undefined || (typeof x === 'string' && /^([01]\d|2[0-3]):[0-5]\d$/.test(x)));
+  assert(typeof c.afternoonLeaveStart === 'string' && /^([01]\d|2[0-3]):[0-5]\d$/.test(c.afternoonLeaveStart));
   for (const x of [c.lunchDurationMinutes,c.exitBufferMinutes,c.arrivalBufferMinutes]) assert(typeof x === 'number' && Number.isFinite(x));
   return c;
 }
@@ -41,12 +43,16 @@ function snapshot(value: unknown): Snapshot {
   for (const p of s.result.plans) {
     assert(object(p) && Array.isArray(p.screenings) && strings(p.missedFilmIds) && strings(p.vacationDates));
     assert(p.missedFilmIds.every(id => s.input.films.some(f => f.id === id)) && p.vacationDates.every(date));
+    if (!Array.isArray(p.vacationDetails)) p.vacationDetails = p.vacationDates.map(date => ({ date, kind: 'full', units: 2 }));
+    assert(p.vacationDetails.every(detail => object(detail) && date(detail.date) && (detail.kind === 'full' || detail.kind === 'afternoon') && (detail.units === 1 || detail.units === 2)));
     assert(p.screenings.every(screening => object(screening) && screeningsById.get(screening.id) === JSON.stringify(screening)));
     assert(Array.isArray(p.lunches) && p.lunches.every(l => object(l) && date(l.date) && timestamp(l.startAt) && timestamp(l.endAt) && l.startAt < l.endAt));
     // Backfill scores saved before screeningDays was added to the ranking.
-    const score = p.score as ScheduleScore & { screeningDays?: unknown };
+    const score = p.score as ScheduleScore & { screeningDays?: unknown; vacationUnits?: unknown };
     if (score.screeningDays === undefined) score.screeningDays = new Set(p.screenings.map(screening => dateInJapan(minute(screening.startAt)))).size;
-    assert(object(score) && [score.missedFilmCount,score.vacationDays,score.screeningDays,score.travelMinutes,score.waitingMinutes].every(natural));
+    if (score.vacationUnits === undefined && typeof score.vacationDays === 'number') score.vacationUnits = score.vacationDays * 2;
+    if (score.vacationDays === undefined && typeof score.vacationUnits === 'number') score.vacationDays = score.vacationUnits / 2;
+    assert(object(score) && natural(score.missedFilmCount) && natural(score.vacationUnits) && typeof score.vacationDays === 'number' && Number.isFinite(score.vacationDays) && score.vacationDays >= 0 && natural(score.screeningDays) && natural(score.travelMinutes) && natural(score.waitingMinutes));
   }
   return s;
 }

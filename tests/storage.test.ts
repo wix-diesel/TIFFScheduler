@@ -27,6 +27,14 @@ test('missing settings migrate to defaults',()=>{
  const restored=decode(JSON.stringify(v),'tiff-2025');
  assert.equal(restored.constraints.workStart,'09:00');assert.equal(restored.constraints.maxScreeningsPerDay,undefined);assert.equal(restored.constraints.earliestScreeningStart,undefined);assert.equal(restored.constraints.latestScreeningEnd,undefined);
 });
+test('old snapshots migrate afternoon settings and leave score details',()=>{
+ const v=structuredClone(state()) as any;
+ delete v.constraints.afternoonLeaveDates;delete v.constraints.afternoonLeaveStart;
+ for(const plan of v.lastResult.result.plans){delete plan.vacationDetails;delete plan.score.vacationUnits;}
+ const restored=decode(JSON.stringify(v),'tiff-2025');
+ assert.deepEqual(restored.constraints.afternoonLeaveDates,[]);assert.equal(restored.constraints.afternoonLeaveStart,'13:00');
+ assert.ok(restored.lastResult!.result.plans.every(plan=>plan.vacationDetails.length===plan.vacationDates.length && plan.score.vacationUnits===plan.score.vacationDays*2));
+});
 test('year isolation and data fingerprint cover timetable and titles',()=>{
  const storage=memory();const a=createRepository('tiff-2025',()=>storage);a.load();a.save(state());
  assert.equal(createRepository('tiff-2026',()=>storage).load().state,null);

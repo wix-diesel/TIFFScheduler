@@ -1,5 +1,5 @@
 import type { ScheduleInput, SchedulePlan, ScheduleResult, Screening } from './types.ts';
-import { canFollow, occupied, vacationDate, lunchBreaks, meetsEarliestScreeningStart, meetsLatestScreeningEnd, withinDailyScreeningLimit } from './constraints.ts';
+import { canFollow, occupied, screeningVacationRequirement, vacationDaysForItinerary, lunchBreaks, meetsEarliestScreeningStart, meetsLatestScreeningEnd, withinDailyScreeningLimit } from './constraints.ts';
 import { compareScores, scorePlan } from './scoring.ts';
 import { validateInput } from './validation.ts';
 const planKey = (plan: SchedulePlan) => JSON.stringify(plan.screenings.map(s => s.id));
@@ -11,8 +11,8 @@ export function optimizeSchedule(input: ScheduleInput, maxPlans = 3): ScheduleRe
   if (!Number.isInteger(maxPlans) || maxPlans < 1 || maxPlans > 3) throw new Error('maxPlans must be 1..3');
   if (!input.selectedFilmIds.length) return { plans: [], visitedNodes: 0 };
   const groups = input.selectedFilmIds.map(id => ({ id, candidates: input.screenings.filter(s => {
-    const vacation = vacationDate(s, input);
-    return s.filmId === id && meetsEarliestScreeningStart(s, input) && meetsLatestScreeningEnd(s, input) && !(vacation && input.constraints.unavailableDates.includes(vacation));
+    const vacation = screeningVacationRequirement(s, input);
+    return s.filmId === id && meetsEarliestScreeningStart(s, input) && meetsLatestScreeningEnd(s, input) && vacation !== null && !(vacation && input.constraints.unavailableDates.includes(vacation.date));
   }).sort((a, b) => occupied(a, input)[0] - occupied(b, input)[0] || lexical(a.id, b.id)) }))
     .sort((a, b) => a.candidates.length - b.candidates.length || lexical(a.id, b.id));
   const plans: SchedulePlan[] = [];
@@ -23,13 +23,19 @@ export function optimizeSchedule(input: ScheduleInput, maxPlans = 3): ScheduleRe
     if (worst) {
       const minimumMissed = index - selected.length;
       if (minimumMissed > worst.score.missedFilmCount) return;
-      const vacationCount = new Set(selected.map(s => vacationDate(s, input)).filter(Boolean)).size;
-      if (minimumMissed === worst.score.missedFilmCount && vacationCount > worst.score.vacationDays) return;
+      const lowerBoundByDate = new Map<string, number>();
+      for (const screening of selected) {
+        const requirement = screeningVacationRequirement(screening, input);
+        if (requirement) lowerBoundByDate.set(requirement.date, Math.max(lowerBoundByDate.get(requirement.date) ?? 0, requirement.units));
+      }
+      const vacationUnits = [...lowerBoundByDate.values()].reduce((sum, units) => sum + units, 0);
+      if (minimumMissed === worst.score.missedFilmCount && vacationUnits > worst.score.vacationUnits) return;
     }
     if (index === groups.length) {
       if (!selected.every((b, i) => i === 0 || canFollow(selected[i - 1]!, b, input))) return;
       const lunches = lunchBreaks(selected, input);
       if (!lunches) return;
+      if (!vacationDaysForItinerary(selected, lunches, input)) return;
       plans.push(scorePlan(selected, lunches, input));
       plans.sort((a, b) => compareScores(a.score, b.score) || lexical(planKey(a), planKey(b)));
       if (plans.length > maxPlans) plans.pop();
