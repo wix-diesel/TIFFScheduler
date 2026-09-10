@@ -1,5 +1,5 @@
 import type { ScheduleInput, SchedulePlan, ScheduleResult, Screening } from './types.ts';
-import { canFollow, occupied, vacationDate, lunchBreaks, withinDailyScreeningLimit } from './constraints.ts';
+import { canFollow, occupied, vacationDate, lunchBreaks, meetsEarliestScreeningStart, withinDailyScreeningLimit } from './constraints.ts';
 import { compareScores, scorePlan } from './scoring.ts';
 import { validateInput } from './validation.ts';
 const planKey = (plan: SchedulePlan) => JSON.stringify(plan.screenings.map(s => s.id));
@@ -12,7 +12,7 @@ export function optimizeSchedule(input: ScheduleInput, maxPlans = 3): ScheduleRe
   if (!input.selectedFilmIds.length) return { plans: [], visitedNodes: 0 };
   const groups = input.selectedFilmIds.map(id => ({ id, candidates: input.screenings.filter(s => {
     const vacation = vacationDate(s, input);
-    return s.filmId === id && !(vacation && input.constraints.unavailableDates.includes(vacation));
+    return s.filmId === id && meetsEarliestScreeningStart(s, input) && !(vacation && input.constraints.unavailableDates.includes(vacation));
   }).sort((a, b) => occupied(a, input)[0] - occupied(b, input)[0] || lexical(a.id, b.id)) }))
     .sort((a, b) => a.candidates.length - b.candidates.length || lexical(a.id, b.id));
   const plans: SchedulePlan[] = [];

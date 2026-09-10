@@ -20,6 +20,9 @@ export function validateInput(input: ScheduleInput): void {
   for (const d of [...c.additionalDaysOff, ...c.unavailableDates, ...input.holidays]) date(d);
   if (c.workingWeekdays.some(d => !Number.isInteger(d) || d < 0 || d > 6)) fail('weekday');
   for (const v of [c.workStart ?? '09:00', c.workEnd ?? '18:00', c.lunchWindowStart, c.lunchWindowEnd]) clock(v);
+  if (c.earliestScreeningStart !== undefined) clock(c.earliestScreeningStart);
+  if (c.latestScreeningEnd !== undefined) clock(c.latestScreeningEnd);
+  if (c.earliestScreeningStart !== undefined && c.latestScreeningEnd !== undefined && c.earliestScreeningStart >= c.latestScreeningEnd) fail('screening time window');
   if ((c.workStart ?? '09:00') >= (c.workEnd ?? '18:00')) fail('work window');
   if (c.lunchWindowStart >= c.lunchWindowEnd) fail('lunch window');
   for (const field of ['lunchDurationMinutes', 'exitBufferMinutes', 'arrivalBufferMinutes'] as const) nonnegative(c[field], field);

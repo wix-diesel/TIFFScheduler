@@ -25,6 +25,7 @@ function constraints(value: unknown): UserConstraints {
   assert(c.maxScreeningsPerDay === undefined || (natural(c.maxScreeningsPerDay) && c.maxScreeningsPerDay > 0));
   // Drafts can have temporarily inconsistent windows, but never invalid types.
   for (const x of [c.workStart,c.workEnd,c.lunchWindowStart,c.lunchWindowEnd]) assert(typeof x === 'string' && (x === '' || /^([01]\d|2[0-3]):[0-5]\d$/.test(x)));
+  for (const x of [c.earliestScreeningStart,c.latestScreeningEnd]) assert(x === undefined || (typeof x === 'string' && /^([01]\d|2[0-3]):[0-5]\d$/.test(x)));
   for (const x of [c.lunchDurationMinutes,c.exitBufferMinutes,c.arrivalBufferMinutes]) assert(typeof x === 'number' && Number.isFinite(x));
   return c;
 }

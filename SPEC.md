@@ -139,6 +139,13 @@ MVP では最大 3 件を表示する。
 - 短編集なども一つの上映枠を1本として数える
 - 上限内で全作品を鑑賞できない場合は、最大鑑賞数の代替案を表示する
 
+### 上映開始時刻
+
+- 初期値は「制限なし」
+- 全日共通の日本時間を指定できる
+- 上映前イベントを含む開始時刻が指定時刻以降の上映だけを候補にする
+- 入場バッファはこの時刻条件に含めない
+
 ### 移動バッファ
 
 初期値：
@@ -237,6 +244,8 @@ interface TravelTime {
 ```ts
 interface UserConstraints {
   maxScreeningsPerDay?: number | undefined;
+  earliestScreeningStart?: string | undefined;
+  latestScreeningEnd?: string | undefined;
   workingWeekdays: number[];
   additionalDaysOff: string[];
   unavailableDates: string[];
@@ -333,6 +342,14 @@ MVP では日本の祝日データを静的データとして保持するか、�
 ## 8.6 1日最大鑑賞本数
 
 `maxScreeningsPerDay` が指定された場合、上映開始時刻の日本時間の日付ごとに上映枠数を集計し、上限を超えるプランを無効とする。0、負数、小数、非有限数は不正入力とし、選択作品数を超える正整数は許可する。未指定時は既存の探索結果と互換になる。
+
+---
+
+## 8.7 上映開始時刻の下限
+
+`earliestScreeningStart` は全日共通の任意の日本時間（`HH:mm`）とする。未指定時は制限しない。指定時は各上映について、上映開始日の日本時間における `startAt - eventBeforeMinutes` が指定時刻以上であることを必須とし、境界一致を許可する。
+
+上映前イベントは判定に含めるが、入場バッファは含めない。入場バッファは従来どおり、上映間の移動、勤務、昼食などの占有判定には含める。将来の終了上限 `latestScreeningEnd` も指定された場合は `earliestScreeningStart < latestScreeningEnd` を必須とし、日付をまたぐ指定時間帯は扱わない。
 
 ---
 
