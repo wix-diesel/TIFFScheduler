@@ -33,9 +33,9 @@ test('official slot includes stage events without adding them twice; short sourc
   assert.equal((Date.parse(kika.endAt)-Date.parse(kika.startAt))/60000,110);
   assert.match(kika.timingNote!,/補正/);
 });
-test('Culture Day is a holiday; weekday screenings require leave; real films can be optimized',()=>{
+test('configured working weekdays require leave even on a festival holiday; real films can be optimized',()=>{
   const holiday=data.screenings.find(s=>s.startAt.startsWith('2025-11-03T13:'))!;
-  assert.equal(vacationDate(holiday,input),undefined);
+  assert.equal(vacationDate(holiday,input),'2025-11-03');
   const weekday=data.screenings.find(s=>s.startAt.startsWith('2025-10-28T14:'))!;
   assert.equal(vacationDate(weekday,input),'2025-10-28');
   const selectedFilmIds=['母なる大地','パレスチナ36','金髪'].map(title=>data.films.find(f=>f.title===title)!.id);

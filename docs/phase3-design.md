@@ -76,6 +76,7 @@ npm run data:import -- /path/to/official-venues-acts.json
 ## 祝日
 
 開催期間中の2025-11-03（文化の日）を静的保持。2026年の祝日を流用しない。
+勤務曜日に設定された曜日はこのデータより優先して勤務日として判定する。
 出典: 国立天文台 https://eco.mtk.nao.ac.jp/koyomi/yoko/2025/rekiyou251.html
 
 ## UIと検証

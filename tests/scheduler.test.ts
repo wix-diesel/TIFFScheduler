@@ -74,14 +74,16 @@ test('latest end uses the JST start date, includes the following event and exclu
   candidates.constraints.latestScreeningEnd = undefined;
   assert.equal(optimizeSchedule(candidates).plans[0]!.score.missedFilmCount, 0);
 });
-test('vacation uses JST, work interval, weekends, holidays and additional days off', () => {
+test('vacation uses JST, configured working weekdays, work interval and additional days off', () => {
   const s = screening('a', 'a', '10:00', '11:00'); const data = input([s]);
   assert.equal(vacationDate(s, data), '2026-10-30');
   assert.equal(vacationDate({ ...s, startAt: '2026-10-30T01:00:00Z', endAt: '2026-10-30T02:00:00Z' }, data), '2026-10-30');
   assert.equal(vacationDate(screening('b', 'a', '18:10', '20:00'), data), undefined);
   assert.equal(vacationDate(screening('b', 'a', '18:09', '20:00'), data), '2026-10-30');
   assert.equal(vacationDate(screening('b', 'a', '10:00', '11:00', 'a', '2026-10-31'), data), undefined);
-  data.holidays = ['2026-10-30']; assert.equal(vacationDate(s, data), undefined);
+  // A configured working weekday remains a workday even when the supplied
+  // festival calendar contains that date.
+  data.holidays = ['2026-10-30']; assert.equal(vacationDate(s, data), '2026-10-30');
   data.holidays = []; data.constraints.additionalDaysOff = ['2026-10-30']; assert.equal(vacationDate(s, data), undefined);
 });
 test('unavailable means no leave; evening and non-workday screenings remain eligible', () => {
