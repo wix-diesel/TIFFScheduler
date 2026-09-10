@@ -1,7 +1,7 @@
 import type { ScheduleInput, SchedulePlan } from '../scheduler/types.ts';
 import { occupied, travelMinutes } from '../scheduler/constraints.ts';
 import { dateInJapan, minute } from '../scheduler/time.ts';
-export interface TimelineEntry { start: number; end: number; label: string; detail: string; kind: 'film' | 'lunch' | 'travel' | 'buffer' }
+export interface TimelineEntry { start: number; end: number; label: string; detail: string; kind: 'film' | 'lunch' | 'travel' | 'buffer'; screeningId?: string }
 export function buildTimeline(plan: SchedulePlan, input: ScheduleInput): Map<string, TimelineEntry[]> {
   const days = new Map<string, TimelineEntry[]>();
   const venueNames = new Map(input.venues.map(venue => [venue.id, venue.name]));
@@ -19,7 +19,7 @@ export function buildTimeline(plan: SchedulePlan, input: ScheduleInput): Map<str
   screenings.forEach(({screening: s, occupancy: [start,end], filmStart, filmEnd},i) => {
     const venue = venueNames.get(s.venueId)!;
     add({start,end:filmStart,label:s.eventBeforeMinutes?'入場・上映前イベント':'入場',detail:venue,kind:'buffer'});
-    add({start:filmStart,end:filmEnd,label:filmTitles.get(s.filmId)!,detail:[venue,s.eventLabel,s.timingNote].filter(Boolean).join(' / '),kind:'film'});
+    add({start:filmStart,end:filmEnd,label:filmTitles.get(s.filmId)!,detail:[venue,s.eventLabel,s.timingNote].filter(Boolean).join(' / '),kind:'film',screeningId:s.id});
     add({start:filmEnd,end,label:s.eventAfterMinutes?'上映後イベント・退場':'退場',detail:venue,kind:'buffer'});
     const next=screenings[i+1];
     if(next && dateInJapan(end)===dateInJapan(next.occupancy[0])) add({start:end,end:end+travelMinutes(s,next.screening,input),label:'会場移動',detail:`${venue} → ${venueNames.get(next.screening.venueId)!}`,kind:'travel'});

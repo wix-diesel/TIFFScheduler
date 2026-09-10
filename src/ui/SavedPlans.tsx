@@ -23,7 +23,7 @@ export function SavedPlans({plans,fingerprint,onChange,onLoad}:{plans:SavedPlan[
       <label>プラン名<input maxLength={100} value={plan.name} onChange={e=>{const name=e.target.value; if(name.trim())onChange(plans.map(p=>p.id===plan.id?{...p,name}:p));}}/></label>
       <p>保存日時：{new Date(plan.createdAt).toLocaleString('ja-JP',{timeZone:'Asia/Tokyo'})}（日本時間）</p>
       {plan.dataFingerprint!==fingerprint&&<p className="notice">上映情報が更新されています。このプランは保存時の情報です。</p>}
-      <PlanView snapshot={plan.snapshot}/>
+      <PlanView snapshot={plan.snapshot} planId={plan.id}/>
       <button type="button" onClick={()=>onLoad(plan)}>この条件で再計算</button>
       <button type="button" onClick={()=>onChange(plans.filter(p=>p.id!==plan.id))}>この保存プランを削除</button>
     </details>)}

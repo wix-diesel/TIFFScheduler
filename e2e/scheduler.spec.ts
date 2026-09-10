@@ -196,3 +196,35 @@ test('denied localStorage getter does not prevent generation',async({page})=>{
  await page.goto('./');await expect(page.getByRole('alert')).toContainText('保存できませんでした');
  await page.locator('.film-card').first().getByRole('checkbox').check();await page.getByRole('button',{name:'スケジュールを生成'}).click();await expect(page.locator('.plan').first()).toBeVisible();
 });
+
+test('calendar actions download one plan and fall back when file sharing is unavailable',async({page})=>{
+ await page.goto('./');await page.locator('.film-card').first().getByRole('checkbox').check();await page.getByRole('button',{name:'スケジュールを生成'}).click();
+ const actions=page.locator('.plan').first().locator(':scope > .calendar-actions');
+ const direct=page.waitForEvent('download');await actions.getByRole('button',{name:'ICSを保存',exact:true}).click();
+ await expect((await direct).suggestedFilename()).toMatch(/\.ics$/);
+ await expect(actions.getByRole('status')).toContainText('ICSを保存しました');
+ const fallback=page.waitForEvent('download');await actions.getByRole('button',{name:'カレンダーに追加',exact:true}).click();await fallback;
+ await expect(actions.getByRole('status')).toContainText('直接渡せなかった');
+ await expect(page.locator('.timeline .film').first().getByRole('button',{name:'この上映のICSを保存'})).toBeVisible();
+});
+
+test('cancelling the calendar share is not presented as an error',async({page})=>{
+ await page.addInitScript(()=>{
+  Object.defineProperty(navigator,'canShare',{configurable:true,value:()=>true});
+  Object.defineProperty(navigator,'share',{configurable:true,value:async()=>{throw new DOMException('cancelled','AbortError');}});
+ });
+ await page.goto('./');await page.locator('.film-card').first().getByRole('checkbox').check();await page.getByRole('button',{name:'スケジュールを生成'}).click();
+ const actions=page.locator('.plan').first().locator(':scope > .calendar-actions');await actions.getByRole('button',{name:'カレンダーに追加',exact:true}).click();
+ await expect(actions.getByRole('status')).toHaveText('共有をキャンセルしました。');await expect(page.getByRole('alert')).toHaveCount(0);
+});
+
+test('a failed calendar share downloads the ICS fallback',async({page})=>{
+ await page.addInitScript(()=>{
+  Object.defineProperty(navigator,'canShare',{configurable:true,value:()=>true});
+  Object.defineProperty(navigator,'share',{configurable:true,value:async()=>{throw new Error('share failed');}});
+ });
+ await page.goto('./');await page.locator('.film-card').first().getByRole('checkbox').check();await page.getByRole('button',{name:'スケジュールを生成'}).click();
+ const actions=page.locator('.plan').first().locator(':scope > .calendar-actions');const download=page.waitForEvent('download');
+ await actions.getByRole('button',{name:'カレンダーに追加',exact:true}).click();await download;
+ await expect(actions.getByRole('status')).toContainText('ICSを保存しました');
+});
