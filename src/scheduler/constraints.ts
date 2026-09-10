@@ -48,7 +48,10 @@ export function withinDailyScreeningLimit(screenings: readonly Screening[], inpu
 }
 export function vacationDate(s: Screening, input: ScheduleInput): string | undefined {
   const c = input.constraints, [start, end] = occupied(s, input), date = dateInJapan(start);
-  if (!c.workingWeekdays.includes(weekday(date)) || c.additionalDaysOff.includes(date) || input.holidays.includes(date)) return undefined;
+  // The user's working-weekday setting is authoritative. A holiday in the
+  // supplied festival calendar must not turn a configured working day into a
+  // non-working day; date-specific additional days off remain an override.
+  if (!c.workingWeekdays.includes(weekday(date)) || c.additionalDaysOff.includes(date)) return undefined;
   return overlaps(start, end, at(date, c.workStart ?? '09:00'), at(date, c.workEnd ?? '18:00')) ? date : undefined;
 }
 /** Lunch is required when an occupied screening overlaps the lunch window.
