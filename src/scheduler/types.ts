@@ -27,7 +27,7 @@ export interface ScheduleInput {
   travelTimes: readonly TravelTime[];
   selectedFilmIds: readonly string[];
   constraints: UserConstraints;
-  /** Holiday calendar supplied by the caller; configured working weekdays take precedence. */
+/** Holiday calendar supplied by the caller (validated for date format only); it does not affect vacation-day calculation. */
   holidays: readonly string[];
 }
 export interface ScheduleScore { missedFilmCount: number; vacationDays: number; travelMinutes: number; waitingMinutes: number }
