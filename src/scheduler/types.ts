@@ -7,7 +7,7 @@ export interface UserConstraints {
   maxScreeningsPerDay?: number | undefined;
   /** Earliest screening start including any event before it, as a JST HH:mm clock. */
   earliestScreeningStart?: string | undefined;
-  /** Reserved for the paired latest-end constraint; undefined means unrestricted. */
+  /** Latest screening end including any event after it, as a JST HH:mm clock. */
   latestScreeningEnd?: string | undefined;
   workingWeekdays: number[];
   additionalDaysOff: string[];

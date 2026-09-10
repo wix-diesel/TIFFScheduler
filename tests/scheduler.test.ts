@@ -1,6 +1,6 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { optimizeSchedule, DEFAULT_CONSTRAINTS, canFollow, vacationDate, lunchBreaks, compareScores, scorePlan, meetsEarliestScreeningStart, withinDailyScreeningLimit } from '../src/scheduler/index.ts';
+import { optimizeSchedule, DEFAULT_CONSTRAINTS, canFollow, vacationDate, lunchBreaks, compareScores, scorePlan, meetsEarliestScreeningStart, meetsLatestScreeningEnd, withinDailyScreeningLimit } from '../src/scheduler/index.ts';
 import type { ScheduleInput, Screening } from '../src/scheduler/types.ts';
 const time = (clock: string, date = '2026-10-30') => `${date}T${clock}:00+09:00`;
 const screening = (id: string, filmId: string, start: string, end: string, venueId = 'a', date = '2026-10-30'): Screening => ({ id, filmId, venueId, startAt: time(start, date), endAt: time(end, date) });
@@ -48,6 +48,30 @@ test('earliest start uses JST, includes the preceding event and excludes the arr
   candidates.constraints.earliestScreeningStart = '10:00';
   assert.equal(optimizeSchedule(candidates).plans[0]!.screenings[0]!.id, 'allowed');
   candidates.constraints.earliestScreeningStart = undefined;
+  assert.equal(optimizeSchedule(candidates).plans[0]!.score.missedFilmCount, 0);
+});
+test('latest end uses the JST start date, includes the following event and excludes the exit buffer', () => {
+  const boundary = screening('boundary', 'film', '20:00', '22:00');
+  const data = input([boundary]);
+  data.constraints.latestScreeningEnd = '22:00';
+  assert.equal(meetsLatestScreeningEnd(boundary, data), true);
+  assert.equal(meetsLatestScreeningEnd({ ...boundary, endAt: time('22:01') }, data), false);
+  assert.equal(meetsLatestScreeningEnd({ ...boundary, endAt: time('21:50'), eventAfterMinutes: 10 }, data), true);
+  assert.equal(meetsLatestScreeningEnd({ ...boundary, endAt: time('21:50'), eventAfterMinutes: 11 }, data), false);
+  // Even a large exit buffer is occupancy only and does not reject the screening.
+  data.constraints.exitBufferMinutes = 120;
+  assert.equal(meetsLatestScreeningEnd(boundary, data), true);
+  assert.equal(meetsLatestScreeningEnd({ ...boundary, startAt: '2026-10-30T11:00:00Z', endAt: '2026-10-30T13:00:00Z' }, data), true);
+  // A 01:00 end is on the following day and must not pass the 22:00 limit of its start date.
+  assert.equal(meetsLatestScreeningEnd({ ...boundary, startAt: time('23:00'), endAt: time('01:00', '2026-10-31') }, data), false);
+
+  const candidates = input([
+    screening('late', 'film', '20:00', '22:01'),
+    screening('allowed', 'film', '20:00', '22:00'),
+  ]);
+  candidates.constraints.latestScreeningEnd = '22:00';
+  assert.equal(optimizeSchedule(candidates).plans[0]!.screenings[0]!.id, 'allowed');
+  candidates.constraints.latestScreeningEnd = undefined;
   assert.equal(optimizeSchedule(candidates).plans[0]!.score.missedFilmCount, 0);
 });
 test('vacation uses JST, work interval, weekends, holidays and additional days off', () => {

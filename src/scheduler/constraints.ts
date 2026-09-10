@@ -22,6 +22,17 @@ export function meetsEarliestScreeningStart(screening: Screening, input: Schedul
   const screeningStart = advertisedStart - (screening.eventBeforeMinutes ?? 0);
   return screeningStart >= at(dateInJapan(advertisedStart), earliest);
 }
+/** Apply the JST upper bound to the screening and its following event only.
+ * The exit buffer remains part of occupancy, but intentionally not this rule.
+ * The bound is built from the advertised screening start date, so a screening
+ * ending after midnight cannot pass a same-day clock limit. */
+export function meetsLatestScreeningEnd(screening: Screening, input: ScheduleInput): boolean {
+  const latest = input.constraints.latestScreeningEnd;
+  if (latest === undefined) return true;
+  const advertisedStart = minute(screening.startAt);
+  const screeningEnd = minute(screening.endAt) + (screening.eventAfterMinutes ?? 0);
+  return screeningEnd <= at(dateInJapan(advertisedStart), latest);
+}
 /** Count each screening by its advertised start date in Japan. */
 export function withinDailyScreeningLimit(screenings: readonly Screening[], input: ScheduleInput): boolean {
   const limit = input.constraints.maxScreeningsPerDay;

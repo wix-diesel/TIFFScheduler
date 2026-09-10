@@ -23,6 +23,7 @@ test('select films, edit constraints and generate a mobile-friendly plan', async
   await page.getByLabel('確保する時間').selectOption('45');
   await page.getByLabel('最大上映本数').fill('1');
   await page.getByLabel('この時刻以降').fill('09:00');
+  await page.getByLabel('この時刻までに終了').fill('23:00');
   await generate.click();
   await expect(page.locator('.plan').first()).toBeVisible();
   await expect(page.locator('.plan').first().locator('.timeline .film strong')).toHaveText(title);
@@ -36,6 +37,7 @@ test('select films, edit constraints and generate a mobile-friendly plan', async
   await expect(generate).toBeEnabled();
   await expect(page.getByLabel('最大上映本数')).toHaveValue('1');
   await expect(page.getByLabel('この時刻以降')).toHaveValue('09:00');
+  await expect(page.getByLabel('この時刻までに終了')).toHaveValue('23:00');
   await expect(page.getByLabel('退場（分）')).toHaveValue('15');
   await expect(page.locator('.plan').first()).toBeVisible();
   expect(errors).toEqual([]);
