@@ -30,7 +30,7 @@ export interface ScheduleInput {
 /** Holiday calendar supplied by the caller (validated for date format only); it does not affect vacation-day calculation. */
   holidays: readonly string[];
 }
-export interface ScheduleScore { missedFilmCount: number; vacationDays: number; travelMinutes: number; waitingMinutes: number }
+export interface ScheduleScore { missedFilmCount: number; vacationDays: number; screeningDays: number; travelMinutes: number; waitingMinutes: number }
 export interface LunchBreak { date: string; startAt: string; endAt: string }
 export interface SchedulePlan { screenings: Screening[]; missedFilmIds: string[]; vacationDates: string[]; lunches: LunchBreak[]; score: ScheduleScore }
 export interface ScheduleResult { plans: SchedulePlan[]; visitedNodes: number }

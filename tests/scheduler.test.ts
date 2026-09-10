@@ -114,6 +114,18 @@ test('same vacation count prefers less travel, then less waiting', () => {
   const data = input([screening('a', 'a', '09:00', '10:00'), screening('b1', 'b', '10:30', '11:00', 'b'), screening('b2', 'b', '11:00', '11:15'), screening('b3', 'b', '10:20', '11:00')]);
   assert.equal(optimizeSchedule(data).plans[0]!.screenings[1]!.id, 'b3');
 });
+test('same vacation count prefers fewer screening days before travel', () => {
+  const data = input([
+    screening('a', 'a', '09:00', '10:00'),
+    screening('b-same-day', 'b', '10:30', '11:00', 'b'),
+    screening('b-next-day', 'b', '09:00', '09:30', 'a', '2026-10-31'),
+  ]);
+  data.constraints.workingWeekdays = [5, 6];
+  const best = optimizeSchedule(data).plans[0]!;
+  assert.equal(best.score.vacationDays, 1);
+  assert.equal(best.score.screeningDays, 1);
+  assert.deepEqual(best.screenings.map(s => s.id), ['a', 'b-same-day']);
+});
 test('maximum-cardinality alternatives, missing candidates, deterministic top three', () => {
   const data = input(['a', 'b', 'c', 'd'].map(id => screening(id, id, '09:00', '10:00')));
   const result = optimizeSchedule(data);

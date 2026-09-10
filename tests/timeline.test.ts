@@ -27,5 +27,5 @@ test('sample vacation restriction produces alternatives and respects the selecte
 });
 test('timeline formatting uses Japan time independent of machine timezone',()=>{
  assert.equal(timeLabel('2026-10-30T01:00:00Z'),'10:00');
- assert.equal(buildTimeline({screenings:[],lunches:[],missedFilmIds:[],vacationDates:[],score:{vacationDays:0,missedFilmCount:0,travelMinutes:0,waitingMinutes:0}},input).size,0);
+ assert.equal(buildTimeline({screenings:[],lunches:[],missedFilmIds:[],vacationDates:[],score:{vacationDays:0,missedFilmCount:0,screeningDays:0,travelMinutes:0,waitingMinutes:0}},input).size,0);
 });

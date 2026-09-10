@@ -1,6 +1,7 @@
-import type { ScheduleInput, ScheduleResult, UserConstraints } from '../scheduler/types.ts';
+import type { ScheduleInput, ScheduleResult, ScheduleScore, UserConstraints } from '../scheduler/types.ts';
 import { validateInput } from '../scheduler/validation.ts';
 import { migrateConstraints } from './migration.ts';
+import { dateInJapan, minute } from '../scheduler/time.ts';
 
 export type Snapshot = { input: ScheduleInput; result: ScheduleResult };
 export type SavedPlan = { id: string; name: string; createdAt: string; dataFingerprint: string; snapshot: Snapshot };
@@ -42,7 +43,10 @@ function snapshot(value: unknown): Snapshot {
     assert(p.missedFilmIds.every(id => s.input.films.some(f => f.id === id)) && p.vacationDates.every(date));
     assert(p.screenings.every(screening => object(screening) && screeningsById.get(screening.id) === JSON.stringify(screening)));
     assert(Array.isArray(p.lunches) && p.lunches.every(l => object(l) && date(l.date) && timestamp(l.startAt) && timestamp(l.endAt) && l.startAt < l.endAt));
-    assert(object(p.score) && [p.score.missedFilmCount,p.score.vacationDays,p.score.travelMinutes,p.score.waitingMinutes].every(natural));
+    // Backfill scores saved before screeningDays was added to the ranking.
+    const score = p.score as ScheduleScore & { screeningDays?: unknown };
+    if (score.screeningDays === undefined) score.screeningDays = new Set(p.screenings.map(screening => dateInJapan(minute(screening.startAt)))).size;
+    assert(object(score) && [score.missedFilmCount,score.vacationDays,score.screeningDays,score.travelMinutes,score.waitingMinutes].every(natural));
   }
   return s;
 }
