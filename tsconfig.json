@@ -10,7 +10,8 @@
     "outDir": "lib",
     "rootDir": "src",
     "rewriteRelativeImportExtensions": true,
-    "verbatimModuleSyntax": true
+    "verbatimModuleSyntax": true,
+    "types": []
   },
   "include": [
     "src/scheduler/**/*.ts"

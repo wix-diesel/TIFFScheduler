@@ -21,6 +21,7 @@
     "@playwright/test": "^1.63.0",
     "@types/react": "^19.2.18",
     "@types/react-dom": "^19.2.7",
+    "ical.js": "^2.2.1",
     "typescript": "~5.9.3",
     "vite": "^7.3.6"
   },
