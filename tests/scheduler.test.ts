@@ -1,6 +1,6 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { optimizeSchedule, DEFAULT_CONSTRAINTS, canFollow, vacationDate, lunchBreaks, compareScores, scorePlan, meetsEarliestScreeningStart, meetsLatestScreeningEnd, withinDailyScreeningLimit } from '../src/scheduler/index.ts';
+import { optimizeSchedule, DEFAULT_CONSTRAINTS, canFollow, vacationDate, lunchBreaks, vacationDaysForItinerary, compareScores, scorePlan, meetsEarliestScreeningStart, meetsLatestScreeningEnd, withinDailyScreeningLimit } from '../src/scheduler/index.ts';
 import type { ScheduleInput, Screening } from '../src/scheduler/types.ts';
 const time = (clock: string, date = '2026-10-30') => `${date}T${clock}:00+09:00`;
 const screening = (id: string, filmId: string, start: string, end: string, venueId = 'a', date = '2026-10-30'): Screening => ({ id, filmId, venueId, startAt: time(start, date), endAt: time(end, date) });
@@ -198,6 +198,12 @@ test('branch and bound matches exhaustive top-three enumeration for 40 seeded ca
     }
     const data = input(screenings), all: ReturnType<typeof scorePlan>[] = [];
     data.constraints.maxScreeningsPerDay = 1 + random(2);
+    // Exercise the units-based branch-and-bound lower bound as well as the
+    // legacy whole-day path. The generated dates are 10/30 (Friday) and
+    // 10/31 (Saturday), so the first setting produces real half-day cases
+    // while the second also verifies that non-working days ignore the flag.
+    if (trial % 3 === 0) data.constraints.afternoonLeaveDates = ['2026-10-30'];
+    else if (trial % 3 === 1) data.constraints.afternoonLeaveDates = ['2026-10-30', '2026-10-31'];
     function enumerate(i: number, chosen: Screening[]) {
       if (i < data.selectedFilmIds.length) {
         enumerate(i + 1, chosen);
@@ -207,7 +213,7 @@ test('branch and bound matches exhaustive top-three enumeration for 40 seeded ca
       chosen.sort((a, b) => Date.parse(a.startAt) - Date.parse(b.startAt) || a.id.localeCompare(b.id));
       if (!withinDailyScreeningLimit(chosen, data)) return;
       if (!chosen.every((s, j) => j === 0 || canFollow(chosen[j - 1]!, s, data))) return;
-      const lunches = lunchBreaks(chosen, data); if (lunches) all.push(scorePlan(chosen, lunches, data));
+      const lunches = lunchBreaks(chosen, data); if (lunches && vacationDaysForItinerary(chosen, lunches, data)) all.push(scorePlan(chosen, lunches, data));
     }
     enumerate(0, []);
     const key = (p: ReturnType<typeof scorePlan>) => JSON.stringify(p.screenings.map(s => s.id));
