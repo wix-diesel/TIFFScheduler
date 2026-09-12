@@ -1,0 +1,15 @@
+.timeline .dinner > div { border-color: #8a4d76; }
+
+/* The dinner controls follow the condition workspace as a separate fieldset. */
+form > fieldset {
+  width: 320px;
+  margin-left: auto;
+  background: white;
+  border: 1px solid #cbd4df;
+  border-radius: 8px;
+  padding: 20px;
+}
+
+@media (max-width: 850px) {
+  form > fieldset { width: 100%; margin-left: 0; }
+}

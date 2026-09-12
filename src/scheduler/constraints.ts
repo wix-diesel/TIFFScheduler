@@ -119,9 +119,10 @@ function blockers(day: readonly Screening[], input: ScheduleInput): Array<[numbe
 }
 function candidates(request: MealRequest, blocked: readonly [number, number][], placed: readonly MealBreak[]): number[] {
   const all: number[] = [];
+  const unavailable = [...blocked, ...placed.map(meal => [minute(meal.startAt), minute(meal.endAt)] as [number, number])];
   for (let start = request.start; start + request.duration <= request.end; start++) {
     const end = start + request.duration;
-    if (![...blocked, ...placed.map(meal => [minute(meal.startAt), minute(meal.endAt)] as [number, number])].some(([a, b]) => overlaps(start, end, a, b))) all.push(start);
+    if (!unavailable.some(([a, b]) => overlaps(start, end, a, b))) all.push(start);
   }
   return all;
 }
