@@ -25,16 +25,19 @@ export function validateInput(input: ScheduleInput): void {
   const afternoonConflicts = [...c.additionalDaysOff, ...c.unavailableDates].some(date => c.afternoonLeaveDates.includes(date));
   if (afternoonConflicts) fail('conflicting afternoon leave date setting');
   if (c.workingWeekdays.some(d => !Number.isInteger(d) || d < 0 || d > 6)) fail('weekday');
-  for (const v of [c.workStart ?? '09:00', c.workEnd ?? '18:00', c.afternoonLeaveStart, c.lunchWindowStart, c.lunchWindowEnd]) clock(v);
+  for (const v of [c.workStart ?? '09:00', c.workEnd ?? '18:00', c.afternoonLeaveStart, c.lunchWindowStart, c.lunchWindowEnd, c.dinnerWindowStart, c.dinnerWindowEnd]) clock(v);
   if (c.earliestScreeningStart !== undefined) clock(c.earliestScreeningStart);
   if (c.latestScreeningEnd !== undefined) clock(c.latestScreeningEnd);
   if (c.earliestScreeningStart !== undefined && c.latestScreeningEnd !== undefined && c.earliestScreeningStart >= c.latestScreeningEnd) fail('screening time window');
   if ((c.workStart ?? '09:00') >= (c.workEnd ?? '18:00')) fail('work window');
   if ((c.workStart ?? '09:00') >= c.afternoonLeaveStart || c.afternoonLeaveStart >= (c.workEnd ?? '18:00')) fail('afternoon leave start must be inside work window');
   if (c.lunchWindowStart >= c.lunchWindowEnd) fail('lunch window');
-  for (const field of ['lunchDurationMinutes', 'exitBufferMinutes', 'arrivalBufferMinutes'] as const) nonnegative(c[field], field);
+  if (typeof c.dinnerEnabled !== 'boolean') fail('dinnerEnabled');
+  if (c.dinnerWindowStart >= c.dinnerWindowEnd) fail('dinner window');
+  for (const field of ['lunchDurationMinutes', 'dinnerDurationMinutes', 'exitBufferMinutes', 'arrivalBufferMinutes'] as const) nonnegative(c[field], field);
   const clockMinutes = (v: string) => Number(v.slice(0, 2)) * 60 + Number(v.slice(3));
   if (!c.lunchDurationMinutes || c.lunchDurationMinutes > clockMinutes(c.lunchWindowEnd) - clockMinutes(c.lunchWindowStart)) fail('lunchDurationMinutes must be positive and fit within the lunch window');
+  if (!c.dinnerDurationMinutes || c.dinnerDurationMinutes > clockMinutes(c.dinnerWindowEnd) - clockMinutes(c.dinnerWindowStart)) fail('dinnerDurationMinutes must be positive and fit within the dinner window');
   const routes = new Set<string>();
   for (const t of input.travelTimes) {
     nonnegative(t.minutes, 'travel time');
