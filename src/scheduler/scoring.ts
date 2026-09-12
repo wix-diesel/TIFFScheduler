@@ -1,11 +1,16 @@
 import type { ScheduleScore, ScheduleInput, Screening, SchedulePlan, LunchBreak } from './types.ts';
-import { occupied, travelMinutes, vacationDate } from './constraints.ts';
+import { occupied, travelMinutes, vacationDaysForItinerary } from './constraints.ts';
 import { dateInJapan, minute } from './time.ts';
 export function compareScores(a: ScheduleScore, b: ScheduleScore): number {
-  return a.missedFilmCount - b.missedFilmCount || a.vacationDays - b.vacationDays || a.screeningDays - b.screeningDays || a.travelMinutes - b.travelMinutes || a.waitingMinutes - b.waitingMinutes;
+  const aUnits = a.vacationUnits ?? a.vacationDays * 2;
+  const bUnits = b.vacationUnits ?? b.vacationDays * 2;
+  return a.missedFilmCount - b.missedFilmCount || aUnits - bUnits || a.screeningDays - b.screeningDays || a.travelMinutes - b.travelMinutes || a.waitingMinutes - b.waitingMinutes;
 }
 export function scorePlan(screenings: Screening[], lunches: LunchBreak[], input: ScheduleInput): SchedulePlan {
-  const vacationDates = [...new Set(screenings.map(s => vacationDate(s, input)).filter((d): d is string => d !== undefined))].sort();
+  const vacationDetails = vacationDaysForItinerary(screenings, lunches, input);
+  if (!vacationDetails) throw new Error('Schedule violates leave constraints');
+  const vacationDates = vacationDetails.map(detail => detail.date);
+  const vacationUnits = vacationDetails.reduce((sum, detail) => sum + detail.units, 0);
   const screeningDays = new Set(screenings.map(s => dateInJapan(minute(s.startAt)))).size;
   const missedFilmIds = input.selectedFilmIds.filter(id => !screenings.some(s => s.filmId === id)).sort();
   let travel = 0, waiting = 0;
@@ -18,5 +23,5 @@ export function scorePlan(screenings: Screening[], lunches: LunchBreak[], input:
     const lunch = lunches.reduce((sum, l) => sum + Math.max(0, Math.min(start, minute(l.endAt)) - Math.max(end, minute(l.startAt))), 0);
     waiting += start - end - movement - lunch;
   }
-  return { screenings: [...screenings], missedFilmIds, vacationDates, lunches, score: { missedFilmCount: missedFilmIds.length, vacationDays: vacationDates.length, screeningDays, travelMinutes: travel, waitingMinutes: waiting } };
+  return { screenings: [...screenings], missedFilmIds, vacationDates, vacationDetails, lunches, score: { missedFilmCount: missedFilmIds.length, vacationUnits, vacationDays: vacationUnits / 2, screeningDays, travelMinutes: travel, waitingMinutes: waiting } };
 }

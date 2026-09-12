@@ -12,6 +12,10 @@ export interface UserConstraints {
   workingWeekdays: number[];
   additionalDaysOff: string[];
   unavailableDates: string[];
+  /** Dates on which only an afternoon leave is available. */
+  afternoonLeaveDates: string[];
+  /** Common start time for afternoon leave. */
+  afternoonLeaveStart: string;
   lunchWindowStart: string;
   lunchWindowEnd: string;
   lunchDurationMinutes: number;
@@ -30,15 +34,35 @@ export interface ScheduleInput {
 /** Holiday calendar supplied by the caller (validated for date format only); it does not affect vacation-day calculation. */
   holidays: readonly string[];
 }
-export interface ScheduleScore { missedFilmCount: number; vacationDays: number; screeningDays: number; travelMinutes: number; waitingMinutes: number }
+export type VacationDayKind = 'full' | 'afternoon';
+export interface VacationDay { date: string; kind: VacationDayKind; units: 1 | 2 }
+export interface ScheduleScore {
+  missedFilmCount: number;
+  /** Leave amount in half-day units (full day = 2, afternoon leave = 1). */
+  vacationUnits: number;
+  /** Display/backward-compatible representation of vacationUnits / 2. */
+  vacationDays: number;
+  screeningDays: number;
+  travelMinutes: number;
+  waitingMinutes: number;
+}
 export interface LunchBreak { date: string; startAt: string; endAt: string }
-export interface SchedulePlan { screenings: Screening[]; missedFilmIds: string[]; vacationDates: string[]; lunches: LunchBreak[]; score: ScheduleScore }
+export interface SchedulePlan {
+  screenings: Screening[];
+  missedFilmIds: string[];
+  /** Dates requiring leave, retained for compatibility with saved snapshots. */
+  vacationDates: string[];
+  /** Per-date leave kind and half-day units. */
+  vacationDetails: VacationDay[];
+  lunches: LunchBreak[];
+  score: ScheduleScore;
+}
 export interface ScheduleResult { plans: SchedulePlan[]; visitedNodes: number }
 export const DEFAULT_CONSTRAINTS: Readonly<UserConstraints> = {
   maxScreeningsPerDay: undefined,
   earliestScreeningStart: undefined,
   latestScreeningEnd: undefined,
-  workingWeekdays: [1, 2, 3, 4, 5], additionalDaysOff: [], unavailableDates: [],
+  workingWeekdays: [1, 2, 3, 4, 5], additionalDaysOff: [], unavailableDates: [], afternoonLeaveDates: [], afternoonLeaveStart: '13:00',
   workStart: '09:00', workEnd: '18:00', lunchWindowStart: '11:30', lunchWindowEnd: '14:30',
   lunchDurationMinutes: 45, exitBufferMinutes: 5, arrivalBufferMinutes: 10,
 };
