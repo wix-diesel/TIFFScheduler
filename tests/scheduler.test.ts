@@ -1,6 +1,6 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { optimizeSchedule, DEFAULT_CONSTRAINTS, canFollow, vacationDate, lunchBreaks, vacationDaysForItinerary, compareScores, scorePlan, meetsEarliestScreeningStart, meetsLatestScreeningEnd, withinDailyScreeningLimit } from '../src/scheduler/index.ts';
+import { optimizeSchedule, DEFAULT_CONSTRAINTS, canFollow, vacationDate, mealBreaks, lunchBreaks, vacationDaysForItinerary, compareScores, scorePlan, meetsEarliestScreeningStart, meetsLatestScreeningEnd, withinDailyScreeningLimit } from '../src/scheduler/index.ts';
 import type { ScheduleInput, Screening } from '../src/scheduler/types.ts';
 const time = (clock: string, date = '2026-10-30') => `${date}T${clock}:00+09:00`;
 const screening = (id: string, filmId: string, start: string, end: string, venueId = 'a', date = '2026-10-30'): Screening => ({ id, filmId, venueId, startAt: time(start, date), endAt: time(end, date) });
@@ -102,6 +102,23 @@ test('lunch is continuous, inside window, excludes events, buffers and travel', 
   assert.deepEqual(lunchBreaks(evening.screenings, evening), []);
   const full = input([screening('a', 'a', '11:00', '15:00')]);
   assert.equal(optimizeSchedule(full).plans[0]!.score.missedFilmCount, 1);
+});
+test('dinner is opt-in, spans itinerary gaps, and is jointly reserved with lunch', () => {
+  const data = input([
+    screening('lunch', 'lunch', '11:00', '11:30'),
+    screening('dinner', 'dinner', '18:00', '20:00'),
+  ]);
+  // Off means no evening reservation even when the itinerary crosses dinner.
+  assert.deepEqual(mealBreaks(data.screenings, data)!.map(meal => meal.kind), ['lunch']);
+  data.constraints.dinnerEnabled = true;
+  const meals = mealBreaks(data.screenings, data)!;
+  assert.deepEqual(meals.map(meal => meal.kind), ['lunch', 'dinner']);
+  assert.deepEqual(meals[1], { kind: 'dinner', date: '2026-10-30', startAt: time('20:05'), endAt: time('20:50') });
+  assert.equal(optimizeSchedule(data).plans[0]!.meals.filter(meal => meal.kind === 'dinner').length, 1);
+
+  // A one-minute-short dinner window makes the selected screening infeasible.
+  data.constraints.dinnerWindowEnd = '20:49';
+  assert.equal(optimizeSchedule(data).plans[0]!.score.missedFilmCount, 1);
 });
 test('maximizes films before minimizing vacation and counts each date once', () => {
   const data = input([screening('a1', 'a', '09:00', '10:00'), screening('a2', 'a', '09:00', '10:00', 'a', '2026-10-31'), screening('b', 'b', '10:30', '11:15')]);

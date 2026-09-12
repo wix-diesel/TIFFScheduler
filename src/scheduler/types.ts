@@ -19,6 +19,11 @@ export interface UserConstraints {
   lunchWindowStart: string;
   lunchWindowEnd: string;
   lunchDurationMinutes: number;
+  /** Whether to reserve an evening meal on days whose itinerary reaches its window. */
+  dinnerEnabled: boolean;
+  dinnerWindowStart: string;
+  dinnerWindowEnd: string;
+  dinnerDurationMinutes: number;
   exitBufferMinutes: number;
   arrivalBufferMinutes: number;
   workStart?: string;
@@ -46,7 +51,10 @@ export interface ScheduleScore {
   travelMinutes: number;
   waitingMinutes: number;
 }
-export interface LunchBreak { date: string; startAt: string; endAt: string }
+export type MealKind = 'lunch' | 'dinner';
+export interface MealBreak { kind: MealKind; date: string; startAt: string; endAt: string }
+/** @deprecated Use MealBreak with kind: 'lunch'. */
+export type LunchBreak = Omit<MealBreak, 'kind'>;
 export interface SchedulePlan {
   screenings: Screening[];
   missedFilmIds: string[];
@@ -54,6 +62,8 @@ export interface SchedulePlan {
   vacationDates: string[];
   /** Per-date leave kind and half-day units. */
   vacationDetails: VacationDay[];
+  meals: MealBreak[];
+  /** @deprecated Kept when reading pre-dinner saved snapshots. New plans use meals. */
   lunches: LunchBreak[];
   score: ScheduleScore;
 }
@@ -64,5 +74,6 @@ export const DEFAULT_CONSTRAINTS: Readonly<UserConstraints> = {
   latestScreeningEnd: undefined,
   workingWeekdays: [1, 2, 3, 4, 5], additionalDaysOff: [], unavailableDates: [], afternoonLeaveDates: [], afternoonLeaveStart: '13:00',
   workStart: '09:00', workEnd: '18:00', lunchWindowStart: '11:30', lunchWindowEnd: '14:30',
-  lunchDurationMinutes: 45, exitBufferMinutes: 5, arrivalBufferMinutes: 10,
+  lunchDurationMinutes: 45, dinnerEnabled: false, dinnerWindowStart: '18:00', dinnerWindowEnd: '21:00', dinnerDurationMinutes: 45,
+  exitBufferMinutes: 5, arrivalBufferMinutes: 10,
 };

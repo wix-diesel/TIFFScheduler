@@ -53,7 +53,7 @@ export function planEvents(snapshot: Snapshot, index: number, options: PlanCalen
   // `meals` is introduced by the dinner feature; retain the current `lunches`
   // fallback so old and saved snapshots remain exportable during migration.
   const migratedMeals = (plan as SchedulePlan & {meals?: readonly CalendarMeal[]}).meals;
-  const meals: readonly CalendarMeal[] = migratedMeals ?? plan.lunches.map(lunch => ({...lunch,kind:'lunch' as const}));
+  const meals: readonly CalendarMeal[] = migratedMeals ?? (plan.lunches ?? []).map(lunch => ({...lunch,kind:'lunch' as const}));
   for (const meal of meals) events.push({
     uid: `meal-${uidPart(options.festivalId)}-${identity}-${meal.date}-${meal.kind}-${uidPart(meal.startAt)}@tiff-scheduler`,
     summary: meal.kind === 'dinner' ? '夕食' : '昼食', start: meal.startAt, end: meal.endAt,

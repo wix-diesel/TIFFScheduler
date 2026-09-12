@@ -1,7 +1,7 @@
 import type { ScheduleInput, SchedulePlan } from '../scheduler/types.ts';
 import { occupied, travelMinutes } from '../scheduler/constraints.ts';
 import { dateInJapan, minute } from '../scheduler/time.ts';
-export interface TimelineEntry { start: number; end: number; label: string; detail: string; kind: 'film' | 'lunch' | 'travel' | 'buffer'; screeningId?: string }
+export interface TimelineEntry { start: number; end: number; label: string; detail: string; kind: 'film' | 'lunch' | 'dinner' | 'travel' | 'buffer'; screeningId?: string }
 export function buildTimeline(plan: SchedulePlan, input: ScheduleInput): Map<string, TimelineEntry[]> {
   const days = new Map<string, TimelineEntry[]>();
   const venueNames = new Map(input.venues.map(venue => [venue.id, venue.name]));
@@ -24,7 +24,8 @@ export function buildTimeline(plan: SchedulePlan, input: ScheduleInput): Map<str
     const next=screenings[i+1];
     if(next && dateInJapan(end)===dateInJapan(next.occupancy[0])) add({start:end,end:end+travelMinutes(s,next.screening,input),label:'会場移動',detail:`${venue} → ${venueNames.get(next.screening.venueId)!}`,kind:'travel'});
   });
-  plan.lunches.forEach(l=>add({start:minute(l.startAt),end:minute(l.endAt),label:'昼食',detail:'移動・入退場と重ならない休憩時間',kind:'lunch'}));
+  const meals = plan.meals ?? (plan.lunches ?? []).map(lunch => ({ ...lunch, kind: 'lunch' as const }));
+  meals.forEach(meal=>add({start:minute(meal.startAt),end:minute(meal.endAt),label:meal.kind === 'dinner' ? '夕食' : '昼食',detail:'移動・入退場と重ならない休憩時間',kind:meal.kind}));
   return new Map([...days].sort(([a],[b])=>a.localeCompare(b)).map(([d,entries])=>[d,entries.sort((a,b)=>a.start-b.start)]));
 }
 export const timeLabel=(value:number|string)=>new Intl.DateTimeFormat('ja-JP',{timeZone:'Asia/Tokyo',hour:'2-digit',minute:'2-digit',hourCycle:'h23'}).format(new Date(typeof value==='number'?value*60000:value));

@@ -1,5 +1,5 @@
 import type { ScheduleInput, SchedulePlan, ScheduleResult, Screening } from './types.ts';
-import { canFollow, occupied, screeningVacationRequirement, vacationDaysForItinerary, lunchBreaks, meetsEarliestScreeningStart, meetsLatestScreeningEnd, withinDailyScreeningLimit } from './constraints.ts';
+import { canFollow, occupied, screeningVacationRequirement, vacationDaysForItinerary, mealBreaks, meetsEarliestScreeningStart, meetsLatestScreeningEnd, withinDailyScreeningLimit } from './constraints.ts';
 import { compareScores, scorePlan } from './scoring.ts';
 import { validateInput } from './validation.ts';
 const planKey = (plan: SchedulePlan) => JSON.stringify(plan.screenings.map(s => s.id));
@@ -33,10 +33,10 @@ export function optimizeSchedule(input: ScheduleInput, maxPlans = 3): ScheduleRe
     }
     if (index === groups.length) {
       if (!selected.every((b, i) => i === 0 || canFollow(selected[i - 1]!, b, input))) return;
-      const lunches = lunchBreaks(selected, input);
-      if (!lunches) return;
-      if (!vacationDaysForItinerary(selected, lunches, input)) return;
-      plans.push(scorePlan(selected, lunches, input));
+      const meals = mealBreaks(selected, input);
+      if (!meals) return;
+      if (!vacationDaysForItinerary(selected, meals, input)) return;
+      plans.push(scorePlan(selected, meals, input));
       plans.sort((a, b) => compareScores(a.score, b.score) || lexical(planKey(a), planKey(b)));
       if (plans.length > maxPlans) plans.pop();
       return;

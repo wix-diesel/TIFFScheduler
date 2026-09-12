@@ -1,4 +1,4 @@
-import type { Screening, ScheduleInput, LunchBreak, VacationDay } from './types.ts';
+import type { Screening, ScheduleInput, LunchBreak, MealBreak, MealKind, VacationDay } from './types.ts';
 import { minute, dateInJapan, at, weekday, overlaps, isoInJapan } from './time.ts';
 
 export function occupied(s: Screening, input: ScheduleInput): [number, number] {
@@ -80,7 +80,7 @@ function addRequirement(map: Map<string, VacationDay>, requirement: VacationDay)
   if (!current || requirement.units > current.units) map.set(requirement.date, requirement);
 }
 /** Build intervals for screenings, venue movement and secured meals. Home trips are not modeled. */
-export function itineraryIntervals(screenings: readonly Screening[], lunches: readonly LunchBreak[], input: ScheduleInput): Array<[number, number]> {
+export function itineraryIntervals(screenings: readonly Screening[], meals: readonly (MealBreak | LunchBreak)[], input: ScheduleInput): Array<[number, number]> {
   const ordered = [...screenings].sort((a, b) => occupied(a, input)[0] - occupied(b, input)[0] || a.id.localeCompare(b.id));
   const intervals: Array<[number, number]> = ordered.map(screening => occupied(screening, input));
   for (let i = 1; i < ordered.length; i++) {
@@ -89,13 +89,13 @@ export function itineraryIntervals(screenings: readonly Screening[], lunches: re
     const travel = travelMinutes(previous, current, input);
     if (dateInJapan(previousEnd) === dateInJapan(currentStart) && Number.isFinite(travel) && travel > 0) intervals.push([previousEnd, previousEnd + travel]);
   }
-  intervals.push(...lunches.map(lunch => [minute(lunch.startAt), minute(lunch.endAt)] as [number, number]));
+  intervals.push(...meals.map(meal => [minute(meal.startAt), minute(meal.endAt)] as [number, number]));
   return intervals;
 }
 /** Return date-level leave details, or undefined when movement/meal placement violates the policy. */
-export function vacationDaysForItinerary(screenings: readonly Screening[], lunches: readonly LunchBreak[], input: ScheduleInput): VacationDay[] | undefined {
+export function vacationDaysForItinerary(screenings: readonly Screening[], meals: readonly (MealBreak | LunchBreak)[], input: ScheduleInput): VacationDay[] | undefined {
   const details = new Map<string, VacationDay>();
-  for (const [start, end] of itineraryIntervals(screenings, lunches, input)) {
+  for (const [start, end] of itineraryIntervals(screenings, meals, input)) {
     const requirement = vacationRequirementForInterval(start, end, input);
     if (requirement === null) return undefined;
     if (requirement) {
@@ -106,39 +106,64 @@ export function vacationDaysForItinerary(screenings: readonly Screening[], lunch
   return [...details.values()].sort((a, b) => a.date.localeCompare(b.date));
 }
 
-function lunchCandidates(date: string, day: readonly Screening[], input: ScheduleInput): number[] {
-  const c = input.constraints, windowStart = at(date, c.lunchWindowStart), windowEnd = at(date, c.lunchWindowEnd), candidates: number[] = [];
-  let cursor = windowStart;
-  for (let i = 0; i < day.length; i++) {
-    const screening = day[i]!, [start, end] = occupied(screening, input), gapStart = cursor, gapEnd = Math.min(start, windowEnd);
-    if (gapStart + c.lunchDurationMinutes <= gapEnd) {
-      candidates.push(gapStart, gapEnd - c.lunchDurationMinutes);
-      const afternoon = at(date, c.afternoonLeaveStart);
-      if (afternoon >= gapStart && afternoon + c.lunchDurationMinutes <= gapEnd) candidates.push(afternoon);
-    }
-    const next = day[i + 1];
-    cursor = Math.max(cursor, end + (next ? travelMinutes(screening, next, input) : 0));
+type MealRequest = { kind: MealKind; date: string; start: number; end: number; duration: number };
+
+/** Occupied screenings and direction-sensitive venue movement leave the only usable meal gaps. */
+function blockers(day: readonly Screening[], input: ScheduleInput): Array<[number, number]> {
+  const result = day.map(s => occupied(s, input));
+  for (let i = 1; i < day.length; i++) {
+    const end = occupied(day[i - 1]!, input)[1], travel = travelMinutes(day[i - 1]!, day[i]!, input);
+    if (Number.isFinite(travel) && travel > 0) result.push([end, end + travel]);
   }
-  if (cursor + c.lunchDurationMinutes <= windowEnd) {
-    candidates.push(cursor, windowEnd - c.lunchDurationMinutes);
-    const afternoon = at(date, c.afternoonLeaveStart);
-    if (afternoon >= cursor && afternoon + c.lunchDurationMinutes <= windowEnd) candidates.push(afternoon);
-  }
-  return [...new Set(candidates)].filter(start => start >= windowStart && start + c.lunchDurationMinutes <= windowEnd).sort((a, b) => a - b);
+  return result.sort((a, b) => a[0] - b[0]);
 }
-/** Lunch is required when a screening overlaps the window. Later slots are tried so afternoon leave can avoid morning work. */
-export function lunchBreaks(screenings: readonly Screening[], input: ScheduleInput): LunchBreak[] | undefined {
-  const result: LunchBreak[] = [], ordered = [...screenings].sort((a, b) => occupied(a, input)[0] - occupied(b, input)[0] || a.id.localeCompare(b.id));
+function candidates(request: MealRequest, blocked: readonly [number, number][], placed: readonly MealBreak[]): number[] {
+  const all: number[] = [];
+  const unavailable = [...blocked, ...placed.map(meal => [minute(meal.startAt), minute(meal.endAt)] as [number, number])];
+  for (let start = request.start; start + request.duration <= request.end; start++) {
+    const end = start + request.duration;
+    if (!unavailable.some(([a, b]) => overlaps(start, end, a, b))) all.push(start);
+  }
+  return all;
+}
+/**
+ * Jointly reserve lunch and (optionally) dinner.  Every minute in each free
+ * interval is a candidate, so moving lunch later can make both meals fit.
+ */
+export function mealBreaks(screenings: readonly Screening[], input: ScheduleInput): MealBreak[] | undefined {
+  const ordered = [...screenings].sort((a, b) => occupied(a, input)[0] - occupied(b, input)[0] || a.id.localeCompare(b.id));
+  const requests: MealRequest[] = [];
   for (const date of [...new Set(ordered.map(s => dateInJapan(occupied(s, input)[0])))]) {
     const day = ordered.filter(s => dateInJapan(occupied(s, input)[0]) === date);
-    const windowStart = at(date, input.constraints.lunchWindowStart), windowEnd = at(date, input.constraints.lunchWindowEnd);
-    if (!day.some(s => overlaps(...occupied(s, input), windowStart, windowEnd))) continue;
-    const candidate = lunchCandidates(date, day, input).find(start => {
-      const lunch = { date, startAt: isoInJapan(start), endAt: isoInJapan(start + input.constraints.lunchDurationMinutes) };
-      return vacationDaysForItinerary(ordered, [...result, lunch], input) !== undefined;
-    });
-    if (candidate === undefined) return undefined;
-    result.push({ date, startAt: isoInJapan(candidate), endAt: isoInJapan(candidate + input.constraints.lunchDurationMinutes) });
+    const first = occupied(day[0]!, input)[0], last = occupied(day.at(-1)!, input)[1];
+    const lunchStart = at(date, input.constraints.lunchWindowStart), lunchEnd = at(date, input.constraints.lunchWindowEnd);
+    if (day.some(s => overlaps(...occupied(s, input), lunchStart, lunchEnd))) requests.push({ kind: 'lunch', date, start: lunchStart, end: lunchEnd, duration: input.constraints.lunchDurationMinutes });
+    const dinnerStart = at(date, input.constraints.dinnerWindowStart), dinnerEnd = at(date, input.constraints.dinnerWindowEnd);
+    if (input.constraints.dinnerEnabled && overlaps(first, last, dinnerStart, dinnerEnd)) requests.push({ kind: 'dinner', date, start: dinnerStart, end: dinnerEnd, duration: input.constraints.dinnerDurationMinutes });
   }
-  return result;
+  const byDate = new Map<string, MealRequest[]>();
+  for (const request of requests) byDate.set(request.date, [...(byDate.get(request.date) ?? []), request]);
+  const result: MealBreak[] = [];
+  for (const [date, dayRequests] of byDate) {
+    const day = ordered.filter(s => dateInJapan(occupied(s, input)[0]) === date), blocked = blockers(day, input);
+    const place = (index: number, placed: MealBreak[]): MealBreak[] | undefined => {
+      if (index === dayRequests.length) return vacationDaysForItinerary(ordered, [...result, ...placed], input) ? placed : undefined;
+      const request = dayRequests[index]!;
+      for (const start of candidates(request, blocked, placed)) {
+        const meal: MealBreak = { kind: request.kind, date, startAt: isoInJapan(start), endAt: isoInJapan(start + request.duration) };
+        const found = place(index + 1, [...placed, meal]);
+        if (found) return found;
+      }
+      return undefined;
+    };
+    const placed = place(0, []);
+    if (!placed) return undefined;
+    result.push(...placed);
+  }
+  return result.sort((a, b) => minute(a.startAt) - minute(b.startAt) || a.kind.localeCompare(b.kind));
+}
+/** Compatibility API for callers saved before meals became typed. */
+export function lunchBreaks(screenings: readonly Screening[], input: ScheduleInput): LunchBreak[] | undefined {
+  const meals = mealBreaks(screenings, input);
+  return meals?.filter(meal => meal.kind === 'lunch').map(({ date, startAt, endAt }) => ({ date, startAt, endAt }));
 }

@@ -26,10 +26,11 @@ function constraints(value: unknown): UserConstraints {
   assert(strings(c.afternoonLeaveDates) && c.afternoonLeaveDates.every(date));
   assert(c.maxScreeningsPerDay === undefined || (natural(c.maxScreeningsPerDay) && c.maxScreeningsPerDay > 0));
   // Drafts can have temporarily inconsistent windows, but never invalid types.
-  for (const x of [c.workStart,c.workEnd,c.lunchWindowStart,c.lunchWindowEnd]) assert(typeof x === 'string' && (x === '' || /^([01]\d|2[0-3]):[0-5]\d$/.test(x)));
+  for (const x of [c.workStart,c.workEnd,c.lunchWindowStart,c.lunchWindowEnd,c.dinnerWindowStart,c.dinnerWindowEnd]) assert(typeof x === 'string' && (x === '' || /^([01]\d|2[0-3]):[0-5]\d$/.test(x)));
   for (const x of [c.earliestScreeningStart,c.latestScreeningEnd]) assert(x === undefined || (typeof x === 'string' && /^([01]\d|2[0-3]):[0-5]\d$/.test(x)));
   assert(typeof c.afternoonLeaveStart === 'string' && /^([01]\d|2[0-3]):[0-5]\d$/.test(c.afternoonLeaveStart));
-  for (const x of [c.lunchDurationMinutes,c.exitBufferMinutes,c.arrivalBufferMinutes]) assert(typeof x === 'number' && Number.isFinite(x));
+  assert(typeof c.dinnerEnabled === 'boolean');
+  for (const x of [c.lunchDurationMinutes,c.dinnerDurationMinutes,c.exitBufferMinutes,c.arrivalBufferMinutes]) assert(typeof x === 'number' && Number.isFinite(x));
   return c;
 }
 function snapshot(value: unknown): Snapshot {
@@ -46,7 +47,8 @@ function snapshot(value: unknown): Snapshot {
     if (!Array.isArray(p.vacationDetails)) p.vacationDetails = p.vacationDates.map(date => ({ date, kind: 'full', units: 2 }));
     assert(p.vacationDetails.every(detail => object(detail) && date(detail.date) && (detail.kind === 'full' || detail.kind === 'afternoon') && (detail.units === 1 || detail.units === 2)));
     assert(p.screenings.every(screening => object(screening) && screeningsById.get(screening.id) === JSON.stringify(screening)));
-    assert(Array.isArray(p.lunches) && p.lunches.every(l => object(l) && date(l.date) && timestamp(l.startAt) && timestamp(l.endAt) && l.startAt < l.endAt));
+    if (!Array.isArray(p.meals)) p.meals = (p.lunches ?? []).map(l => ({ ...l, kind: 'lunch' }));
+    assert(Array.isArray(p.meals) && p.meals.every(meal => object(meal) && (meal.kind === 'lunch' || meal.kind === 'dinner') && date(meal.date) && timestamp(meal.startAt) && timestamp(meal.endAt) && meal.startAt < meal.endAt));
     // Backfill scores saved before screeningDays was added to the ranking.
     const score = p.score as ScheduleScore & { screeningDays?: unknown; vacationUnits?: unknown };
     if (score.screeningDays === undefined) score.screeningDays = new Set(p.screenings.map(screening => dateInJapan(minute(screening.startAt)))).size;

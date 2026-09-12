@@ -50,6 +50,13 @@ test('UIDs are stable, plans stay separate, and auxiliary events are opt-in',()=
   assert.equal(new ICAL.Component(ICAL.parse(single)).getAllSubcomponents('vevent').length,1);
   assert.ok(!generatePlanIcs(snapshot,0,fixed).includes(snapshot.result.plans[1]?.screenings.find(s=>!snapshot.result.plans[0]!.screenings.some(first=>first.id===s.id))?.id ?? 'impossible-id'));
 });
+test('plan calendars export dinner as a distinct meal event', () => {
+  const dinnerSnapshot = structuredClone(snapshot);
+  dinnerSnapshot.result.plans[0]!.meals.push({ kind: 'dinner', date: '2026-10-30', startAt: '2026-10-30T18:00:00+09:00', endAt: '2026-10-30T18:45:00+09:00' });
+  const dinner = planEvents(dinnerSnapshot, 0, fixed).find(event => event.summary === '夕食');
+  assert.ok(dinner);
+  assert.equal(dinner!.start, '2026-10-30T18:00:00+09:00');
+});
 
 test('Web Share detects support, distinguishes cancellation and failure',async()=>{
   const file=calendarFile('BEGIN:VCALENDAR\r\nEND:VCALENDAR\r\n','plan.ics');
