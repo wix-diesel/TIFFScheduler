@@ -6,6 +6,7 @@ import { festival, festivalInfo } from './ui/data.ts';
 import { FilmPicker } from './ui/FilmPicker.tsx';
 import { PlanView } from './ui/PlanView.tsx';
 import { SavedPlans } from './ui/SavedPlans.tsx';
+import { LicensesDialog } from './ui/LicensesDialog.tsx';
 import { usePersistedSchedule, dataFingerprint } from './storage/usePersistedSchedule.ts';
 import { MAX_PLANS } from './storage/codec.ts';
 
@@ -55,5 +56,5 @@ export default function App() {
       setState(previous=>({...previous,selectedFilmIds:[...ids],constraints:structuredClone(saved.snapshot.input.constraints),lastResult:null}));
       setNotice(`保存時の条件を読み込みました。スケジュールを生成すると最新データで再計算します。${ids.length!==saved.snapshot.input.selectedFilmIds.length?'削除された作品は選択から除外しました。':''}`);setError('');
     }}/>
-    <footer>TIFF Scheduler · 非公式 / 2025年アーカイブ / 設定・プランはこのブラウザに保存されます（別端末との同期なし）</footer></main></>;
+    <footer>TIFF Scheduler · 非公式 / 2025年アーカイブ / 設定・プランはこのブラウザに保存されます（別端末との同期なし） · <LicensesDialog /></footer></main></>;
 }

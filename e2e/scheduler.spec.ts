@@ -1,5 +1,16 @@
 import { expect, test } from '@playwright/test';
 
+test('shows bundled OSS licenses from Vite-generated JSON', async ({ page }) => {
+  await page.goto('./');
+  await page.getByRole('button', { name: 'Licenses', exact: true }).click();
+  const dialog = page.getByRole('dialog', { name: 'OSS Licenses' });
+  await expect(dialog).toBeVisible();
+  await expect(dialog).toContainText('react');
+  await expect(dialog).toContainText('MIT');
+  await dialog.getByRole('button', { name: 'ライセンス一覧を閉じる' }).click();
+  await expect(dialog).toBeHidden();
+});
+
 // Exercise the production bundle at the same subpath as GitHub Pages.
 test('select films, edit constraints and generate a mobile-friendly plan', async ({ page }) => {
   const errors: string[] = [];
