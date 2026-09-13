@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { useRef, useState } from 'react';
 
 type License = {
   name: string;
@@ -17,33 +17,37 @@ function isLicense(value: unknown): value is License {
   return typeof value === 'object'
     && value !== null
     && typeof (value as License).name === 'string'
-    && typeof (value as License).version === 'string';
+    && typeof (value as License).version === 'string'
+    && ((value as License).identifier === undefined || typeof (value as License).identifier === 'string')
+    && ((value as License).text === undefined || typeof (value as License).text === 'string');
 }
 
 export function LicensesDialog() {
   const dialogRef = useRef<HTMLDialogElement>(null);
   const [loadState, setLoadState] = useState<LoadState>({ status: 'idle' });
 
-  useEffect(() => {
+  const open = () => {
     const dialog = dialogRef.current;
     if (!dialog) return;
-    const close = () => dialog.close();
-    dialog.addEventListener('cancel', close);
-    return () => dialog.removeEventListener('cancel', close);
-  }, []);
-
-  const open = async () => {
-    dialogRef.current?.showModal();
+    if (!dialog.open) {
+      try {
+        dialog.showModal();
+      } catch {
+        return;
+      }
+    }
     if (loadState.status !== 'idle') return;
     setLoadState({ status: 'loading' });
-    try {
-      const response = await fetch(new URL('licenses.json', document.baseURI));
-      const data: unknown = await response.json();
-      if (!response.ok || !Array.isArray(data) || !data.every(isLicense)) throw new Error('Invalid license data');
-      setLoadState({ status: 'loaded', licenses: data });
-    } catch {
-      setLoadState({ status: 'error' });
-    }
+    void (async () => {
+      try {
+        const response = await fetch(new URL('licenses.json', document.baseURI));
+        const data: unknown = await response.json();
+        if (!response.ok || !Array.isArray(data) || !data.every(isLicense)) throw new Error('Invalid license data');
+        setLoadState({ status: 'loaded', licenses: data });
+      } catch {
+        setLoadState({ status: 'error' });
+      }
+    })();
   };
 
   let content;
@@ -56,7 +60,7 @@ export function LicensesDialog() {
   }
 
   return <>
-    <button type="button" className="licenses-link" onClick={() => void open()}>Licenses</button>
+    <button type="button" className="licenses-link" onClick={open}>Licenses</button>
     <dialog ref={dialogRef} className="licenses-dialog" aria-labelledby="licenses-heading">
       <div className="licenses-dialog__header">
         <h2 id="licenses-heading">OSS Licenses</h2>
