@@ -16,6 +16,7 @@ export function validateInput(input: ScheduleInput): void {
   for (const id of input.selectedFilmIds) if (!input.films.some(f => f.id === id)) fail(`unknown film ${id}`);
   for (const f of input.films) { nonnegative(f.durationMinutes, `film ${f.id}: durationMinutes`); if (!f.durationMinutes) fail(`film ${f.id}: durationMinutes must be positive`); }
   const c = input.constraints;
+  if (c.optimizationObjective !== undefined && !['maxFilms', 'minVacation'].includes(c.optimizationObjective)) fail('optimizationObjective');
   if (c.maxScreeningsPerDay !== undefined && (!Number.isSafeInteger(c.maxScreeningsPerDay) || c.maxScreeningsPerDay < 1)) fail('maxScreeningsPerDay must be a positive integer');
   for (const d of [...c.additionalDaysOff, ...c.unavailableDates, ...input.holidays]) date(d);
   for (const d of c.afternoonLeaveDates) date(d);

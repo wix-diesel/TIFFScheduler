@@ -127,6 +127,36 @@ test('maximizes films before minimizing vacation and counts each date once', () 
   assert.equal(optimizeSchedule(input([data.screenings[0]!, data.screenings[2]!])).plans[0]!.score.vacationDays, 1);
   assert.equal(optimizeSchedule(input([data.screenings[0]!, data.screenings[1]!])).plans[0]!.score.vacationDays, 0);
 });
+test('objective switches between more films and less leave, with film count breaking leave ties', () => {
+  const data = input([
+    screening('daytime', 'a', '09:00', '10:00'),
+    screening('evening', 'b', '19:00', '20:00'),
+    screening('weekend', 'c', '10:00', '11:00', 'a', '2026-10-31'),
+  ]);
+  assert.equal(optimizeSchedule(data, 1).plans[0]!.screenings.length, 3);
+  data.constraints.optimizationObjective = 'minVacation';
+  const best = optimizeSchedule(data, 1).plans[0]!;
+  assert.equal(best.score.vacationUnits, 0);
+  assert.equal(best.screenings.length, 2);
+  assert.deepEqual(best.missedFilmIds, ['a']);
+  delete data.constraints.optimizationObjective;
+  assert.equal(optimizeSchedule(data, 1).plans[0]!.screenings.length, 3);
+});
+test('leave-first ranking may omit every film when all screenings require leave', () => {
+  const data = input([screening('daytime', 'a', '09:00', '10:00')]);
+  data.constraints.optimizationObjective = 'minVacation';
+  assert.equal(optimizeSchedule(data, 1).plans[0]!.screenings.length, 0);
+  data.constraints.optimizationObjective = 'maxFilms';
+  assert.equal(optimizeSchedule(data, 1).plans[0]!.screenings.length, 1);
+});
+test('score comparison changes only the primary order and counts afternoon leave as half a day', () => {
+  const moreFilms = { missedFilmCount: 0, vacationUnits: 1, vacationDays: 0.5, screeningDays: 1, travelMinutes: 0, waitingMinutes: 0 };
+  const noLeave = { ...moreFilms, missedFilmCount: 1, vacationUnits: 0, vacationDays: 0 };
+  assert.ok(compareScores(moreFilms, noLeave, 'maxFilms') < 0);
+  assert.ok(compareScores(moreFilms, noLeave, 'minVacation') > 0);
+  assert.ok(compareScores(moreFilms, { ...moreFilms, vacationUnits: 2, vacationDays: 1 }, 'minVacation') < 0);
+  assert.ok(compareScores(noLeave, { ...noLeave, missedFilmCount: 2 }, 'minVacation') < 0);
+});
 test('same vacation count prefers less travel, then less waiting', () => {
   const data = input([screening('a', 'a', '09:00', '10:00'), screening('b1', 'b', '10:30', '11:00', 'b'), screening('b2', 'b', '11:00', '11:15'), screening('b3', 'b', '10:20', '11:00')]);
   assert.equal(optimizeSchedule(data).plans[0]!.screenings[1]!.id, 'b3');
@@ -181,6 +211,7 @@ test('rejects malformed input instead of silently producing plans', () => {
     (d: ScheduleInput) => { d.selectedFilmIds = ['a', 'a']; },
     (d: ScheduleInput) => { d.screenings = [{ ...d.screenings[0]!, startAt: '2026-10-30T09:00:00' }]; },
     (d: ScheduleInput) => { d.constraints.arrivalBufferMinutes = -1; },
+    (d: ScheduleInput) => { Object.assign(d.constraints, { optimizationObjective: 'unknown' }); },
     (d: ScheduleInput) => { d.constraints.maxScreeningsPerDay = 0; },
     (d: ScheduleInput) => { d.constraints.maxScreeningsPerDay = -1; },
     (d: ScheduleInput) => { d.constraints.maxScreeningsPerDay = 1.5; },
@@ -204,7 +235,7 @@ test('waiting excludes the reserved lunch and movement', () => {
 });
 // Exhaustive enumeration deliberately has no optimizer pruning. Seeded fixtures
 // exercise candidate permutations and omission branches against exact top-k.
-test('branch and bound matches exhaustive top-three enumeration for 40 seeded cases', () => {
+test('both objectives match exhaustive top-k enumeration for 40 seeded cases', () => {
   let seed = 42;
   const random = (n: number) => { seed = (Math.imul(seed, 1664525) + 1013904223) >>> 0; return seed % n; };
   for (let trial = 0; trial < 40; trial++) {
@@ -234,8 +265,17 @@ test('branch and bound matches exhaustive top-three enumeration for 40 seeded ca
     }
     enumerate(0, []);
     const key = (p: ReturnType<typeof scorePlan>) => JSON.stringify(p.screenings.map(s => s.id));
-    all.sort((a, b) => compareScores(a.score, b.score) || (key(a) < key(b) ? -1 : key(a) > key(b) ? 1 : 0));
-    assert.deepEqual(optimizeSchedule(data).plans, all.slice(0, 3), `seeded trial ${trial}`);
+    for (const objective of ['maxFilms', 'minVacation'] as const) {
+      data.constraints.optimizationObjective = objective;
+      // Independent comparator guards both search bounds and objective wiring.
+      const fields = objective === 'maxFilms'
+        ? ['missedFilmCount', 'vacationUnits', 'screeningDays', 'travelMinutes', 'waitingMinutes'] as const
+        : ['vacationUnits', 'missedFilmCount', 'screeningDays', 'travelMinutes', 'waitingMinutes'] as const;
+      all.sort((a, b) => fields.map(field => a.score[field] - b.score[field]).find(diff => diff !== 0) || (key(a) < key(b) ? -1 : key(a) > key(b) ? 1 : 0));
+      for (const k of [1, 2, 3]) assert.deepEqual(optimizeSchedule(data, k).plans, all.slice(0, k), `trial ${trial}, ${objective}, top-${k}`);
+      const reversed = { ...data, screenings: [...data.screenings].reverse(), selectedFilmIds: [...data.selectedFilmIds].reverse() };
+      assert.deepEqual(optimizeSchedule(reversed).plans, all.slice(0, 3), `reversed trial ${trial}, ${objective}`);
+    }
   }
 });
 test('does not prune a partial route that a later intermediate film can make feasible', () => {

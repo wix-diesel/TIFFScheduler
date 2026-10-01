@@ -1,5 +1,36 @@
 import { expect, test } from '@playwright/test';
 
+test('switch objective, preserve it on reload and restore saved-plan criteria', async ({ page }) => {
+  await page.goto('./');
+  const results = page.locator('.results').first();
+  const objective = page.getByLabel('優先する基準');
+  const generate = page.getByRole('button', { name: 'スケジュールを生成' });
+  await expect(objective).toHaveValue('maxFilms');
+  await page.locator('.film-card').first().getByRole('checkbox').check();
+  await generate.click();
+  await expect(results.locator('.plan').first()).toContainText('評価基準：鑑賞本数を最大化');
+  await page.getByRole('button', { name: 'プラン 1を保存', exact: true }).click();
+  await objective.selectOption('minVacation');
+  await expect(results.locator('.plan')).toHaveCount(0);
+  await expect(page.locator('.generate-bar')).toContainText('必要休暇量 → 鑑賞数');
+  await generate.click();
+  await expect(results.locator('.plan').first()).toContainText('評価基準：休暇日数を最小化');
+  await expect(page.locator('.results').first()).toContainText('おすすめ案は');
+  await page.reload();
+  await expect(objective).toHaveValue('minVacation');
+  await expect(results.locator('.plan').first()).toContainText('評価基準：休暇日数を最小化');
+  await page.getByText('保存プラン 1', { exact: true }).click();
+  const saved = page.locator('.results').last();
+  await expect(saved.locator('.plan')).toContainText('評価基準：鑑賞本数を最大化');
+  await saved.getByRole('button', { name: 'この条件で再計算' }).click();
+  await expect(objective).toHaveValue('maxFilms');
+  await expect(page.locator('.results').first().locator('.plan')).toHaveCount(0);
+  await objective.selectOption('minVacation');
+  await page.getByRole('button', { name: '設定・作品選択を初期化' }).click();
+  await expect(objective).toHaveValue('maxFilms');
+  expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true);
+});
+
 test('2026 catalog starts separately and preserves the previous edition in storage', async ({ page }) => {
   await page.goto('./');
   const oldValue = JSON.stringify({ festivalId: 'tiff-2025', selectedFilmIds: ['38005WFC16'] });
