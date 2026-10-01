@@ -1,1045 +1,940 @@
 [
   {
-    "id": "38000TOC01",
-    "title": "てっぺんの向こうにあなたがいる",
-    "durationMinutes": 130,
+    "id": "39000OCC01",
+    "title": "映画「SUKIYAKI 上を向いて歩こう」",
+    "durationMinutes": 155,
     "department": "オープニング",
-    "url": "https://2025.tiff-jp.net/ja/lineup/film/38000TOC01"
+    "url": "https://2026.tiff-jp.net/ja/lineup/film/39000OCC01"
   },
   {
-    "id": "38000TOC02",
-    "title": "ハムネット",
-    "durationMinutes": 126,
-    "department": "クロージング",
-    "url": "https://2025.tiff-jp.net/ja/lineup/film/38000TOC02"
-  },
-  {
-    "id": "38001CPC01",
-    "title": "TOKYOタクシー",
-    "durationMinutes": 103,
+    "id": "39000OCC02",
+    "title": "ゴジラ-0.0",
+    "durationMinutes": 135,
     "department": "センターピース",
-    "url": "https://2025.tiff-jp.net/ja/lineup/film/38001CPC01"
+    "url": "https://2026.tiff-jp.net/ja/lineup/film/39000OCC02"
   },
   {
-    "id": "38002CMP01",
-    "title": "アトロピア",
-    "durationMinutes": 103,
+    "id": "39000OCC03",
+    "title": "コロニー／群体",
+    "durationMinutes": 123,
+    "department": "クロージング",
+    "url": "https://2026.tiff-jp.net/ja/lineup/film/39000OCC03"
+  },
+  {
+    "id": "39001CMP01",
+    "title": "妖怪、化物をひろう",
+    "durationMinutes": 108,
     "department": "コンペティション",
-    "url": "https://2025.tiff-jp.net/ja/lineup/film/38002CMP01"
+    "url": "https://2026.tiff-jp.net/ja/lineup/film/39001CMP01"
   },
   {
-    "id": "38002CMP02",
-    "title": "金髪",
-    "durationMinutes": 103,
+    "id": "39001CMP02",
+    "title": "問題だらけの花嫁",
+    "durationMinutes": 88,
     "department": "コンペティション",
-    "url": "https://2025.tiff-jp.net/ja/lineup/film/38002CMP02"
+    "url": "https://2026.tiff-jp.net/ja/lineup/film/39001CMP02"
   },
   {
-    "id": "38002CMP03",
-    "title": "恒星の向こう側",
-    "durationMinutes": 91,
+    "id": "39001CMP03",
+    "title": "ふたつの自由",
+    "durationMinutes": 101,
     "department": "コンペティション",
-    "url": "https://2025.tiff-jp.net/ja/lineup/film/38002CMP03"
+    "url": "https://2026.tiff-jp.net/ja/lineup/film/39001CMP03"
   },
   {
-    "id": "38002CMP04",
-    "title": "ポンペイのゴーレム",
-    "durationMinutes": 107,
-    "department": "コンペティション",
-    "url": "https://2025.tiff-jp.net/ja/lineup/film/38002CMP04"
-  },
-  {
-    "id": "38002CMP05",
-    "title": "裏か表か？",
-    "durationMinutes": 116,
-    "department": "コンペティション",
-    "url": "https://2025.tiff-jp.net/ja/lineup/film/38002CMP05"
-  },
-  {
-    "id": "38002CMP06",
-    "title": "雌鶏",
+    "id": "39001CMP04",
+    "title": "地獄が来たとしても",
     "durationMinutes": 96,
     "department": "コンペティション",
-    "url": "https://2025.tiff-jp.net/ja/lineup/film/38002CMP06"
+    "url": "https://2026.tiff-jp.net/ja/lineup/film/39001CMP04"
   },
   {
-    "id": "38002CMP07",
-    "title": "マリア・ヴィトリア",
-    "durationMinutes": 114,
+    "id": "39001CMP05",
+    "title": "腹喜（フーシー)　四つの饗宴奇譚",
+    "durationMinutes": 135,
     "department": "コンペティション",
-    "url": "https://2025.tiff-jp.net/ja/lineup/film/38002CMP07"
+    "url": "https://2026.tiff-jp.net/ja/lineup/film/39001CMP05"
   },
   {
-    "id": "38002CMP08",
-    "title": "死のキッチン",
+    "id": "39001CMP06",
+    "title": "ヘイゼル85",
+    "durationMinutes": 92,
+    "department": "コンペティション",
+    "url": "https://2026.tiff-jp.net/ja/lineup/film/39001CMP06"
+  },
+  {
+    "id": "39001CMP07",
+    "title": "過怠",
+    "durationMinutes": 131,
+    "department": "コンペティション",
+    "url": "https://2026.tiff-jp.net/ja/lineup/film/39001CMP07"
+  },
+  {
+    "id": "39001CMP08",
+    "title": "魔法の星図",
+    "durationMinutes": 85,
+    "department": "コンペティション",
+    "url": "https://2026.tiff-jp.net/ja/lineup/film/39001CMP08"
+  },
+  {
+    "id": "39001CMP09",
+    "title": "獄中の記憶",
+    "durationMinutes": 167,
+    "department": "コンペティション",
+    "url": "https://2026.tiff-jp.net/ja/lineup/film/39001CMP09"
+  },
+  {
+    "id": "39001CMP10",
+    "title": "ふたりを結ぶ夜",
     "durationMinutes": 96,
     "department": "コンペティション",
-    "url": "https://2025.tiff-jp.net/ja/lineup/film/38002CMP08"
+    "url": "https://2026.tiff-jp.net/ja/lineup/film/39001CMP10"
   },
   {
-    "id": "38002CMP09",
-    "title": "マザー",
-    "durationMinutes": 104,
-    "department": "コンペティション",
-    "url": "https://2025.tiff-jp.net/ja/lineup/film/38002CMP09"
-  },
-  {
-    "id": "38002CMP10",
-    "title": "母なる大地",
-    "durationMinutes": 129,
-    "department": "コンペティション",
-    "url": "https://2025.tiff-jp.net/ja/lineup/film/38002CMP10"
-  },
-  {
-    "id": "38002CMP11",
-    "title": "春の木",
-    "durationMinutes": 122,
-    "department": "コンペティション",
-    "url": "https://2025.tiff-jp.net/ja/lineup/film/38002CMP11"
-  },
-  {
-    "id": "38002CMP12",
-    "title": "パレスチナ36",
-    "durationMinutes": 119,
-    "department": "コンペティション",
-    "url": "https://2025.tiff-jp.net/ja/lineup/film/38002CMP12"
-  },
-  {
-    "id": "38002CMP13",
-    "title": "虚空への説教",
+    "id": "39001CMP11",
+    "title": "夜明け前の赤",
     "durationMinutes": 113,
     "department": "コンペティション",
-    "url": "https://2025.tiff-jp.net/ja/lineup/film/38002CMP13"
+    "url": "https://2026.tiff-jp.net/ja/lineup/film/39001CMP11"
   },
   {
-    "id": "38002CMP14",
-    "title": "飛行家",
-    "durationMinutes": 118,
+    "id": "39001CMP12",
+    "title": "妹兄とマンホールの蓋",
+    "durationMinutes": 116,
     "department": "コンペティション",
-    "url": "https://2025.tiff-jp.net/ja/lineup/film/38002CMP14"
+    "url": "https://2026.tiff-jp.net/ja/lineup/film/39001CMP12"
   },
   {
-    "id": "38002CMP15",
-    "title": "私たちは森の果実",
-    "durationMinutes": 87,
+    "id": "39001CMP13",
+    "title": "木々は見ている",
+    "durationMinutes": 112,
     "department": "コンペティション",
-    "url": "https://2025.tiff-jp.net/ja/lineup/film/38002CMP15"
+    "url": "https://2026.tiff-jp.net/ja/lineup/film/39001CMP13"
   },
   {
-    "id": "38003ASF00",
-    "title": "佐藤忠男、映画の旅",
-    "durationMinutes": 98,
+    "id": "39001CMP14",
+    "title": "男ともだち",
+    "durationMinutes": 131,
+    "department": "コンペティション",
+    "url": "https://2026.tiff-jp.net/ja/lineup/film/39001CMP14"
+  },
+  {
+    "id": "39001CMP15",
+    "title": "今日が終わるまで",
+    "durationMinutes": 91,
+    "department": "コンペティション",
+    "url": "https://2026.tiff-jp.net/ja/lineup/film/39001CMP15"
+  },
+  {
+    "id": "39002ASF01",
+    "title": "EDJOP（エジョプ）",
+    "durationMinutes": 124,
     "department": "アジアの未来",
-    "url": "https://2025.tiff-jp.net/ja/lineup/film/38003ASF00"
+    "url": "https://2026.tiff-jp.net/ja/lineup/film/39002ASF01"
   },
   {
-    "id": "38003ASF01",
-    "title": "みんな、おしゃべり！",
-    "durationMinutes": 143,
-    "department": "アジアの未来",
-    "url": "https://2025.tiff-jp.net/ja/lineup/film/38003ASF01"
-  },
-  {
-    "id": "38003ASF02",
-    "title": "遥か東の中心で",
-    "durationMinutes": 104,
-    "department": "アジアの未来",
-    "url": "https://2025.tiff-jp.net/ja/lineup/film/38003ASF02"
-  },
-  {
-    "id": "38003ASF03",
-    "title": "最も美しい葬儀の歌",
-    "durationMinutes": 111,
-    "department": "アジアの未来",
-    "url": "https://2025.tiff-jp.net/ja/lineup/film/38003ASF03"
-  },
-  {
-    "id": "38003ASF04",
-    "title": "光輪",
-    "durationMinutes": 106,
-    "department": "アジアの未来",
-    "url": "https://2025.tiff-jp.net/ja/lineup/film/38003ASF04"
-  },
-  {
-    "id": "38003ASF05",
-    "title": "黄色い子",
-    "durationMinutes": 72,
-    "department": "アジアの未来",
-    "url": "https://2025.tiff-jp.net/ja/lineup/film/38003ASF05"
-  },
-  {
-    "id": "38003ASF06",
-    "title": "一つの夜と三つの夏",
-    "durationMinutes": 100,
-    "department": "アジアの未来",
-    "url": "https://2025.tiff-jp.net/ja/lineup/film/38003ASF06"
-  },
-  {
-    "id": "38003ASF07",
-    "title": "ノアの娘",
+    "id": "39002ASF02",
+    "title": "私なんて特別じゃない",
     "durationMinutes": 80,
     "department": "アジアの未来",
-    "url": "https://2025.tiff-jp.net/ja/lineup/film/38003ASF07"
+    "url": "https://2026.tiff-jp.net/ja/lineup/film/39002ASF02"
   },
   {
-    "id": "38003ASF08",
-    "title": "オペレーターNo.23",
+    "id": "39002ASF03",
+    "title": "12月のジャニ",
+    "durationMinutes": 101,
+    "department": "アジアの未来",
+    "url": "https://2026.tiff-jp.net/ja/lineup/film/39002ASF03"
+  },
+  {
+    "id": "39002ASF04",
+    "title": "ミラクルサマー",
+    "durationMinutes": 65,
+    "department": "アジアの未来",
+    "url": "https://2026.tiff-jp.net/ja/lineup/film/39002ASF04"
+  },
+  {
+    "id": "39002ASF05",
+    "title": "低き所より",
+    "durationMinutes": 101,
+    "department": "アジアの未来",
+    "url": "https://2026.tiff-jp.net/ja/lineup/film/39002ASF05"
+  },
+  {
+    "id": "39002ASF06",
+    "title": "紙の花",
+    "durationMinutes": 75,
+    "department": "アジアの未来",
+    "url": "https://2026.tiff-jp.net/ja/lineup/film/39002ASF06"
+  },
+  {
+    "id": "39002ASF07",
+    "title": "Saravah",
+    "durationMinutes": 103,
+    "department": "アジアの未来",
+    "url": "https://2026.tiff-jp.net/ja/lineup/film/39002ASF07"
+  },
+  {
+    "id": "39002ASF08",
+    "title": "シェリフェ",
+    "durationMinutes": 105,
+    "department": "アジアの未来",
+    "url": "https://2026.tiff-jp.net/ja/lineup/film/39002ASF08"
+  },
+  {
+    "id": "39002ASF09",
+    "title": "つる草",
+    "durationMinutes": 104,
+    "department": "アジアの未来",
+    "url": "https://2026.tiff-jp.net/ja/lineup/film/39002ASF09"
+  },
+  {
+    "id": "39002ASF10",
+    "title": "シルバー",
     "durationMinutes": 92,
     "department": "アジアの未来",
-    "url": "https://2025.tiff-jp.net/ja/lineup/film/38003ASF08"
+    "url": "https://2026.tiff-jp.net/ja/lineup/film/39002ASF10"
   },
   {
-    "id": "38003ASF09",
-    "title": "老人と車",
-    "durationMinutes": 82,
-    "department": "アジアの未来",
-    "url": "https://2025.tiff-jp.net/ja/lineup/film/38003ASF09"
+    "id": "39003NCN01",
+    "title": "いえないふたり",
+    "durationMinutes": 104,
+    "department": "Nippon Cinema Now",
+    "url": "https://2026.tiff-jp.net/ja/lineup/film/39003NCN01"
   },
   {
-    "id": "38003ASF10",
-    "title": "明日のミンジェ",
-    "durationMinutes": 98,
-    "department": "アジアの未来",
-    "url": "https://2025.tiff-jp.net/ja/lineup/film/38003ASF10"
+    "id": "39003NCN02",
+    "title": "オキナワ・サウダージ",
+    "durationMinutes": 110,
+    "department": "Nippon Cinema Now",
+    "url": "https://2026.tiff-jp.net/ja/lineup/film/39003NCN02"
   },
   {
-    "id": "38004GLS01",
-    "title": "ブルーボーイ事件",
-    "durationMinutes": 106,
+    "id": "39003NCN03",
+    "title": "KEFI",
+    "durationMinutes": 79,
+    "department": "Nippon Cinema Now",
+    "url": "https://2026.tiff-jp.net/ja/lineup/film/39003NCN03"
+  },
+  {
+    "id": "39003NCN04",
+    "title": "恋する地球人 -劇場特別版-",
+    "durationMinutes": 102,
+    "department": "Nippon Cinema Now",
+    "url": "https://2026.tiff-jp.net/ja/lineup/film/39003NCN04"
+  },
+  {
+    "id": "39003NCN05",
+    "title": "シルバー・エクスプレス",
+    "durationMinutes": 97,
+    "department": "Nippon Cinema Now",
+    "url": "https://2026.tiff-jp.net/ja/lineup/film/39003NCN05"
+  },
+  {
+    "id": "39003NCN06",
+    "title": "火の玉を見た",
+    "durationMinutes": 112,
+    "department": "Nippon Cinema Now",
+    "url": "https://2026.tiff-jp.net/ja/lineup/film/39003NCN06"
+  },
+  {
+    "id": "39003NCN07",
+    "title": "プラスチック・ラブ！",
+    "durationMinutes": 84,
+    "department": "Nippon Cinema Now",
+    "url": "https://2026.tiff-jp.net/ja/lineup/film/39003NCN07"
+  },
+  {
+    "id": "39003NCN08",
+    "title": "ほとりの家で",
+    "durationMinutes": 81,
+    "department": "Nippon Cinema Now",
+    "url": "https://2026.tiff-jp.net/ja/lineup/film/39003NCN08"
+  },
+  {
+    "id": "39003NCN09",
+    "title": "山﨑リバーサイド - 俳優の肩ごしに -",
+    "durationMinutes": 131,
+    "department": "Nippon Cinema Now",
+    "url": "https://2026.tiff-jp.net/ja/lineup/film/39003NCN09"
+  },
+  {
+    "id": "39004GLS01",
+    "title": "すべて真夜中の恋人たち",
+    "durationMinutes": 139,
     "department": "ガラ・セレクション",
-    "url": "https://2025.tiff-jp.net/ja/lineup/film/38004GLS01"
+    "url": "https://2026.tiff-jp.net/ja/lineup/film/39004GLS01"
   },
   {
-    "id": "38004GLS02",
-    "title": "兄を持ち運べるサイズに",
-    "durationMinutes": 127,
+    "id": "39004GLS02",
+    "title": "記憶ゼロ",
+    "durationMinutes": 87,
     "department": "ガラ・セレクション",
-    "url": "https://2025.tiff-jp.net/ja/lineup/film/38004GLS02"
+    "url": "https://2026.tiff-jp.net/ja/lineup/film/39004GLS02"
   },
   {
-    "id": "38004GLS03",
-    "title": "君の顔では泣けない",
-    "durationMinutes": 123,
+    "id": "39004GLS03",
+    "title": "ベヒモス！ 人生の組曲",
+    "durationMinutes": 126,
     "department": "ガラ・セレクション",
-    "url": "https://2025.tiff-jp.net/ja/lineup/film/38004GLS03"
+    "url": "https://2026.tiff-jp.net/ja/lineup/film/39004GLS03"
   },
   {
-    "id": "38004GLS04",
-    "title": "エディントンへようこそ",
-    "durationMinutes": 148,
-    "department": "ガラ・セレクション",
-    "url": "https://2025.tiff-jp.net/ja/lineup/film/38004GLS04"
-  },
-  {
-    "id": "38004GLS05",
-    "title": "悪魔祓い株式会社",
-    "durationMinutes": 92,
-    "department": "ガラ・セレクション",
-    "url": "https://2025.tiff-jp.net/ja/lineup/film/38004GLS05"
-  },
-  {
-    "id": "38004GLS06",
-    "title": "恋愛裁判",
-    "durationMinutes": 124,
-    "department": "ガラ・セレクション",
-    "url": "https://2025.tiff-jp.net/ja/lineup/film/38004GLS06"
-  },
-  {
-    "id": "38004GLS07",
-    "title": "ナイトフラワー",
-    "durationMinutes": 124,
-    "department": "ガラ・セレクション",
-    "url": "https://2025.tiff-jp.net/ja/lineup/film/38004GLS07"
-  },
-  {
-    "id": "38004GLS08",
-    "title": "栄光のバックホーム",
+    "id": "39004GLS04",
+    "title": "愛しい人",
     "durationMinutes": 135,
     "department": "ガラ・セレクション",
-    "url": "https://2025.tiff-jp.net/ja/lineup/film/38004GLS08"
+    "url": "https://2026.tiff-jp.net/ja/lineup/film/39004GLS04"
   },
   {
-    "id": "38004GLS09",
-    "title": "レンタル・ファミリー",
-    "durationMinutes": 110,
+    "id": "39004GLS05",
+    "title": "ないものねだりの君に光の花束を",
+    "durationMinutes": 106,
     "department": "ガラ・セレクション",
-    "url": "https://2025.tiff-jp.net/ja/lineup/film/38004GLS09"
+    "url": "https://2026.tiff-jp.net/ja/lineup/film/39004GLS05"
   },
   {
-    "id": "38004GLS10",
-    "title": "She Has No Name",
-    "durationMinutes": 94,
+    "id": "39004GLS06",
+    "title": "BYE BYE LOVE 探偵はBARにいる",
+    "durationMinutes": 127,
     "department": "ガラ・セレクション",
-    "url": "https://2025.tiff-jp.net/ja/lineup/film/38004GLS10"
+    "url": "https://2026.tiff-jp.net/ja/lineup/film/39004GLS06"
   },
   {
-    "id": "38004GLS11",
-    "title": "Sirāt（原題）",
-    "durationMinutes": 115,
+    "id": "39004GLS07",
+    "title": "Diary of a Mad Old Man（原題）",
+    "durationMinutes": 119,
     "department": "ガラ・セレクション",
-    "url": "https://2025.tiff-jp.net/ja/lineup/film/38004GLS11"
+    "url": "https://2026.tiff-jp.net/ja/lineup/film/39004GLS07"
   },
   {
-    "id": "38004GLS12",
-    "title": "風林火山",
-    "durationMinutes": 124,
+    "id": "39004GLS08",
+    "title": "Fjord（原題）",
+    "durationMinutes": 146,
     "department": "ガラ・セレクション",
-    "url": "https://2025.tiff-jp.net/ja/lineup/film/38004GLS12"
+    "url": "https://2026.tiff-jp.net/ja/lineup/film/39004GLS08"
   },
   {
-    "id": "38004GLS13",
-    "title": "スプリングスティーン 孤独のハイウェイ",
-    "durationMinutes": 120,
+    "id": "39004GLS09",
+    "title": "陽だまりの歌が聴こえる",
+    "durationMinutes": 134,
     "department": "ガラ・セレクション",
-    "url": "https://2025.tiff-jp.net/ja/lineup/film/38004GLS13"
+    "url": "https://2026.tiff-jp.net/ja/lineup/film/39004GLS09"
   },
   {
-    "id": "38005WFC01",
-    "title": "ガールズ・オン・ワイヤー",
-    "durationMinutes": 114,
+    "id": "39004GLS10",
+    "title": "キャンプ・ミアズマ ティーンのセックスと死",
+    "durationMinutes": 112,
+    "department": "ガラ・セレクション",
+    "url": "https://2026.tiff-jp.net/ja/lineup/film/39004GLS10"
+  },
+  {
+    "id": "39004GLS11",
+    "title": "劇場版「虎に翼」",
+    "durationMinutes": 130,
+    "department": "ガラ・セレクション",
+    "url": "https://2026.tiff-jp.net/ja/lineup/film/39004GLS11"
+  },
+  {
+    "id": "39004GLS12",
+    "title": "ヴェリティ／真実",
+    "durationMinutes": 117,
+    "department": "ガラ・セレクション",
+    "url": "https://2026.tiff-jp.net/ja/lineup/film/39004GLS12"
+  },
+  {
+    "id": "39004GLS13",
+    "title": "ワイルド・ホース・ナイン",
+    "durationMinutes": 118,
+    "department": "ガラ・セレクション",
+    "url": "https://2026.tiff-jp.net/ja/lineup/film/39004GLS13"
+  },
+  {
+    "id": "39004GLS14",
+    "title": "君の話",
+    "durationMinutes": 121,
+    "department": "ガラ・セレクション",
+    "url": "https://2026.tiff-jp.net/ja/lineup/film/39004GLS14"
+  },
+  {
+    "id": "39004GLS15",
+    "title": "ディスプレイスメント・フィルム・ファンド",
+    "durationMinutes": 133,
+    "department": "ガラ・セレクション",
+    "url": "https://2026.tiff-jp.net/ja/lineup/film/39004GLS15"
+  },
+  {
+    "id": "39005WFC01",
+    "title": "DAU",
+    "durationMinutes": 217,
     "department": "ワールド・フォーカス",
-    "url": "https://2025.tiff-jp.net/ja/lineup/film/38005WFC01"
+    "url": "https://2026.tiff-jp.net/ja/lineup/film/39005WFC01"
   },
   {
-    "id": "38005WFC02",
-    "title": "蜘蛛女のキス",
-    "durationMinutes": 129,
-    "department": "ワールド・フォーカス",
-    "url": "https://2025.tiff-jp.net/ja/lineup/film/38005WFC02"
-  },
-  {
-    "id": "38005WFC03",
-    "title": "コピティアムの日々",
-    "durationMinutes": 129,
-    "department": "ワールド・フォーカス",
-    "url": "https://2025.tiff-jp.net/ja/lineup/film/38005WFC03"
-  },
-  {
-    "id": "38005WFC04",
-    "title": "ル・ラック",
-    "durationMinutes": 83,
-    "department": "ワールド・フォーカス",
-    "url": "https://2025.tiff-jp.net/ja/lineup/film/38005WFC04"
-  },
-  {
-    "id": "38005WFC05",
-    "title": "マゼラン",
+    "id": "39005WFC02",
+    "title": "夢見た冒険",
     "durationMinutes": 164,
     "department": "ワールド・フォーカス",
-    "url": "https://2025.tiff-jp.net/ja/lineup/film/38005WFC05"
+    "url": "https://2026.tiff-jp.net/ja/lineup/film/39005WFC02"
   },
   {
-    "id": "38005WFC06",
-    "title": "メアーズ・ネスト",
-    "durationMinutes": 98,
-    "department": "ワールド・フォーカス",
-    "url": "https://2025.tiff-jp.net/ja/lineup/film/38005WFC06"
-  },
-  {
-    "id": "38005WFC07",
-    "title": "マスターマインド",
-    "durationMinutes": 110,
-    "department": "ワールド・フォーカス",
-    "url": "https://2025.tiff-jp.net/ja/lineup/film/38005WFC07"
-  },
-  {
-    "id": "38005WFC08",
-    "title": "トンネル：暗闇の中の太陽",
-    "durationMinutes": 126,
-    "department": "ワールド・フォーカス",
-    "url": "https://2025.tiff-jp.net/ja/lineup/film/38005WFC08"
-  },
-  {
-    "id": "38005WFC09",
-    "title": "囚われ人",
-    "durationMinutes": 134,
-    "department": "ワールド・フォーカス",
-    "url": "https://2025.tiff-jp.net/ja/lineup/film/38005WFC09"
-  },
-  {
-    "id": "38005WFC10",
-    "title": "ドリームズ",
-    "durationMinutes": 98,
-    "department": "ワールド・フォーカス",
-    "url": "https://2025.tiff-jp.net/ja/lineup/film/38005WFC10"
-  },
-  {
-    "id": "38005WFC11",
-    "title": "マタドール",
-    "durationMinutes": 106,
-    "department": "ワールド・フォーカス",
-    "url": "https://2025.tiff-jp.net/ja/lineup/film/38005WFC11"
-  },
-  {
-    "id": "38005WFC12",
-    "title": "波",
+    "id": "39005WFC03",
+    "title": "聴覚",
     "durationMinutes": 128,
     "department": "ワールド・フォーカス",
-    "url": "https://2025.tiff-jp.net/ja/lineup/film/38005WFC12"
+    "url": "https://2026.tiff-jp.net/ja/lineup/film/39005WFC03"
   },
   {
-    "id": "38005WFC13",
-    "title": "エイプリル",
-    "durationMinutes": 116,
+    "id": "39005WFC04",
+    "title": "お通しください、ご先祖さま",
+    "durationMinutes": 151,
     "department": "ワールド・フォーカス",
-    "url": "https://2025.tiff-jp.net/ja/lineup/film/38005WFC13"
+    "url": "https://2026.tiff-jp.net/ja/lineup/film/39005WFC04"
   },
   {
-    "id": "38005WFC14",
-    "title": "木々の隙間",
-    "durationMinutes": 80,
-    "department": "ワールド・フォーカス",
-    "url": "https://2025.tiff-jp.net/ja/lineup/film/38005WFC14"
-  },
-  {
-    "id": "38005WFC15",
-    "title": "ダブル・ハピネス",
-    "durationMinutes": 130,
-    "department": "ワールド・フォーカス",
-    "url": "https://2025.tiff-jp.net/ja/lineup/film/38005WFC15"
-  },
-  {
-    "id": "38005WFC16",
-    "title": "人生は海のように",
-    "durationMinutes": 100,
-    "department": "ワールド・フォーカス",
-    "url": "https://2025.tiff-jp.net/ja/lineup/film/38005WFC16"
-  },
-  {
-    "id": "38005WFC17",
-    "title": "キカ",
-    "durationMinutes": 110,
-    "department": "ワールド・フォーカス",
-    "url": "https://2025.tiff-jp.net/ja/lineup/film/38005WFC17"
-  },
-  {
-    "id": "38005WFC18",
-    "title": "ヴィトリヴァル",
-    "durationMinutes": 111,
-    "department": "ワールド・フォーカス",
-    "url": "https://2025.tiff-jp.net/ja/lineup/film/38005WFC18"
-  },
-  {
-    "id": "38005WFC19",
-    "title": "黒い神と白い悪魔",
-    "durationMinutes": 120,
-    "department": "ワールド・フォーカス",
-    "url": "https://2025.tiff-jp.net/ja/lineup/film/38005WFC19"
-  },
-  {
-    "id": "38005WFC20",
-    "title": "アントニオ・ダス・モルテス",
-    "durationMinutes": 100,
-    "department": "ワールド・フォーカス",
-    "url": "https://2025.tiff-jp.net/ja/lineup/film/38005WFC20"
-  },
-  {
-    "id": "38005WFC21",
-    "title": "セントラル・ステーション",
-    "durationMinutes": 110,
-    "department": "ワールド・フォーカス",
-    "url": "https://2025.tiff-jp.net/ja/lineup/film/38005WFC21"
-  },
-  {
-    "id": "38005WFC22",
-    "title": "カザ・ブランカ",
-    "durationMinutes": 95,
-    "department": "ワールド・フォーカス",
-    "url": "https://2025.tiff-jp.net/ja/lineup/film/38005WFC22"
-  },
-  {
-    "id": "38005WFC23",
-    "title": "ブルー・トレイル",
+    "id": "39005WFC05",
+    "title": "赤死病の仮面",
     "durationMinutes": 86,
     "department": "ワールド・フォーカス",
-    "url": "https://2025.tiff-jp.net/ja/lineup/film/38005WFC23"
+    "url": "https://2026.tiff-jp.net/ja/lineup/film/39005WFC05"
   },
   {
-    "id": "38005WFC24",
-    "title": "ビトゥーカ ミルトン・ナシメント フェアウェルツアー（仮題）",
+    "id": "39005WFC06",
+    "title": "妻が泣く",
+    "durationMinutes": 93,
+    "department": "ワールド・フォーカス",
+    "url": "https://2026.tiff-jp.net/ja/lineup/film/39005WFC06"
+  },
+  {
+    "id": "39005WFC07",
+    "title": "エリコへの道",
+    "durationMinutes": 76,
+    "department": "ワールド・フォーカス",
+    "url": "https://2026.tiff-jp.net/ja/lineup/film/39005WFC07"
+  },
+  {
+    "id": "39005WFC08",
+    "title": "スリープ・ノー・モア 不眠工場",
+    "durationMinutes": 96,
+    "department": "ワールド・フォーカス",
+    "url": "https://2026.tiff-jp.net/ja/lineup/film/39005WFC08"
+  },
+  {
+    "id": "39005WFC09",
+    "title": "ハエ",
+    "durationMinutes": 102,
+    "department": "ワールド・フォーカス",
+    "url": "https://2026.tiff-jp.net/ja/lineup/film/39005WFC09"
+  },
+  {
+    "id": "39005WFC10",
+    "title": "La Bola Negra（原題）",
+    "durationMinutes": 159,
+    "department": "ワールド・フォーカス",
+    "url": "https://2026.tiff-jp.net/ja/lineup/film/39005WFC10"
+  },
+  {
+    "id": "39005WFC11",
+    "title": "あの試合",
+    "durationMinutes": 91,
+    "department": "ワールド・フォーカス",
+    "url": "https://2026.tiff-jp.net/ja/lineup/film/39005WFC11"
+  },
+  {
+    "id": "39005WFC12",
+    "title": "私の人生の16の瞬間",
+    "durationMinutes": 86,
+    "department": "ワールド・フォーカス",
+    "url": "https://2026.tiff-jp.net/ja/lineup/film/39005WFC12"
+  },
+  {
+    "id": "39005WFC13",
+    "title": "虹と踊る",
     "durationMinutes": 115,
     "department": "ワールド・フォーカス",
-    "url": "https://2025.tiff-jp.net/ja/lineup/film/38005WFC24"
+    "url": "https://2026.tiff-jp.net/ja/lineup/film/39005WFC13"
   },
   {
-    "id": "38006NCN01",
-    "title": "西海楽園",
-    "durationMinutes": 72,
-    "department": "Nippon Cinema Now",
-    "url": "https://2025.tiff-jp.net/ja/lineup/film/38006NCN01"
-  },
-  {
-    "id": "38006NCN02",
-    "title": "白の花実",
+    "id": "39005WFC14",
+    "title": "名人からの贈り物",
     "durationMinutes": 110,
-    "department": "Nippon Cinema Now",
-    "url": "https://2025.tiff-jp.net/ja/lineup/film/38006NCN02"
+    "department": "ワールド・フォーカス",
+    "url": "https://2026.tiff-jp.net/ja/lineup/film/39005WFC14"
   },
   {
-    "id": "38006NCN03",
-    "title": "魂のきせき",
-    "durationMinutes": 97,
-    "department": "Nippon Cinema Now",
-    "url": "https://2025.tiff-jp.net/ja/lineup/film/38006NCN03"
-  },
-  {
-    "id": "38006NCN04",
-    "title": "名もなき鳥たち",
-    "durationMinutes": 157,
-    "department": "Nippon Cinema Now",
-    "url": "https://2025.tiff-jp.net/ja/lineup/film/38006NCN04"
-  },
-  {
-    "id": "38006NCN05",
-    "title": "万事快調〈オール・グリーンズ〉",
-    "durationMinutes": 119,
-    "department": "Nippon Cinema Now",
-    "url": "https://2025.tiff-jp.net/ja/lineup/film/38006NCN05"
-  },
-  {
-    "id": "38006NCN06",
-    "title": "POCA PON　ポカポン",
-    "durationMinutes": 94,
-    "department": "Nippon Cinema Now",
-    "url": "https://2025.tiff-jp.net/ja/lineup/film/38006NCN06"
-  },
-  {
-    "id": "38006NCN07",
-    "title": "みらいのうた",
-    "durationMinutes": 137,
-    "department": "Nippon Cinema Now",
-    "url": "https://2025.tiff-jp.net/ja/lineup/film/38006NCN07"
-  },
-  {
-    "id": "38006NCN08",
-    "title": "LOST LAND／ロストランド",
-    "durationMinutes": 99,
-    "department": "Nippon Cinema Now",
-    "url": "https://2025.tiff-jp.net/ja/lineup/film/38006NCN08"
-  },
-  {
-    "id": "38006NCN09",
-    "title": "Dear Stranger／ディア・ストレンジャー",
-    "durationMinutes": 138,
-    "department": "Nippon Cinema Now",
-    "url": "https://2025.tiff-jp.net/ja/lineup/film/38006NCN09"
-  },
-  {
-    "id": "38007ANM01",
-    "title": "アラーの神にもいわれはない",
-    "durationMinutes": 82,
-    "department": "アニメーション",
-    "url": "https://2025.tiff-jp.net/ja/lineup/film/38007ANM01"
-  },
-  {
-    "id": "38007ANM02",
-    "title": "天使のたまご 4Kリマスター",
-    "durationMinutes": 71,
-    "department": "アニメーション",
-    "url": "https://2025.tiff-jp.net/ja/lineup/film/38007ANM02"
-  },
-  {
-    "id": "38007ANM03",
-    "title": "ChaO",
-    "durationMinutes": 90,
-    "department": "アニメーション",
-    "url": "https://2025.tiff-jp.net/ja/lineup/film/38007ANM03"
-  },
-  {
-    "id": "38007ANM04",
-    "title": "デコラド",
+    "id": "39005WFC15",
+    "title": "いつまでも幸せに",
     "durationMinutes": 95,
-    "department": "アニメーション",
-    "url": "https://2025.tiff-jp.net/ja/lineup/film/38007ANM04"
+    "department": "ワールド・フォーカス",
+    "url": "https://2026.tiff-jp.net/ja/lineup/film/39005WFC15"
   },
   {
-    "id": "38007ANM05",
-    "title": "エッジ・オブ・タイム",
-    "durationMinutes": 97,
-    "department": "アニメーション",
-    "url": "https://2025.tiff-jp.net/ja/lineup/film/38007ANM05"
+    "id": "39005WFC16",
+    "title": "有用な人",
+    "durationMinutes": 111,
+    "department": "ワールド・フォーカス",
+    "url": "https://2026.tiff-jp.net/ja/lineup/film/39005WFC16"
   },
   {
-    "id": "38007ANM06",
-    "title": "私はフランケルダ",
-    "durationMinutes": 114,
-    "department": "アニメーション",
-    "url": "https://2025.tiff-jp.net/ja/lineup/film/38007ANM06"
+    "id": "39005WFC17",
+    "title": "良き隣人たち レストア版",
+    "durationMinutes": 95,
+    "department": "ワールド・フォーカス",
+    "url": "https://2026.tiff-jp.net/ja/lineup/film/39005WFC17"
   },
   {
-    "id": "38007ANM07",
-    "title": "無名の人生",
-    "durationMinutes": 93,
-    "department": "アニメーション",
-    "url": "https://2025.tiff-jp.net/ja/lineup/film/38007ANM07"
+    "id": "39005WFC18",
+    "title": "Saccharine（原題）",
+    "durationMinutes": 112,
+    "department": "ワールド・フォーカス",
+    "url": "https://2026.tiff-jp.net/ja/lineup/film/39005WFC18"
   },
   {
-    "id": "38007ANM08",
-    "title": "迷宮のしおり",
-    "durationMinutes": 115,
-    "department": "アニメーション",
-    "url": "https://2025.tiff-jp.net/ja/lineup/film/38007ANM08"
-  },
-  {
-    "id": "38007ANM09",
-    "title": "ホウセンカ",
-    "durationMinutes": 90,
-    "department": "アニメーション",
-    "url": "https://2025.tiff-jp.net/ja/lineup/film/38007ANM09"
-  },
-  {
-    "id": "38007ANM10",
-    "title": "Little Amélie or the Character of Rain（英題）",
-    "durationMinutes": 77,
-    "department": "アニメーション",
-    "url": "https://2025.tiff-jp.net/ja/lineup/film/38007ANM10"
-  },
-  {
-    "id": "38007ANM11",
-    "title": "トリツカレ男",
+    "id": "39005WFC19",
+    "title": "時と潮",
     "durationMinutes": 98,
-    "department": "アニメーション",
-    "url": "https://2025.tiff-jp.net/ja/lineup/film/38007ANM11"
+    "department": "ワールド・フォーカス",
+    "url": "https://2026.tiff-jp.net/ja/lineup/film/39005WFC19"
   },
   {
-    "id": "38007ANM12",
-    "title": "桃太郎 海の神兵　デジタル修復版",
-    "durationMinutes": 74,
-    "department": "アニメーション",
-    "url": "https://2025.tiff-jp.net/ja/lineup/film/38007ANM12"
-  },
-  {
-    "id": "38008CLA01",
-    "title": "浮雲　4Kデジタルリマスター版",
-    "durationMinutes": 124,
-    "department": "日本映画クラシックス",
-    "url": "https://2025.tiff-jp.net/ja/lineup/film/38008CLA01"
-  },
-  {
-    "id": "38008CLA02",
-    "title": "めし　4Kデジタルリマスター版",
-    "durationMinutes": 97,
-    "department": "日本映画クラシックス",
-    "url": "https://2025.tiff-jp.net/ja/lineup/film/38008CLA02"
-  },
-  {
-    "id": "38008CLA03",
-    "title": "銀座化粧　4Kデジタルリマスター版",
-    "durationMinutes": 87,
-    "department": "日本映画クラシックス",
-    "url": "https://2025.tiff-jp.net/ja/lineup/film/38008CLA03"
-  },
-  {
-    "id": "38008CLA04",
-    "title": "乾いた花　4Kデジタルリマスター版",
+    "id": "39005WFC20",
+    "title": "サバイバル",
     "durationMinutes": 96,
-    "department": "日本映画クラシックス",
-    "url": "https://2025.tiff-jp.net/ja/lineup/film/38008CLA04"
+    "department": "ワールド・フォーカス",
+    "url": "https://2026.tiff-jp.net/ja/lineup/film/39005WFC20"
   },
   {
-    "id": "38008CLA05",
-    "title": "夜叉ヶ池　4Kデジタルリマスター版",
-    "durationMinutes": 124,
-    "department": "日本映画クラシックス",
-    "url": "https://2025.tiff-jp.net/ja/lineup/film/38008CLA05"
+    "id": "39005WFC21",
+    "title": "The Blood Countess（英題）",
+    "durationMinutes": 119,
+    "department": "ワールド・フォーカス",
+    "url": "https://2026.tiff-jp.net/ja/lineup/film/39005WFC21"
   },
   {
-    "id": "38008CLA06",
-    "title": "鑓の権三　4Kデジタルリマスター版",
-    "durationMinutes": 126,
-    "department": "日本映画クラシックス",
-    "url": "https://2025.tiff-jp.net/ja/lineup/film/38008CLA06"
+    "id": "39005WFC22",
+    "title": "雪に埋もれて",
+    "durationMinutes": 103,
+    "department": "ワールド・フォーカス",
+    "url": "https://2026.tiff-jp.net/ja/lineup/film/39005WFC22"
   },
   {
-    "id": "38008CLA07",
-    "title": "炎上　4Kデジタル修復版",
-    "durationMinutes": 99,
-    "department": "日本映画クラシックス",
-    "url": "https://2025.tiff-jp.net/ja/lineup/film/38008CLA07"
+    "id": "39005WFC23",
+    "title": "アル中⼥の肖像",
+    "durationMinutes": 108,
+    "department": "ワールド・フォーカス",
+    "url": "https://2026.tiff-jp.net/ja/lineup/film/39005WFC23"
   },
   {
-    "id": "38008CLA08",
-    "title": "剣　４Kデジタル修復版",
-    "durationMinutes": 95,
-    "department": "日本映画クラシックス",
-    "url": "https://2025.tiff-jp.net/ja/lineup/film/38008CLA08"
+    "id": "39006ANM01",
+    "title": "アマデオともうひとつの新世界",
+    "durationMinutes": 105,
+    "department": "アニメーション",
+    "url": "https://2026.tiff-jp.net/ja/lineup/film/39006ANM01"
   },
   {
-    "id": "38008CLA09",
-    "title": "MISHIMA",
-    "durationMinutes": 122,
-    "department": "日本映画クラシックス",
-    "url": "https://2025.tiff-jp.net/ja/lineup/film/38008CLA09"
+    "id": "39006ANM02",
+    "title": "CHERRY AND VIRGIN",
+    "durationMinutes": 86,
+    "department": "アニメーション",
+    "url": "https://2026.tiff-jp.net/ja/lineup/film/39006ANM02"
   },
   {
-    "id": "38008CLA10",
-    "title": "三島由紀夫vs東大全共闘 50年目の真実",
+    "id": "39006ANM03",
+    "title": "フォーガットン・アイランド 忘却の魔法島",
+    "durationMinutes": 109,
+    "department": "アニメーション",
+    "url": "https://2026.tiff-jp.net/ja/lineup/film/39006ANM03"
+  },
+  {
+    "id": "39006ANM04",
+    "title": "ghost／夜の果て",
+    "durationMinutes": 110,
+    "department": "アニメーション",
+    "url": "https://2026.tiff-jp.net/ja/lineup/film/39006ANM04"
+  },
+  {
+    "id": "39006ANM05",
+    "title": "GROTESQQQUE-グロテスク-",
+    "durationMinutes": 104,
+    "department": "アニメーション",
+    "url": "https://2026.tiff-jp.net/ja/lineup/film/39006ANM05"
+  },
+  {
+    "id": "39006ANM06",
+    "title": "Iron Boy（英題）",
+    "durationMinutes": 90,
+    "department": "アニメーション",
+    "url": "https://2026.tiff-jp.net/ja/lineup/film/39006ANM06"
+  },
+  {
+    "id": "39006ANM07",
+    "title": "サノバビッチ",
+    "durationMinutes": 73,
+    "department": "アニメーション",
+    "url": "https://2026.tiff-jp.net/ja/lineup/film/39006ANM07"
+  },
+  {
+    "id": "39006ANM08",
+    "title": "ウォーキング・ウィズ・アニメーターズ",
+    "durationMinutes": 104,
+    "department": "アニメーション",
+    "url": "https://2026.tiff-jp.net/ja/lineup/film/39006ANM08"
+  },
+  {
+    "id": "39006ANM09",
+    "title": "我々は宇宙人",
+    "durationMinutes": 118,
+    "department": "アニメーション",
+    "url": "https://2026.tiff-jp.net/ja/lineup/film/39006ANM09"
+  },
+  {
+    "id": "39006ANM10",
+    "title": "劇場版「名探偵コナン 紺青の拳（フィスト）」",
+    "durationMinutes": 109,
+    "department": "アニメーション",
+    "url": "https://2026.tiff-jp.net/ja/lineup/film/39006ANM10"
+  },
+  {
+    "id": "39006ANM11",
+    "title": "金の国 水の国",
+    "durationMinutes": 117,
+    "department": "アニメーション",
+    "url": "https://2026.tiff-jp.net/ja/lineup/film/39006ANM11"
+  },
+  {
+    "id": "39006ANM12",
+    "title": "劇場アニメ『ベルサイユのばら』",
+    "durationMinutes": 113,
+    "department": "アニメーション",
+    "url": "https://2026.tiff-jp.net/ja/lineup/film/39006ANM12"
+  },
+  {
+    "id": "39007CLA01",
+    "title": "女が階段を上る時　4Kデジタルリマスター版",
+    "durationMinutes": 111,
+    "department": "日本映画クラシックス",
+    "url": "https://2026.tiff-jp.net/ja/lineup/film/39007CLA01"
+  },
+  {
+    "id": "39007CLA02",
+    "title": "乱れ雲　4Kデジタルリマスター版",
     "durationMinutes": 108,
     "department": "日本映画クラシックス",
-    "url": "https://2025.tiff-jp.net/ja/lineup/film/38008CLA10"
+    "url": "https://2026.tiff-jp.net/ja/lineup/film/39007CLA02"
   },
   {
-    "id": "38008CLA11",
-    "title": "スワロウテイル ４Kデジタルリマスター版",
-    "durationMinutes": 149,
+    "id": "39007CLA03",
+    "title": "魚影の群れ",
+    "durationMinutes": 140,
     "department": "日本映画クラシックス",
-    "url": "https://2025.tiff-jp.net/ja/lineup/film/38008CLA11"
+    "url": "https://2026.tiff-jp.net/ja/lineup/film/39007CLA03"
   },
   {
-    "id": "38008CLA12",
-    "title": "四月物語",
-    "durationMinutes": 67,
+    "id": "39007CLA04",
+    "title": "東京上空いらっしゃいませ",
+    "durationMinutes": 109,
     "department": "日本映画クラシックス",
-    "url": "https://2025.tiff-jp.net/ja/lineup/film/38008CLA12"
+    "url": "https://2026.tiff-jp.net/ja/lineup/film/39007CLA04"
   },
   {
-    "id": "38008CLA13",
-    "title": "Shall we ダンス？",
-    "durationMinutes": 136,
+    "id": "39007CLA05",
+    "title": "濡れた週末",
+    "durationMinutes": 71,
     "department": "日本映画クラシックス",
-    "url": "https://2025.tiff-jp.net/ja/lineup/film/38008CLA13"
+    "url": "https://2026.tiff-jp.net/ja/lineup/film/39007CLA05"
   },
   {
-    "id": "38008CLA14",
-    "title": "The Ozu Diaries",
-    "durationMinutes": 139,
+    "id": "39007CLA06",
+    "title": "ラブホテル",
+    "durationMinutes": 88,
     "department": "日本映画クラシックス",
-    "url": "https://2025.tiff-jp.net/ja/lineup/film/38008CLA14"
+    "url": "https://2026.tiff-jp.net/ja/lineup/film/39007CLA06"
   },
   {
-    "id": "38009YUT01",
-    "title": "ボタニスト 植物学家（仮題）",
-    "durationMinutes": 96,
-    "department": "ユース",
-    "url": "https://2025.tiff-jp.net/ja/lineup/film/38009YUT01"
+    "id": "39007CLA07",
+    "title": "ラスト・キャバレー",
+    "durationMinutes": 78,
+    "department": "日本映画クラシックス",
+    "url": "https://2026.tiff-jp.net/ja/lineup/film/39007CLA07"
   },
   {
-    "id": "38009YUT02",
-    "title": "マッド・ビルズ・トゥ・ペイ",
-    "durationMinutes": 100,
-    "department": "ユース",
-    "url": "https://2025.tiff-jp.net/ja/lineup/film/38009YUT02"
+    "id": "39007CLA08",
+    "title": "帝都物語 4K",
+    "durationMinutes": 135,
+    "department": "日本映画クラシックス",
+    "url": "https://2026.tiff-jp.net/ja/lineup/film/39007CLA08"
   },
   {
-    "id": "38009YUT03",
-    "title": "ストレンジ・リヴァー",
-    "durationMinutes": 106,
-    "department": "ユース",
-    "url": "https://2025.tiff-jp.net/ja/lineup/film/38009YUT03"
+    "id": "39007CLA09",
+    "title": "丹波哲郎の大霊界／死んだらどうなる",
+    "durationMinutes": 97,
+    "department": "日本映画クラシックス",
+    "url": "https://2026.tiff-jp.net/ja/lineup/film/39007CLA09"
   },
   {
-    "id": "38010TSR01",
-    "title": "スキャンダルイブ",
-    "durationMinutes": 100,
-    "department": "TIFFシリーズ",
-    "url": "https://2025.tiff-jp.net/ja/lineup/film/38010TSR01"
+    "id": "39007CLA10",
+    "title": "瀧の白糸［デジタル復元版］",
+    "durationMinutes": 122,
+    "department": "日本映画クラシックス",
+    "url": "https://2026.tiff-jp.net/ja/lineup/film/39007CLA10"
   },
   {
-    "id": "38011WEP01",
-    "title": "100 サンセット",
-    "durationMinutes": 99,
-    "department": "ウィメンズ・エンパワーメント",
-    "url": "https://2025.tiff-jp.net/ja/lineup/film/38011WEP01"
+    "id": "39007CLA11",
+    "title": "浪華悲歌",
+    "durationMinutes": 71,
+    "department": "日本映画クラシックス",
+    "url": "https://2026.tiff-jp.net/ja/lineup/film/39007CLA11"
   },
   {
-    "id": "38011WEP02",
-    "title": "藍反射",
-    "durationMinutes": 103,
-    "department": "ウィメンズ・エンパワーメント",
-    "url": "https://2025.tiff-jp.net/ja/lineup/film/38011WEP02"
+    "id": "39007CLA12",
+    "title": "衹園の姉妹",
+    "durationMinutes": 69,
+    "department": "日本映画クラシックス",
+    "url": "https://2026.tiff-jp.net/ja/lineup/film/39007CLA12"
   },
   {
-    "id": "38011WEP03",
-    "title": "シネマ・ジャジレー",
-    "durationMinutes": 129,
-    "department": "ウィメンズ・エンパワーメント",
-    "url": "https://2025.tiff-jp.net/ja/lineup/film/38011WEP03"
+    "id": "39007CLA13",
+    "title": "殘菊物語［デジタル修復版］",
+    "durationMinutes": 142,
+    "department": "日本映画クラシックス",
+    "url": "https://2026.tiff-jp.net/ja/lineup/film/39007CLA13"
   },
   {
-    "id": "38011WEP04",
-    "title": "ハッピー・バースデイ",
+    "id": "39007CLA15",
+    "title": "雨月物語［デジタル修復版］",
+    "durationMinutes": 98,
+    "department": "日本映画クラシックス",
+    "url": "https://2026.tiff-jp.net/ja/lineup/film/39007CLA15"
+  },
+  {
+    "id": "39007CLA16",
+    "title": "衹園囃子",
+    "durationMinutes": 84,
+    "department": "日本映画クラシックス",
+    "url": "https://2026.tiff-jp.net/ja/lineup/film/39007CLA16"
+  },
+  {
+    "id": "39007CLA17",
+    "title": "山椒大夫［デジタル修復版］",
+    "durationMinutes": 126,
+    "department": "日本映画クラシックス",
+    "url": "https://2026.tiff-jp.net/ja/lineup/film/39007CLA17"
+  },
+  {
+    "id": "39007CLA18",
+    "title": "近松物語［デジタル修復版］",
+    "durationMinutes": 102,
+    "department": "日本映画クラシックス",
+    "url": "https://2026.tiff-jp.net/ja/lineup/film/39007CLA18"
+  },
+  {
+    "id": "39007CLA19",
+    "title": "楊貴妃",
     "durationMinutes": 91,
-    "department": "ウィメンズ・エンパワーメント",
-    "url": "https://2025.tiff-jp.net/ja/lineup/film/38011WEP04"
+    "department": "日本映画クラシックス",
+    "url": "https://2026.tiff-jp.net/ja/lineup/film/39007CLA19"
   },
   {
-    "id": "38011WEP05",
-    "title": "私はネヴェンカ",
-    "durationMinutes": 117,
-    "department": "ウィメンズ・エンパワーメント",
-    "url": "https://2025.tiff-jp.net/ja/lineup/film/38011WEP05"
+    "id": "39007CLA20",
+    "title": "新・平家物語［デジタル復元版］",
+    "durationMinutes": 107,
+    "department": "日本映画クラシックス",
+    "url": "https://2026.tiff-jp.net/ja/lineup/film/39007CLA20"
   },
   {
-    "id": "38011WEP06",
-    "title": "佐藤さんと佐藤さん",
-    "durationMinutes": 114,
-    "department": "ウィメンズ・エンパワーメント",
-    "url": "https://2025.tiff-jp.net/ja/lineup/film/38011WEP06"
+    "id": "39007CLA21",
+    "title": "赤線地帶［デジタル修復版］",
+    "durationMinutes": 85,
+    "department": "日本映画クラシックス",
+    "url": "https://2026.tiff-jp.net/ja/lineup/film/39007CLA21"
   },
   {
-    "id": "38011WEP07",
-    "title": "私の愛のかたち",
+    "id": "39008YUT01",
+    "title": "ジョーの一日：フェドラ編",
+    "durationMinutes": 88,
+    "department": "ユース",
+    "url": "https://2026.tiff-jp.net/ja/lineup/film/39008YUT01"
+  },
+  {
+    "id": "39008YUT02",
+    "title": "リヴァー・トレイン",
+    "durationMinutes": 76,
+    "department": "ユース",
+    "url": "https://2026.tiff-jp.net/ja/lineup/film/39008YUT02"
+  },
+  {
+    "id": "39008YUT03",
+    "title": "ときに悲しみ、ときに反逆",
+    "durationMinutes": 101,
+    "department": "ユース",
+    "url": "https://2026.tiff-jp.net/ja/lineup/film/39008YUT03"
+  },
+  {
+    "id": "39008YUT05",
+    "title": "TIFFティーンズ映画教室 10周年記念／TIFFティーンズ・シネクラブ2026報告会",
+    "durationMinutes": 180,
+    "department": "ユース",
+    "url": "https://2026.tiff-jp.net/ja/lineup/film/39008YUT05"
+  },
+  {
+    "id": "39010WEP01",
+    "title": "木々から遠く離れて",
+    "durationMinutes": 121,
+    "department": "ウィメンズ・エンパワーメント",
+    "url": "https://2026.tiff-jp.net/ja/lineup/film/39010WEP01"
+  },
+  {
+    "id": "39010WEP02",
+    "title": "A Girl Unknown（英題）",
+    "durationMinutes": 125,
+    "department": "ウィメンズ・エンパワーメント",
+    "url": "https://2026.tiff-jp.net/ja/lineup/film/39010WEP02"
+  },
+  {
+    "id": "39010WEP03",
+    "title": "夢から覚めることはそうない",
+    "durationMinutes": 100,
+    "department": "ウィメンズ・エンパワーメント",
+    "url": "https://2026.tiff-jp.net/ja/lineup/film/39010WEP03"
+  },
+  {
+    "id": "39010WEP04",
+    "title": "青い夜の恋人たち",
     "durationMinutes": 105,
     "department": "ウィメンズ・エンパワーメント",
-    "url": "https://2025.tiff-jp.net/ja/lineup/film/38011WEP07"
+    "url": "https://2026.tiff-jp.net/ja/lineup/film/39010WEP04"
   },
   {
-    "id": "38013MST01",
-    "title": "ソイ・チェン マスタークラス＋『トワイライト・ウォリアーズ 決戦！九龍城砦』上映",
-    "durationMinutes": 125,
-    "department": "ソイ・チェン　マスタークラス",
-    "url": "https://2025.tiff-jp.net/ja/lineup/film/38013MST01"
+    "id": "39010WEP05",
+    "title": "メルトダウン",
+    "durationMinutes": 110,
+    "department": "ウィメンズ・エンパワーメント",
+    "url": "https://2026.tiff-jp.net/ja/lineup/film/39010WEP05"
   },
   {
-    "id": "38014SPS01",
-    "title": "イン・アイ・イン・モーション",
-    "durationMinutes": 127,
-    "department": "特別上映",
-    "url": "https://2025.tiff-jp.net/ja/lineup/film/38014SPS01"
+    "id": "39010WEP06",
+    "title": "Super Lucky Girl",
+    "durationMinutes": 79,
+    "department": "ウィメンズ・エンパワーメント",
+    "url": "https://2026.tiff-jp.net/ja/lineup/film/39010WEP06"
   },
   {
-    "id": "38014SPS02",
-    "title": "ヤンヤン 夏の想い出 4Kレストア版",
-    "durationMinutes": 173,
-    "department": "特別上映",
-    "url": "https://2025.tiff-jp.net/ja/lineup/film/38014SPS02"
+    "id": "39010WEP07",
+    "title": "裸のままで",
+    "durationMinutes": 102,
+    "department": "ウィメンズ・エンパワーメント",
+    "url": "https://2026.tiff-jp.net/ja/lineup/film/39010WEP07"
   },
   {
-    "id": "38014SPS03",
-    "title": "愛殺 レストア版",
-    "durationMinutes": 91,
-    "department": "特別上映",
-    "url": "https://2025.tiff-jp.net/ja/lineup/film/38014SPS03"
+    "id": "39012CCA01",
+    "title": "プルティウィをめぐる４つの季節",
+    "durationMinutes": 137,
+    "department": "CROSSCUT ASIA+",
+    "url": "https://2026.tiff-jp.net/ja/lineup/film/39012CCA01"
   },
   {
-    "id": "38014SPS04",
-    "title": "GENERATIONS：The Documentary",
-    "durationMinutes": 107,
-    "department": "特別上映",
-    "url": "https://2025.tiff-jp.net/ja/lineup/film/38014SPS04"
-  },
-  {
-    "id": "38014SPS05",
-    "title": "８番出口",
-    "durationMinutes": 95,
-    "department": "特別上映",
-    "url": "https://2025.tiff-jp.net/ja/lineup/film/38014SPS05"
-  },
-  {
-    "id": "38015KAF01",
-    "title": "モダン・タイムス",
-    "durationMinutes": 87,
-    "department": "黒澤明の愛した映画",
-    "url": "https://2025.tiff-jp.net/ja/lineup/film/38015KAF01"
-  },
-  {
-    "id": "38015KAF02",
-    "title": "太陽がいっぱい 4Kレストア版",
-    "durationMinutes": 118,
-    "department": "黒澤明の愛した映画",
-    "url": "https://2025.tiff-jp.net/ja/lineup/film/38015KAF02"
-  },
-  {
-    "id": "38015KAF03",
-    "title": "冬冬の夏休み デジタルリマスター版",
-    "durationMinutes": 98,
-    "department": "黒澤明の愛した映画",
-    "url": "https://2025.tiff-jp.net/ja/lineup/film/38015KAF03"
-  },
-  {
-    "id": "38015KAF04",
-    "title": "羅生門　4Kデジタル修復版",
-    "durationMinutes": 88,
-    "department": "黒澤明の愛した映画",
-    "url": "https://2025.tiff-jp.net/ja/lineup/film/38015KAF04"
-  },
-  {
-    "id": "38015KAF05",
-    "title": "夢",
-    "durationMinutes": 120,
-    "department": "黒澤明の愛した映画",
-    "url": "https://2025.tiff-jp.net/ja/lineup/film/38015KAF05"
-  },
-  {
-    "id": "38018ODS01",
-    "title": "ミッション：インポッシブル／ファイナル・レコニング",
-    "durationMinutes": 169,
-    "department": "東京国際映画祭 屋外上映会2025",
-    "url": "https://2025.tiff-jp.net/ja/lineup/film/38018ODS01"
-  },
-  {
-    "id": "38018ODS02",
-    "title": "教皇選挙",
-    "durationMinutes": 120,
-    "department": "東京国際映画祭 屋外上映会2025",
-    "url": "https://2025.tiff-jp.net/ja/lineup/film/38018ODS02"
-  },
-  {
-    "id": "38018ODS03",
-    "title": "366日",
-    "durationMinutes": 122,
-    "department": "東京国際映画祭 屋外上映会2025",
-    "url": "https://2025.tiff-jp.net/ja/lineup/film/38018ODS03"
-  },
-  {
-    "id": "38018ODS04",
-    "title": "新しい靴を買わなくちゃ",
-    "durationMinutes": 115,
-    "department": "東京国際映画祭 屋外上映会2025",
-    "url": "https://2025.tiff-jp.net/ja/lineup/film/38018ODS04"
-  },
-  {
-    "id": "38018ODS05",
-    "title": "遙かなる山の呼び声",
-    "durationMinutes": 124,
-    "department": "東京国際映画祭 屋外上映会2025",
-    "url": "https://2025.tiff-jp.net/ja/lineup/film/38018ODS05"
-  },
-  {
-    "id": "38018ODS06",
-    "title": "ジョーズ",
-    "durationMinutes": 124,
-    "department": "東京国際映画祭 屋外上映会2025",
-    "url": "https://2025.tiff-jp.net/ja/lineup/film/38018ODS06"
-  },
-  {
-    "id": "38018ODS07",
-    "title": "ネムルバカ",
-    "durationMinutes": 106,
-    "department": "東京国際映画祭 屋外上映会2025",
-    "url": "https://2025.tiff-jp.net/ja/lineup/film/38018ODS07"
-  },
-  {
-    "id": "38018ODS08",
-    "title": "パリタクシー",
-    "durationMinutes": 91,
-    "department": "東京国際映画祭 屋外上映会2025",
-    "url": "https://2025.tiff-jp.net/ja/lineup/film/38018ODS08"
-  },
-  {
-    "id": "38018ODS09",
-    "title": "赤い糸 輪廻のひみつ",
-    "durationMinutes": 128,
-    "department": "東京国際映画祭 屋外上映会2025",
-    "url": "https://2025.tiff-jp.net/ja/lineup/film/38018ODS09"
-  },
-  {
-    "id": "38018ODS10",
-    "title": "ヴェノム：ザ・ラストダンス",
-    "durationMinutes": 109,
-    "department": "東京国際映画祭 屋外上映会2025",
-    "url": "https://2025.tiff-jp.net/ja/lineup/film/38018ODS10"
-  },
-  {
-    "id": "38018ODS11",
-    "title": "バッドボーイズ RIDE OR DIE",
-    "durationMinutes": 115,
-    "department": "東京国際映画祭 屋外上映会2025",
-    "url": "https://2025.tiff-jp.net/ja/lineup/film/38018ODS11"
-  },
-  {
-    "id": "38018ODS12",
-    "title": "恋するプリテンダー",
-    "durationMinutes": 103,
-    "department": "東京国際映画祭 屋外上映会2025",
-    "url": "https://2025.tiff-jp.net/ja/lineup/film/38018ODS12"
-  },
-  {
-    "id": "38018ODS13",
-    "title": "グランツーリスモ",
-    "durationMinutes": 134,
-    "department": "東京国際映画祭 屋外上映会2025",
-    "url": "https://2025.tiff-jp.net/ja/lineup/film/38018ODS13"
-  },
-  {
-    "id": "38018ODS14",
-    "title": "はじまりのうた",
-    "durationMinutes": 104,
-    "department": "東京国際映画祭 屋外上映会2025",
-    "url": "https://2025.tiff-jp.net/ja/lineup/film/38018ODS14"
-  },
-  {
-    "id": "38018ODS15",
-    "title": "ベスト・キッド",
-    "durationMinutes": 140,
-    "department": "東京国際映画祭 屋外上映会2025",
-    "url": "https://2025.tiff-jp.net/ja/lineup/film/38018ODS15"
-  },
-  {
-    "id": "38018ODS16",
-    "title": "スーパーマンII　冒険編",
-    "durationMinutes": 127,
-    "department": "東京国際映画祭 屋外上映会2025",
-    "url": "https://2025.tiff-jp.net/ja/lineup/film/38018ODS16"
-  },
-  {
-    "id": "38018ODS17",
-    "title": "スーパーマン リターンズ",
-    "durationMinutes": 154,
-    "department": "東京国際映画祭 屋外上映会2025",
-    "url": "https://2025.tiff-jp.net/ja/lineup/film/38018ODS17"
-  },
-  {
-    "id": "38018ODS18",
-    "title": "マン・オブ・スティール",
-    "durationMinutes": 143,
-    "department": "東京国際映画祭 屋外上映会2025",
-    "url": "https://2025.tiff-jp.net/ja/lineup/film/38018ODS18"
-  },
-  {
-    "id": "38018ODS19",
-    "title": "劇場版マクロスF～イツワリノウタヒメ～",
-    "durationMinutes": 120,
-    "department": "東京国際映画祭 屋外上映会2025",
-    "url": "https://2025.tiff-jp.net/ja/lineup/film/38018ODS19"
-  },
-  {
-    "id": "38018ODS20",
-    "title": "劇場版マクロスF～サヨナラノツバサ～",
-    "durationMinutes": 115,
-    "department": "東京国際映画祭 屋外上映会2025",
-    "url": "https://2025.tiff-jp.net/ja/lineup/film/38018ODS20"
-  },
-  {
-    "id": "38018ODS21",
-    "title": "劇場版マクロスΔ 激情のワルキューレ",
-    "durationMinutes": 120,
-    "department": "東京国際映画祭 屋外上映会2025",
-    "url": "https://2025.tiff-jp.net/ja/lineup/film/38018ODS21"
-  },
-  {
-    "id": "38018ODS22",
-    "title": "劇場版マクロスΔ 絶対LIVE!!!!!!／劇場短編マクロスF～時の迷宮～",
-    "durationMinutes": 124,
-    "department": "東京国際映画祭 屋外上映会2025",
-    "url": "https://2025.tiff-jp.net/ja/lineup/film/38018ODS22"
-  },
-  {
-    "id": "38018ODS24",
-    "title": "スティング",
-    "durationMinutes": 129,
-    "department": "東京国際映画祭 屋外上映会2025",
-    "url": "https://2025.tiff-jp.net/ja/lineup/film/38018ODS24"
-  },
-  {
-    "id": "38031SKP01",
-    "title": "長い夜",
-    "durationMinutes": 116,
-    "department": "「SKIPシティ国際Dシネマ映画祭2025」受賞作品上映",
-    "url": "https://2025.tiff-jp.net/ja/lineup/film/38031SKP01"
-  },
-  {
-    "id": "38032DGJ01",
-    "title": "HAPPYEND",
-    "durationMinutes": 113,
-    "department": "日本映画監督協会新人賞 上映とトーク",
-    "url": "https://2025.tiff-jp.net/ja/lineup/film/38032DGJ01"
-  },
-  {
-    "id": "38033AIC01",
-    "title": "強くなるとき",
+    "id": "39012CCA02",
+    "title": "フィリピニャーナ",
     "durationMinutes": 100,
-    "department": "あいち国際女性映画祭 in Tokyo 『強くなるとき』",
-    "url": "https://2025.tiff-jp.net/ja/lineup/film/38033AIC01"
+    "department": "CROSSCUT ASIA+",
+    "url": "https://2026.tiff-jp.net/ja/lineup/film/39012CCA02"
+  },
+  {
+    "id": "39012CCA03",
+    "title": "人間に生まれるなら",
+    "durationMinutes": 99,
+    "department": "CROSSCUT ASIA+",
+    "url": "https://2026.tiff-jp.net/ja/lineup/film/39012CCA03"
+  },
+  {
+    "id": "39012CCA04",
+    "title": "未明のとき",
+    "durationMinutes": 103,
+    "department": "CROSSCUT ASIA+",
+    "url": "https://2026.tiff-jp.net/ja/lineup/film/39012CCA04"
+  },
+  {
+    "id": "39012CCA05",
+    "title": "瞬く光の陰で",
+    "durationMinutes": 161,
+    "department": "CROSSCUT ASIA+",
+    "url": "https://2026.tiff-jp.net/ja/lineup/film/39012CCA05"
+  },
+  {
+    "id": "39012CCA06",
+    "title": "トゥラン",
+    "durationMinutes": 91,
+    "department": "CROSSCUT ASIA+",
+    "url": "https://2026.tiff-jp.net/ja/lineup/film/39012CCA06"
+  },
+  {
+    "id": "39013SPS01",
+    "title": "それって幸せ？",
+    "durationMinutes": 92,
+    "department": "特別上映",
+    "url": "https://2026.tiff-jp.net/ja/lineup/film/39013SPS01"
+  },
+  {
+    "id": "39013SPS02",
+    "title": "羊の皮を着たケモノ",
+    "durationMinutes": 106,
+    "department": "特別上映",
+    "url": "https://2026.tiff-jp.net/ja/lineup/film/39013SPS02"
+  },
+  {
+    "id": "39013SPS03",
+    "title": "蝶変",
+    "durationMinutes": 89,
+    "department": "特別上映",
+    "url": "https://2026.tiff-jp.net/ja/lineup/film/39013SPS03"
+  },
+  {
+    "id": "39013SPS04",
+    "title": "ワイルドウッド",
+    "durationMinutes": 132,
+    "department": "特別上映",
+    "url": "https://2026.tiff-jp.net/ja/lineup/film/39013SPS04"
+  },
+  {
+    "id": "39014KAF01",
+    "title": "サーカス　4Kデジタルリマスター版",
+    "durationMinutes": 73,
+    "department": "黒澤明の愛した映画",
+    "url": "https://2026.tiff-jp.net/ja/lineup/film/39014KAF01"
+  },
+  {
+    "id": "39014KAF02",
+    "title": "友だちのうちはどこ？",
+    "durationMinutes": 84,
+    "department": "黒澤明の愛した映画",
+    "url": "https://2026.tiff-jp.net/ja/lineup/film/39014KAF02"
+  },
+  {
+    "id": "39014KAF03",
+    "title": "姿三四郎　4Kデジタルリマスター版",
+    "durationMinutes": 91,
+    "department": "黒澤明の愛した映画",
+    "url": "https://2026.tiff-jp.net/ja/lineup/film/39014KAF03"
+  },
+  {
+    "id": "39014KAF04",
+    "title": "生きる 4Kデジタルリマスター版",
+    "durationMinutes": 143,
+    "department": "黒澤明の愛した映画",
+    "url": "https://2026.tiff-jp.net/ja/lineup/film/39014KAF04"
+  },
+  {
+    "id": "39031DGJ01",
+    "title": "みんな、おしゃべり！",
+    "durationMinutes": 143,
+    "department": "日本映画監督協会新人賞 上映とトーク",
+    "url": "https://2026.tiff-jp.net/ja/lineup/film/39031DGJ01"
+  },
+  {
+    "id": "39032AIC01",
+    "title": "ふたりの家路",
+    "durationMinutes": 88,
+    "department": "あいち国際女性映画祭 in Tokyo",
+    "url": "https://2026.tiff-jp.net/ja/lineup/film/39032AIC01"
   }
 ]

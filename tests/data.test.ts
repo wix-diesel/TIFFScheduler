@@ -15,7 +15,7 @@ test('2025 official dataset is complete relative to the saved source and validat
   assert.equal(data.report.excluded.length+data.screenings.length,source.acts.length);
   assert.equal(data.report.corrections.length,6);
   assert.equal(data.travelTimes.length,13*13);
-  validateDataset(data);
+  validateDataset(data, 2025);
 });
 test('official PDF anchors retain date, room and start time; official extra screenings are included',()=>{
   const shows=(title:string)=>data.screenings.filter(s=>s.filmId===data.films.find(f=>f.title===title)?.id);
@@ -56,9 +56,9 @@ test('unknown durations remain explicit exclusions; missing routes and duplicate
   const duplicate=structuredClone(source);duplicate.acts.push(duplicate.acts[0]!);
   assert.throws(()=>buildDataset(duplicate,travel),/Duplicate/);
   const missing=structuredClone(data);missing.travelTimes.pop();
-  assert.throws(()=>validateDataset(missing),/route/);
+  assert.throws(()=>validateDataset(missing, 2025),/route/);
   const broken=structuredClone(data);broken.screenings[0]!.filmId='missing';
-  assert.throws(()=>validateDataset(broken),/reference/);
+  assert.throws(()=>validateDataset(broken, 2025),/reference/);
   assert.throws(()=>projectOfficialData([],source.retrievedAt),/Expected/);
 });
 
