@@ -1,5 +1,18 @@
 import { expect, test } from '@playwright/test';
 
+test('2026 catalog starts separately and preserves the previous edition in storage', async ({ page }) => {
+  await page.goto('./');
+  const oldValue = JSON.stringify({ festivalId: 'tiff-2025', selectedFilmIds: ['38005WFC16'] });
+  await page.evaluate(value => localStorage.setItem('tiff-scheduler:tiff-2025', value), oldValue);
+  await page.reload();
+  await expect(page.locator('.tag')).toHaveText('TIFF 2026');
+  await expect(page.locator('.notice')).toContainText('2026-10-26〜2026-11-04');
+  await expect(page.getByRole('button', { name: 'スケジュールを生成' })).toBeDisabled();
+  await page.locator('.film-card').first().getByRole('checkbox').check();
+  await expect.poll(() => page.evaluate(() => JSON.parse(localStorage.getItem('tiff-scheduler:tiff-2026')!).selectedFilmIds.length)).toBe(1);
+  expect(await page.evaluate(() => localStorage.getItem('tiff-scheduler:tiff-2025'))).toBe(oldValue);
+});
+
 test('shows bundled OSS licenses from Vite-generated JSON', async ({ page }) => {
   await page.goto('./');
   await page.getByRole('button', { name: 'Licenses', exact: true }).click();
@@ -28,9 +41,9 @@ test('select films, edit constraints and generate a mobile-friendly plan', async
   await page.getByRole('searchbox').fill('');
   await page.getByRole('checkbox', { name: '選択中のみ' }).check();
   await expect(cards).toHaveCount(1);
-  await page.getByLabel('追加休日', { exact: true }).fill('2025-10-28');
+  await page.getByLabel('追加休日', { exact: true }).fill('2026-10-28');
   await page.locator('.date-list').first().getByRole('button', { name: '追加', exact: true }).click();
-  await expect(page.getByRole('button', { name: '追加休日 2025-10-28を削除' })).toBeVisible();
+  await expect(page.getByRole('button', { name: '追加休日 2026-10-28を削除' })).toBeVisible();
   await page.getByLabel('確保する時間').selectOption('45');
   await page.getByLabel('最大上映本数').fill('1');
   await page.getByLabel('この時刻以降').fill('09:00');
@@ -87,12 +100,12 @@ test('browse a compact catalog and keep selections across pages and filters', as
   await expect(page.getByRole('checkbox', { name: firstTitle, exact: true })).toHaveCount(0);
   await page.getByRole('button', { name: '絞り込みを解除' }).click();
   await expect(cards).toHaveCount(12);
-  await page.getByLabel('上映日で絞り込み').selectOption('2025-10-27');
+  await page.getByLabel('上映日で絞り込み').selectOption('2026-10-26');
   await cards.first().getByText('上映日時・会場を見る', { exact: true }).click();
-  await expect(cards.first().locator('.screenings')).toContainText(/10(?:月|\/)27/);
+  await expect(cards.first().locator('.screenings')).toContainText(/10(?:月|\/)26/);
   await page.getByRole('button', { name: '絞り込みを解除' }).click();
-  await page.getByLabel('作品一覧のページ番号').selectOption('13');
-  await expect(cards).toHaveCount(5);
+  await page.getByLabel('作品一覧のページ番号').selectOption('12');
+  await expect(cards).toHaveCount(2);
   await expect(page.getByRole('button', { name: '次へ', exact: true })).toBeDisabled();
   await page.getByRole('searchbox').fill(firstTitle);
   await expect(cards.first().locator('strong')).toHaveText(firstTitle);
@@ -120,12 +133,12 @@ test('combine department, title and date filters without losing selected films',
   await expect(cards.first().locator('strong')).toHaveText(title);
   await page.getByRole('button', { name: '絞り込みを解除' }).click();
   await page.getByLabel('部門で絞り込み').selectOption('ワールド・フォーカス');
-  await page.getByLabel('上映日で絞り込み').selectOption('2025-10-27');
+  await page.getByLabel('上映日で絞り込み').selectOption('2026-10-26');
   await expect(cards.first()).toBeVisible();
   for (const card of await cards.all()) {
     await expect(card.locator('.film-department')).toHaveText('ワールド・フォーカス');
     await card.getByText('上映日時・会場を見る', { exact: true }).click();
-    await expect(card.locator('.screenings')).toContainText(/10(?:月|\/)27/);
+    await expect(card.locator('.screenings')).toContainText(/10(?:月|\/)26/);
   }
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true);
 });
@@ -166,17 +179,17 @@ test('named snapshots survive edits and reload, and deletion requires confirmati
 
 test('updated data removes missing selections but preserves old named snapshots',async({page})=>{
  await page.goto('./');await page.locator('.film-card').first().getByRole('checkbox').check();await page.getByRole('button',{name:'スケジュールを生成'}).click();await page.getByRole('button',{name:'プラン 1を保存',exact:true}).click();
- await page.evaluate(()=>{const key='tiff-scheduler:tiff-2025';const v=JSON.parse(localStorage.getItem(key)!);v.dataFingerprint='old';v.selectedFilmIds.push('removed-film');v.savedPlans[0].dataFingerprint='old';localStorage.setItem(key,JSON.stringify(v));});
+ await page.evaluate(()=>{const key='tiff-scheduler:tiff-2026';const v=JSON.parse(localStorage.getItem(key)!);v.dataFingerprint='old';v.selectedFilmIds.push('removed-film');v.savedPlans[0].dataFingerprint='old';localStorage.setItem(key,JSON.stringify(v));});
  await page.reload();await expect(page.getByText(/選択していた作品1件/)).toBeVisible();
  await page.getByText('保存プラン 1',{exact:true}).click();await expect(page.getByText('上映情報が更新されています。このプランは保存時の情報です。')).toBeVisible();
  await expect(page.locator('.plan')).toHaveCount(1);
 });
 
 for(const value of ['{',JSON.stringify({schemaVersion:999})])test(`unreadable storage remains untouched: ${value}`,async({page})=>{
- await page.goto('./');await page.evaluate(value=>localStorage.setItem('tiff-scheduler:tiff-2025',value),value);await page.reload();
+ await page.goto('./');await page.evaluate(value=>localStorage.setItem('tiff-scheduler:tiff-2026',value),value);await page.reload();
  await expect(page.getByRole('alert')).toContainText('保存できませんでした');
  await page.locator('.film-card').first().getByRole('checkbox').check();await page.getByRole('button',{name:'スケジュールを生成'}).click();await expect(page.locator('.plan').first()).toBeVisible();
- expect(await page.evaluate(()=>localStorage.getItem('tiff-scheduler:tiff-2025'))).toBe(value);
+ expect(await page.evaluate(()=>localStorage.getItem('tiff-scheduler:tiff-2026'))).toBe(value);
 });
 
 test('another tab warns without replacing in-progress choices',async({page,context})=>{
@@ -195,7 +208,7 @@ test('quota failures keep generated plans usable in memory',async({page})=>{
 
 test('20 named plans require explicit deletion before saving another',async({page})=>{
  await page.goto('./');await page.locator('.film-card').first().getByRole('checkbox').check();await page.getByRole('button',{name:'スケジュールを生成'}).click();await page.getByRole('button',{name:'プラン 1を保存',exact:true}).click();
- await page.evaluate(()=>{const key='tiff-scheduler:tiff-2025';const v=JSON.parse(localStorage.getItem(key)!);v.savedPlans=Array.from({length:20},(_,i)=>({...v.savedPlans[0],id:String(i),name:`保存 ${i}`}));localStorage.setItem(key,JSON.stringify(v));});await page.reload();
+ await page.evaluate(()=>{const key='tiff-scheduler:tiff-2026';const v=JSON.parse(localStorage.getItem(key)!);v.savedPlans=Array.from({length:20},(_,i)=>({...v.savedPlans[0],id:String(i),name:`保存 ${i}`}));localStorage.setItem(key,JSON.stringify(v));});await page.reload();
  await page.getByRole('button',{name:'プラン 1を保存',exact:true}).click();await expect(page.getByRole('alert')).toContainText('20件まで');
  await page.getByText('保存 0',{exact:true}).click();await page.getByRole('button',{name:'この保存プランを削除',exact:true}).first().click();
  await page.getByRole('button',{name:'プラン 1を保存',exact:true}).click();await page.reload();
