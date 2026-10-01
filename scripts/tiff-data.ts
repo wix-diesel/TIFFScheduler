@@ -12,8 +12,14 @@ export const GUIDE_URL = 'https://2026.tiff-jp.net/download/39th_TIFF-Guide-high
 
 /** Festival-specific facts; department and venue IDs can change between editions. */
 function edition(year: number) {
-  if (year === 2025) return { start: '2025-10-27', end: '2025-11-05', departments: departments2025, eventDepartment: 26 };
-  if (year === 2026) return { start: START, end: END, departments: departments2026, eventDepartment: 38 };
+  if (year === 2025) return {
+    start: '2025-10-27', end: '2025-11-05', departments: departments2025, eventDepartment: 26,
+    eventReason: '映画上映ではない業界向けイベント',
+  };
+  if (year === 2026) return {
+    start: START, end: END, departments: departments2026, eventDepartment: 38,
+    eventReason: '業界向けイベント部門（特別企画上映を含む）',
+  };
   throw new Error(`Unsupported festival year ${year}`);
 }
 export interface SourceAct {
@@ -65,7 +71,7 @@ export function buildDataset(source: Source, travel: TravelConfig) {
     ids.add(a.id);
     const skip = (reason: string) => excluded.push({actId: a.id, title: a.title, reason});
     if (a.date < config.start || a.date > config.end) { skip('開催期間外'); continue; }
-    if (a.departmentId === config.eventDepartment) { skip(year === 2026 ? '業界向けイベント部門（特別企画上映を含む）' : '映画上映ではない業界向けイベント'); continue; }
+    if (a.departmentId === config.eventDepartment) { skip(config.eventReason); continue; }
     if (!/^\d+$/.test(a.duration ?? '') || Number(a.duration) <= 0) { skip('本編時間が未記載・複数作品枠・受賞作品未確定'); continue; }
     const duration = Number(a.duration);
     const timestamp = (clock: string) => `${a.date}T${clock}+09:00`;
