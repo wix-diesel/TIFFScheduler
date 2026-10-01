@@ -22,6 +22,28 @@ test('malformed nested results and future versions are rejected',()=>{
  assert.throws(()=>decode(JSON.stringify({...state(),schemaVersion:2}),'tiff-2025'),FutureSchemaError);
  const bad=state();bad.savedPlans[0]!.snapshot.result.plans[0]!.screenings[0]!.filmId='missing';assert.throws(()=>decode(JSON.stringify(bad),'tiff-2025'));
 });
+test('objective persists independently in drafts, results and saved plans',()=>{
+ const v=state();v.constraints.optimizationObjective='minVacation';
+ v.lastResult!.input.constraints.optimizationObjective='minVacation';
+ const restored=decode(encode(v),'tiff-2025');
+ assert.equal(restored.constraints.optimizationObjective,'minVacation');
+ assert.equal(restored.lastResult!.input.constraints.optimizationObjective,'minVacation');
+ assert.equal(restored.savedPlans[0]!.snapshot.input.constraints.optimizationObjective,'maxFilms');
+});
+test('legacy objectives default to film-first and unknown objectives are rejected at every boundary',()=>{
+ const legacy=state();delete legacy.constraints.optimizationObjective;
+ delete legacy.lastResult!.input.constraints.optimizationObjective;
+ delete legacy.savedPlans[0]!.snapshot.input.constraints.optimizationObjective;
+ const restored=decode(JSON.stringify(legacy),'tiff-2025');
+ assert.equal(restored.constraints.optimizationObjective,'maxFilms');
+ assert.equal(restored.lastResult!.input.constraints.optimizationObjective,'maxFilms');
+ assert.equal(restored.savedPlans[0]!.snapshot.input.constraints.optimizationObjective,'maxFilms');
+ for(const location of ['draft','result','saved']){
+  const v=state();const c=location==='draft'?v.constraints:location==='result'?v.lastResult!.input.constraints:v.savedPlans[0]!.snapshot.input.constraints;
+  Object.assign(c,{optimizationObjective:'unknown'});
+  assert.throws(()=>decode(JSON.stringify(v),'tiff-2025'));
+ }
+});
 test('missing settings migrate to defaults',()=>{
  const v=state();delete v.constraints.workStart;delete v.constraints.maxScreeningsPerDay;delete v.constraints.earliestScreeningStart;delete v.constraints.latestScreeningEnd;
  const restored=decode(JSON.stringify(v),'tiff-2025');

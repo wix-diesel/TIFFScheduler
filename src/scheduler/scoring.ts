@@ -1,10 +1,16 @@
-import type { ScheduleScore, ScheduleInput, Screening, SchedulePlan, MealBreak, LunchBreak } from './types.ts';
+import type { ScheduleScore, ScheduleInput, Screening, SchedulePlan, MealBreak, LunchBreak, OptimizationObjective } from './types.ts';
 import { occupied, travelMinutes, vacationDaysForItinerary } from './constraints.ts';
 import { dateInJapan, minute } from './time.ts';
-export function compareScores(a: ScheduleScore, b: ScheduleScore): number {
+/** Compare primary criteria, also used with optimistic bounds during search. */
+export function comparePriorities(a: Pick<ScheduleScore, 'missedFilmCount' | 'vacationUnits'>, b: Pick<ScheduleScore, 'missedFilmCount' | 'vacationUnits'>, objective: OptimizationObjective = 'maxFilms'): number {
+  const films = a.missedFilmCount - b.missedFilmCount;
+  const vacation = a.vacationUnits - b.vacationUnits;
+  return objective === 'minVacation' ? vacation || films : films || vacation;
+}
+export function compareScores(a: ScheduleScore, b: ScheduleScore, objective: OptimizationObjective = 'maxFilms'): number {
   const aUnits = a.vacationUnits ?? a.vacationDays * 2;
   const bUnits = b.vacationUnits ?? b.vacationDays * 2;
-  return a.missedFilmCount - b.missedFilmCount || aUnits - bUnits || a.screeningDays - b.screeningDays || a.travelMinutes - b.travelMinutes || a.waitingMinutes - b.waitingMinutes;
+  return comparePriorities({ ...a, vacationUnits: aUnits }, { ...b, vacationUnits: bUnits }, objective) || a.screeningDays - b.screeningDays || a.travelMinutes - b.travelMinutes || a.waitingMinutes - b.waitingMinutes;
 }
 export function scorePlan(screenings: Screening[], mealInput: readonly (MealBreak | LunchBreak)[], input: ScheduleInput): SchedulePlan {
   const meals: MealBreak[] = mealInput.map(meal => 'kind' in meal ? meal : { ...meal, kind: 'lunch' });

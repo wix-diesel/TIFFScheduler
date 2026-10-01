@@ -20,6 +20,7 @@ function assert(ok: unknown): asserts ok { if (!ok) throw new Error('Invalid sto
 function constraints(value: unknown): UserConstraints {
   assert(object(value));
   const c = migrateConstraints(value);
+  assert(c.optimizationObjective === 'maxFilms' || c.optimizationObjective === 'minVacation');
   assert(Array.isArray(c.workingWeekdays) && c.workingWeekdays.every(x => natural(x) && x <= 6));
   assert(strings(c.additionalDaysOff) && c.additionalDaysOff.every(date));
   assert(strings(c.unavailableDates) && c.unavailableDates.every(date));
