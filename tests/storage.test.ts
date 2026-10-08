@@ -30,6 +30,17 @@ test('objective persists independently in drafts, results and saved plans',()=>{
  assert.equal(restored.lastResult!.input.constraints.optimizationObjective,'minVacation');
  assert.equal(restored.savedPlans[0]!.snapshot.input.constraints.optimizationObjective,'maxFilms');
 });
+test('balanced objective round trips in drafts, generated results and named snapshots',()=>{
+ const v=state();v.constraints.optimizationObjective='balanced';
+ v.lastResult!.input.constraints.optimizationObjective='balanced';
+ v.lastResult!.result=optimizeSchedule(v.lastResult!.input);
+ v.savedPlans[0]!.snapshot=structuredClone(v.lastResult!);
+ assert.deepEqual(decode(encode(v),'tiff-2025'),v);
+ v.constraints.optimizationObjective='minVacation';v.lastResult=null;
+ const restored=decode(encode(v),'tiff-2025');
+ assert.equal(restored.constraints.optimizationObjective,'minVacation');
+ assert.equal(restored.savedPlans[0]!.snapshot.input.constraints.optimizationObjective,'balanced');
+});
 test('legacy objectives default to film-first and unknown objectives are rejected at every boundary',()=>{
  const legacy=state();delete legacy.constraints.optimizationObjective;
  delete legacy.lastResult!.input.constraints.optimizationObjective;

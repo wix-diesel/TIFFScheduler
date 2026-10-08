@@ -1,5 +1,38 @@
 import { expect, test } from '@playwright/test';
 
+test('balanced objective explains its score and persists independently in saved plans', async ({ page }) => {
+  await page.goto('./');
+  const objective = page.getByLabel('優先する基準');
+  const results = page.locator('.results').first();
+  const generate = page.getByRole('button', { name: 'スケジュールを生成' });
+  await page.locator('.film-card').first().getByRole('checkbox').check();
+  await objective.selectOption('balanced');
+  await expect(page.locator('aside')).toContainText('見送る1作品と休暇0.5日');
+  await expect(page.locator('.generate-bar')).toContainText('見送り数＋休暇0.5日単位 → 鑑賞数');
+  await generate.click();
+  await expect(results.locator('.plan').first()).toContainText('評価基準：鑑賞本数と休暇のバランス');
+  await expect(results.locator('.plan').first()).toContainText('バランス評価値：');
+  await page.getByRole('button', { name: 'プラン 1を保存', exact: true }).click();
+  await page.reload();
+  await expect(objective).toHaveValue('balanced');
+  await expect(results.locator('.plan').first()).toContainText('バランス評価値：');
+  await objective.selectOption('minVacation');
+  await expect(results.locator('.plan')).toHaveCount(0);
+  await generate.click();
+  await page.reload();
+  await expect(objective).toHaveValue('minVacation');
+  await page.getByText('保存プラン 1', { exact: true }).click();
+  const saved = page.locator('.results').last();
+  await expect(saved.locator('.plan')).toContainText('評価基準：鑑賞本数と休暇のバランス');
+  await expect(saved.locator('.plan')).toContainText('バランス評価値：');
+  await saved.getByRole('button', { name: 'この条件で再計算' }).click();
+  await expect(objective).toHaveValue('balanced');
+  await expect(results.locator('.plan')).toHaveCount(0);
+  await generate.click();
+  await expect(results.locator('.plan').first()).toContainText('バランス評価値：');
+  expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true);
+});
+
 test('switch objective, preserve it on reload and restore saved-plan criteria', async ({ page }) => {
   await page.goto('./');
   const results = page.locator('.results').first();

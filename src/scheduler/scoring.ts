@@ -1,10 +1,18 @@
 import type { ScheduleScore, ScheduleInput, Screening, SchedulePlan, MealBreak, LunchBreak, OptimizationObjective } from './types.ts';
 import { occupied, travelMinutes, vacationDaysForItinerary } from './constraints.ts';
 import { dateInJapan, minute } from './time.ts';
+type PrimaryScore = Pick<ScheduleScore, 'missedFilmCount' | 'vacationUnits'>;
+/** One missed film and one half-day of leave each add one penalty point. */
+export function balancedPenalty(score: PrimaryScore): number {
+  return score.missedFilmCount + score.vacationUnits;
+}
 /** Compare primary criteria, also used with optimistic bounds during search. */
-export function comparePriorities(a: Pick<ScheduleScore, 'missedFilmCount' | 'vacationUnits'>, b: Pick<ScheduleScore, 'missedFilmCount' | 'vacationUnits'>, objective: OptimizationObjective = 'maxFilms'): number {
+export function comparePriorities(a: PrimaryScore, b: PrimaryScore, objective: OptimizationObjective = 'maxFilms'): number {
   const films = a.missedFilmCount - b.missedFilmCount;
   const vacation = a.vacationUnits - b.vacationUnits;
+  // Nonnegative weights keep the optimizer's lower bounds safe for pruning.
+  // Prefer more films when the combined penalty ties.
+  if (objective === 'balanced') return balancedPenalty(a) - balancedPenalty(b) || films || vacation;
   return objective === 'minVacation' ? vacation || films : films || vacation;
 }
 export function compareScores(a: ScheduleScore, b: ScheduleScore, objective: OptimizationObjective = 'maxFilms'): number {
