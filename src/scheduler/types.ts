@@ -2,9 +2,9 @@ export interface Film { id: string; title: string; originalTitle?: string; depar
 export interface Screening { id: string; filmId: string; venueId: string; startAt: string; endAt: string; eventBeforeMinutes?: number; eventAfterMinutes?: number; sourceUrl?: string; timingNote?: string; eventLabel?: string }
 export interface Venue { id: string; name: string; address?: string }
 export interface TravelTime { fromVenueId: string; toVenueId: string; minutes: number }
-export type OptimizationObjective = 'maxFilms' | 'minVacation';
+export type OptimizationObjective = 'maxFilms' | 'balanced' | 'minVacation';
 export interface UserConstraints {
-  /** Primary ranking criterion; omitted values preserve film-first ranking. */
+  /** Ranking objective; omitted values preserve film-first ranking. */
   optimizationObjective?: OptimizationObjective;
   /** Maximum screenings whose start time falls on the same JST date. */
   maxScreeningsPerDay?: number | undefined;
